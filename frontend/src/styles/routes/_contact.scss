@@ -1,0 +1,113 @@
+@use '../abstracts' as *;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+
+  &__title {
+    color: #1a5e1e;
+    font-size: 35px;
+  }
+
+  &__text {
+    color: #5d5d66;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  &__form {
+    max-width: 800px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 100px;
+    padding: 70px 50px;
+    box-shadow: 10px 10px 59px -28px rgba(0, 0, 0, 0.38);
+    -webkit-box-shadow: 10px 10px 59px -28px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 10px 10px 59px -28px rgba(0, 0, 0, 0.38);
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__label {
+    color: #5d5d66;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  &__input {
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e9;
+    background-color: #fafafa;
+    font-size: 20px;
+    padding: 0 20px;
+    outline: none;
+    color: #5d5d66;
+
+    &:focus {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  }
+
+  &__textarea {
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #e8e8e9;
+    background-color: #fafafa;
+    font-size: 20px;
+    padding: 20px;
+    outline: none;
+    min-height: 150px;
+    max-height: 400px;
+    color: #5d5d66;
+    width: auto;
+    resize: vertical;
+
+    &:focus {
+      background-color: #ffffff;
+      color: #000000;
+    }
+  }
+
+  &__button {
+    background-color: #1a5e1e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 30px;
+    font-size: 18px;
+    font-weight: 800;
+    width: 150px;
+    cursor: pointer;
+    box-shadow: 10px 10px 59px -28px rgba(0, 0, 0, 0.38);
+    -webkit-box-shadow: 10px 10px 59px -28px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 10px 10px 59px -28px rgba(0, 0, 0, 0.38);
+  }
+
+  &__warning {
+    color: #777777;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: justify;
+  }
+
+  @media (max-width:768px ) {
+    padding: 100px 20px;
+    &__form {
+      padding: 70px 20px; 
+    }
+  }
+}

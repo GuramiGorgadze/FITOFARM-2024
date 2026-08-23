@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+$color-bg: #16241a;
+$color-ivory: #f6f2e9;
+$color-ivory-dim: rgba(246, 242, 233, 0.62);
+$color-gold: #c9a15a;
+$color-gold-dark: #b78e4c;
+$color-gold-soft: rgba(201, 161, 90, 0.14);
+$color-sage: #6b8f71;
+$color-hairline: rgba(246, 242, 233, 0.1);
+$color-shadow: rgba(10, 16, 10, 0.35);
+$color-text-dark: #22301e;
+
+$nav-height: 84px;
+$nav-height-mobile: 64px;
+
+.home {
+  .right {
+    position: relative;
+    flex: 1 1 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+
+      border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+      box-shadow:
+        0 30px 60px -20px $color-shadow,
+        0 0 0 1px $color-hairline;
+
+      @media (max-width: 900px) {
+        max-width: 340px;
+      }
+
+      @media (max-width: 640px) {
+        max-width: 260px;
+      }
+    }
+  }
+}

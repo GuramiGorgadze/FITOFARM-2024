@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "text1": "FitoFarm-2024 - A Natural Path to Well-Being",
+    "text2": "FitoFarm-2024 is a pharmaceutical company founded in Georgia, producing biologically active dietary supplements (BAS).",
+    "text3": "The products manufactured by the company are made from natural plant-based materials, creating safe and effective remedies.",
+    "button": "See Our Products",
+    "fitoAlt": "Fito Product Picture"
+  },
+  "about": {
+    "title": "About FitoFarm-2024",
+    "whoTitle": "Who We Are",
+    "whoText1": "FitoFarm-2024 is a pharmaceutical company established in Georgia, specializing in the production of biologically active dietary supplements (BAS).",
+    "whoText2": "We believe that health is not a privilege - it is the right of every person. That is why we create products that are effective, safe, and accessible.",
+    "productsTitle": "Our Products",
+    "productsText": "The FitoFarm-2024 manufacturing facility is located in a high-mountain region of Georgia, in the Tkibuli municipality, where we produce products with 100% natural plant-based composition in an ecologically clean environment. Each product undergoes strict quality control procedures to ensure we provide our customers with the finest goods.",
+    "whyTitle": "Why Choose Us",
+    "reason1Title": "High Georgian quality - 100% natural plant-based formula.",
+    "reason1Text": "We combine the richness of Georgian nature with modern pharmaceutical manufacturing methods to international standards, creating a world-class product that contains no artificial colorants, preservatives, or synthetic additives - only a natural, ecological, and pure composition.",
+    "reason2Title": "Transparency and Trustworthiness.",
+    "reason2Text": "Every ingredient in the product is listed on the label. We do not hide the composition - our customers are always informed about what they are giving their body.",
+    "reason3Title": "Registered and certified company.",
+    "reason3Text": "FitoFarm-2024 holds all permits issued by the relevant authorities of Georgia. Our products meet all applicable norms and standards. Fitosedi drops have been in demand on the international market for 30 years.",
+    "mountainAlt": "Mountain view",
+    "farmAlt": "Aerial view of the farm"
+  },
+  "advert": {
+    "addressTitle": "Address",
+    "address1": "Georgia, Tbilisi, Tsereteli St. 142a.",
+    "address2": "Georgia, Tkibuli, Dabadzveli village",
+    "contactTitle": "Contact Information",
+    "phone": "Tel: 599 142 118",
+    "logoAlt": "FitoFarm logo"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "text": "Our team is prepared to collaborate on any public relations matters you might have. Whether it’s a proposal, expanding a partnership, or a pertinent inquiry, we invite you to fill out our contact form. This will ensure your message reaches us directly via email, enabling us to address your needs efficiently and effectively.",
+    "name": "Name",
+    "email": "Email address",
+    "topic": "Subject",
+    "message": "Your message",
+    "button": "Submit",
+    "sending": "Sending...",
+    "warning": "Please be informed that by completing and submitting this form, “_________________” will process the personal data provided by you solely for the purpose of reviewing and responding to your letter/application, including proposals, partnership opportunities, inquiries, and other matters related to public relations, in accordance with the requirements of the Law of Georgia on Personal Data Protection. For these purposes, your personal data will be processed and retained only for the period necessary to review your letter/application, unless a longer retention period is required due to the nature or content of the correspondence. Furthermore, please be informed that you are entitled to all rights provided for under Chapter III of the Law of Georgia on Personal Data Protection.",
+    "toast": {
+      "validationError": "Please fill in all fields.",
+      "emailError": "Please enter a valid email address.",
+      "loading": "Sending your message...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "products": "Produkte",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "text1": "FitoFarm-2024 – Der natürliche Weg zur Ruhe",
+    "text2": "FitoFarm-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das biologisch aktive Nahrungsergänzungsmittel herstellt.",
+    "text3": "Die vom Unternehmen hergestellten Produkte bestehen aus natürlichen pflanzlichen Rohstoffen, die sichere und wirksame Heilmittel ergeben.",
+    "button": "Unsere Produkte ansehen",
+    "fitoAlt": "Phyto-Produktfoto"
+  },
+  "about": {
+    "aboutTitle": "Über FitoFarm-2024",
+    "whoTitle": "Wer wir sind",
+    "whoText1": "FitoFarm-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das sich auf die Herstellung biologisch aktiver Nahrungsergänzungsmittel spezialisiert hat.",
+    "whoText2": "Wir glauben, dass Gesundheit kein Privileg ist - sie ist das Recht eines jeden Menschen. Deshalb entwickeln wir Produkte, die wirksam, sicher und zugänglich sind.",
+    "productsTitle": "Unsere Produkte",
+    "productsText": "Die Produktionsstätte von FitoFarm-2024 befindet sich in einer Hochgebirgsregion Georgiens, in der Gemeinde Tkibuli, wo wir in einer ökologisch sauberen Umgebung Produkte mit 100% natürlicher pflanzlicher Zusammensetzung herstellen. Jedes Produkt durchläuft strenge Qualitätskontrollverfahren, um unseren Kunden die besten Erzeugnisse zu liefern.",
+    "whyTitle": "Warum man sich für uns entscheidet",
+    "reason1Title": "Hohe georgische Qualität – 100 % natürliche pflanzliche Formel.",
+    "reason1Text": "Wir vereinen den Reichtum der georgischen Natur mit modernen pharmazeutischen Herstellungsmethoden nach internationalen Standards, um ein Produkt von Weltklasse zu schaffen, das keine künstlichen Farbstoffe, Konservierungsstoffe oder synthetischen Zusatzstoffe enthält - nur eine natürliche, ökologische und reine Zusammensetzung.",
+    "reason2Title": "Transparenz und Vertrauenswürdigkeit.",
+    "reason2Text": "Alle Inhaltsstoffe des Produkts sind auf dem Etikett angegeben. Wir verbergen die Zusammensetzung nicht - unsere Kunden sind immer darüber informiert, was sie ihrem Körper zuführen.",
+    "reason3Title": "Ein registriertes und zertifiziertes Unternehmen.",
+    "reason3Text": "FitoFarm-2024 verfügt über alle von den zuständigen georgischen Behörden ausgestellten Genehmigungen. Unsere Produkte entsprechen allen geltenden Normen und Standards. Die Fitosedi-Tropfen sind seit 30 Jahren auf dem internationalen Markt gefragt.",
+    "mountainAlt": "Bergblick",
+    "farmAlt": "Luftaufnahme der Farm"
+  },
+  "advert": {
+    "addressTitle": "Adresse",
+    "address1": "Georgien, Tiflis, Zereteli-Str. 142a.",
+    "address2": "Georgien, Stadt Tkibuli, Dorf Dabadsweli",
+    "contactTitle": "Kontaktinformationen",
+    "phone": "Tel: 599 142 118",
+    "logoAlt": "FitoFarm-Logo"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "text": "Unser Team steht bereit, mit Ihnen in allen Angelegenheiten der Öffentlichkeitsarbeit zusammenzuarbeiten. Ob es sich um ein Angebot, den Ausbau einer Partnerschaft oder eine relevante Anfrage handelt, laden wir Sie ein, unser Kontaktformular auszufüllen. So erreicht uns Ihre Nachricht direkt per E-Mail, damit wir Ihr Anliegen effizient und zielgerichtet bearbeiten können.",
+    "name": "Name",
+    "email": "E-Mail-Adresse",
+    "topic": "Betreff",
+    "message": "Ihre Nachricht",
+    "button": "Senden",
+    "sending": "Wird gesendet...",
+    "warning": "Wir weisen Sie darauf hin, dass die “_________________” beim Ausfüllen und Absenden dieses Formulars die von Ihnen bereitgestellten personenbezogenen Daten ausschließlich zum Zweck der Prüfung und Beantwortung Ihres Schreibens/Antrags verarbeitet, einschließlich Angeboten, Partnerschaftsmöglichkeiten, Anfragen und sonstigen Angelegenheiten der Öffentlichkeitsarbeit, in Übereinstimmung mit den Anforderungen des georgischen Gesetzes über den Schutz personenbezogener Daten. Zu diesen Zwecken werden Ihre personenbezogenen Daten nur für den Zeitraum verarbeitet und gespeichert, der zur Prüfung Ihres Schreibens/Antrags erforderlich ist, sofern nicht aufgrund der Art oder des Inhalts der Korrespondenz eine längere Aufbewahrungsfrist erforderlich ist. Darüber hinaus weisen wir Sie darauf hin, dass Ihnen alle Rechte gemäß Kapitel III des georgischen Gesetzes über den Schutz personenbezogener Daten zustehen.",
+    "toast": {
+      "validationError": "Bitte füllen Sie alle Felder aus.",
+      "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "loading": "Ihre Nachricht wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    }
+  }
+}
