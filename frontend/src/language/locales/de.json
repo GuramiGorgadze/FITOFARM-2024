@@ -28,14 +28,15 @@
     "mountainAlt": "Bergblick",
     "farmAlt": "Luftaufnahme der Farm"
   },
-  "advert": {
-    "addressTitle": "Adresse",
-    "address1": "Georgien, Tiflis, Zereteli-Str. 142a.",
-    "address2": "Georgien, Stadt Tkibuli, Dorf Dabadsweli",
-    "contactTitle": "Kontaktinformationen",
-    "phone": "Tel: 599 142 118",
-    "logoAlt": "FitoFarm-Logo"
-  },
+"info": {
+  "office1Title": "Adresse 1",
+  "office1Address": "Georgien, Tiflis, Zereteli-Straße 142a",
+  "office2Title": "Adresse 2",
+  "office2Address": "Georgien, Tkibuli, Dorf Dabadzveli",
+  "phone": "599 142 118",
+  "email": "info@fitofarm.ge",
+  "logoAlt": "Fitofarm-2024-Logo"
+},
   "contact": {
     "title": "Kontaktieren Sie uns",
     "text": "Unser Team steht bereit, mit Ihnen in allen Angelegenheiten der Öffentlichkeitsarbeit zusammenzuarbeiten. Ob es sich um ein Angebot, den Ausbau einer Partnerschaft oder eine relevante Anfrage handelt, laden wir Sie ein, unser Kontaktformular auszufüllen. So erreicht uns Ihre Nachricht direkt per E-Mail, damit wir Ihr Anliegen effizient und zielgerichtet bearbeiten können.",

@@ -28,14 +28,15 @@
     "mountainAlt": "Mountain view",
     "farmAlt": "Aerial view of the farm"
   },
-  "advert": {
-    "addressTitle": "Address",
-    "address1": "Georgia, Tbilisi, Tsereteli St. 142a.",
-    "address2": "Georgia, Tkibuli, Dabadzveli village",
-    "contactTitle": "Contact Information",
-    "phone": "Tel: 599 142 118",
-    "logoAlt": "FitoFarm logo"
-  },
+"info": {
+  "office1Title": "Address 1",
+  "office1Address": "Georgia, Tbilisi, Tsereteli St. 142a",
+  "office2Title": "Address 2",
+  "office2Address": "Georgia, Tkibuli, Dabadzveli village",
+  "phone": "599 142 118",
+  "email": "info@fitofarm.ge",
+  "logoAlt": "Fitofarm-2024 logo"
+},
   "contact": {
     "title": "Get in Touch",
     "text": "Our team is prepared to collaborate on any public relations matters you might have. Whether it’s a proposal, expanding a partnership, or a pertinent inquiry, we invite you to fill out our contact form. This will ensure your message reaches us directly via email, enabling us to address your needs efficiently and effectively.",
