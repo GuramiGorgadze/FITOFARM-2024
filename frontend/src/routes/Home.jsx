@@ -16,22 +16,32 @@ function Home() {
     <>
       <div className="home">
         <div className="left">
-          <p className="text1 text">{t('home.text1')}</p>
+          <div className="subtext">
+            <div className="line"></div> <p>ბუნებრივი გზა სიმშვიდისკენ</p>
+          </div>
+
+          <p className="text1 text"> </p>
+          <div className="title">
+            <p className="title__text">ფიტოფარმ</p>
+            <p className="title__text green">-2024</p>
+          </div>
+
+          <div className="divider"></div>
+
           <p className="text2 text">{t('home.text2')}</p>
+
           <p className="text3 text">{t('home.text3')}</p>
 
           <Link
             to="/products"
-            className="cta"
+            className="cta-wrapper"
           >
-            <span>{t('home.button')}</span>
-            <svg
-              className="cta__arrow"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
+            <span className="cta-background"></span>
+
+            <span className="cta">
+              {t('home.button')}
+              <i className="bi bi-arrow-right"></i>
+            </span>
           </Link>
         </div>
 
@@ -40,6 +50,8 @@ function Home() {
             src={HomePic}
             alt={t('home.fitoAlt')}
           />
+
+          <div className="background"></div>
         </div>
       </div>
 
