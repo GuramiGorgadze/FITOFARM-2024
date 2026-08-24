@@ -5,6 +5,7 @@
 @use 'components/info';
 @use 'components/scrollToTopButton';
 @use 'components/disclaimer';
+@use 'components/loadingScreen';
 
 @use 'layouts/navbar';
 @use 'layouts/footer';
@@ -12,3 +13,4 @@
 @use 'routes/home';
 @use 'routes/about';
 @use 'routes/contact';
+@use 'routes/legal';

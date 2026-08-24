@@ -12,30 +12,70 @@ function Footer() {
         <div className="column">
           <h2>{t('footer.legalTitle')}</h2>
           <div className="links">
-            <div className="link static">{t('footer.termsOfUse')}</div>
-            <div className="link static">{t('footer.dataPrivacy')}</div>
-            <div className="link static">{t('footer.cookieManagement')}</div>
-            <div className="link static">{t('footer.sitemap')}</div>
+            <a
+              className="link"
+              href="/privacy-policy"
+            >
+              {t('footer.privacyPolicy')}
+            </a>
+            <a
+              className="link"
+              href="/terms"
+            >
+              {t('footer.terms')}
+            </a>
           </div>
         </div>
 
         <div className="column">
           <h2>{t('footer.followTitle')}</h2>
           <div className="links">
-            <a className="link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-facebook" aria-hidden="true" />
+            <a
+              className="link"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                className="bi bi-facebook"
+                aria-hidden="true"
+              />
               Facebook
             </a>
-            <a className="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-linkedin" aria-hidden="true" />
+            <a
+              className="link"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                className="bi bi-linkedin"
+                aria-hidden="true"
+              />
               LinkedIn
             </a>
-            <a className="link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-instagram" aria-hidden="true" />
+            <a
+              className="link"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                className="bi bi-instagram"
+                aria-hidden="true"
+              />
               Instagram
             </a>
-            <a className="link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-youtube" aria-hidden="true" />
+            <a
+              className="link"
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                className="bi bi-youtube"
+                aria-hidden="true"
+              />
               YouTube
             </a>
           </div>
@@ -51,14 +91,13 @@ function Footer() {
         <div className="column">
           <h2>{t('footer.infoTitle')}</h2>
           <div className="links">
+            <div className="link static">{t('info.office1Address')}</div>
+            <div className="link static">{t('info.office2Address')}</div>
             <div className="link static">
-              {t('info.office1Address')}
-            </div>
-            <div className="link static">
-              {t('info.office2Address')}
-            </div>
-            <div className="link static">
-              <i className="bi bi-telephone" aria-hidden="true" />
+              <i
+                className="bi bi-telephone"
+                aria-hidden="true"
+              />
               {t('info.phone')}
             </div>
           </div>
@@ -66,7 +105,11 @@ function Footer() {
 
         <div className="column brand">
           <div className="title">
-            <img className="logo" src={Logo} alt={t('info.logoAlt')} />
+            <img
+              className="logo"
+              src={Logo}
+              alt={t('info.logoAlt')}
+            />
             <p className="wordmark">
               FITOFARM-<span className="wordmark__year">2024</span>
             </p>

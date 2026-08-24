@@ -28,15 +28,16 @@
     "mountainAlt": "Bergblick",
     "farmAlt": "Luftaufnahme der Farm"
   },
-"info": {
-  "office1Title": "Adresse 1",
-  "office1Address": "Georgien, Tiflis, Zereteli-Straße 142a",
-  "office2Title": "Adresse 2",
-  "office2Address": "Georgien, Tkibuli, Dorf Dabadzveli",
-  "phone": "599 142 118",
-  "email": "info@fitofarm.ge",
-  "logoAlt": "Fitofarm-2024-Logo"
-},
+  "info": {
+    "office1Title": "Adresse 1",
+    "office1Address": "Georgien, Tiflis, Zereteli-Straße 142a",
+    "office2Title": "Adresse 2",
+    "office2Address": "Georgien, Tkibuli, Dorf Dabadzveli",
+    "phone": "599 142 118",
+    "email": "info@fitofarm.ge",
+    "logoAlt": "Fitofarm-2024-Logo"
+  },
+  "disclaimer": "Warnhinweis: Diese Produkte sind Nahrungsergänzungsmittel und dienen nicht der Diagnose, Behandlung, Heilung oder Vorbeugung von Krankheiten. Konsultieren Sie vor der Anwendung einen Arzt.",
   "contact": {
     "title": "Kontaktieren Sie uns",
     "text": "Unser Team steht bereit, mit Ihnen in allen Angelegenheiten der Öffentlichkeitsarbeit zusammenzuarbeiten. Ob es sich um ein Angebot, den Ausbau einer Partnerschaft oder eine relevante Anfrage handelt, laden wir Sie ein, unser Kontaktformular auszufüllen. So erreicht uns Ihre Nachricht direkt per E-Mail, damit wir Ihr Anliegen effizient und zielgerichtet bearbeiten können.",
@@ -55,17 +56,140 @@
       "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
     }
   },
+  "terms": {
+    "eyebrow": "Rechtliches",
+    "title": "Allgemeine Geschäftsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert: 24.08.2026",
+    "intro": "Durch den Zugriff auf diese Website oder deren Nutzung (die „Website“) stimmen Sie den folgenden Bedingungen zu.",
+    "toc": {
+      "label": "Auf dieser Seite",
+      "purpose": "Zweck der Website",
+      "ip": "Geistiges Eigentum",
+      "noAccounts": "Keine Konten",
+      "liability": "Haftungsbeschränkung",
+      "productUse": "Produktnutzung",
+      "changes": "Änderungen dieser Bedingungen",
+      "governingLaw": "Anwendbares Recht",
+      "contact": "Kontakt"
+    },
+    "sections": {
+      "purpose": {
+        "title": "Zweck der Website",
+        "body": "Diese Website informiert über die FITOFARM-2024 LLC und die von uns hergestellten biologisch aktiven Nahrungsergänzungsmittel (BAS). Die Inhalte dieser Website dienen ausschließlich allgemeinen Informationszwecken und stellen keine medizinische Beratung dar — siehe den auf der Website angezeigten medizinischen Haftungsausschluss."
+      },
+      "ip": {
+        "title": "Geistiges Eigentum",
+        "body": "Sämtliche Inhalte dieser Website — Texte, Logos, Fotos und Design — sind Eigentum der FITOFARM-2024 LLC und urheberrechtlich geschützt. Sie dürfen ohne unsere schriftliche Genehmigung weder kopiert noch vervielfältigt oder verbreitet werden."
+      },
+      "noAccounts": {
+        "title": "Keine Konten, kein Online-Verkauf",
+        "body": "Diese Website bietet keine Nutzerregistrierung, kein Login und keinen Online-Kauf. Es handelt sich um eine reine Informationsseite mit einem Kontaktformular. Alle über das Kontaktformular übermittelten Nachrichten werden gemäß unserer {{privacyPolicyLink}} behandelt.",
+        "linkText": "Datenschutzerklärung"
+      },
+      "liability": {
+        "title": "Haftungsbeschränkung",
+        "intro": "Wir haften nicht für:",
+        "items": [
+          "Missbrauch oder Fehlinterpretation der auf der Website bereitgestellten Informationen",
+          "vorübergehende Nichtverfügbarkeit der Website aufgrund technischer Probleme",
+          "Inhalte auf verlinkten Websites Dritter"
+        ]
+      },
+      "productUse": {
+        "title": "Produktnutzung",
+        "body": "Vor der Verwendung eines auf dieser Website beschriebenen Produkts müssen Nutzer die Produktanweisungen lesen und einen zugelassenen Arzt oder eine zugelassene Ärztin konsultieren. Das Unternehmen haftet nicht für Folgen, die aus einer unsachgemäßen oder unbeaufsichtigten Nutzung seiner Produkte entstehen."
+      },
+      "changes": {
+        "title": "Änderungen dieser Bedingungen",
+        "body": "Wir können diese Bedingungen jederzeit aktualisieren. Die überarbeitete Fassung wird auf dieser Seite veröffentlicht."
+      },
+      "governingLaw": {
+        "title": "Anwendbares Recht",
+        "body": "Diese Bedingungen unterliegen dem Recht Georgiens. Streitigkeiten werden vor den zuständigen Gerichten Georgiens beigelegt."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "name": "FITOFARM-2024 LLC",
+        "address": "Georgien, Tkibuli, Dorf Dabadzveli",
+        "telLabel": "Tel:",
+        "emailLabel": "E-Mail:"
+      }
+    }
+  },
+  "privacy": {
+    "eyebrow": "Rechtliches",
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: 24.08.2026",
+    "intro": "Die FITOFARM-2024 LLC („Unternehmen“, „wir“, „uns“) respektiert Ihre Privatsphäre. Diese Erklärung beschreibt, welche Informationen wir über diese Website erheben und wie wir sie verwenden.",
+    "toc": {
+      "label": "Auf dieser Seite",
+      "whatWeCollect": "Welche Daten wir erheben",
+      "howWeUseIt": "Wie wir die Daten verwenden",
+      "storage": "Speicherung & Aufbewahrung",
+      "sharing": "Weitergabe",
+      "yourRights": "Ihre Rechte",
+      "children": "Kinder",
+      "changes": "Änderungen",
+      "contact": "Kontakt"
+    },
+    "sections": {
+      "whatWeCollect": {
+        "title": "Welche Daten wir erheben",
+        "intro": "Wir erheben personenbezogene Daten ausschließlich dann, wenn Sie unser Kontaktformular absenden:",
+        "items": ["Name", "E-Mail-Adresse", "Betreff und Inhalt der Nachricht"],
+        "note": "Wir verwenden auf dieser Website weder Cookies noch Konten oder Tracking-Skripte. Ihr Browser kann im Rahmen des normalen Webverkehrs weiterhin standardmäßige technische Informationen (z. B. die IP-Adresse) an unseren Hosting-Anbieter übermitteln — dies erheben oder speichern wir nicht gesondert."
+      },
+      "howWeUseIt": {
+        "title": "Wie wir die Daten verwenden",
+        "intro": "Über das Kontaktformular übermittelte Daten verwenden wir ausschließlich, um:",
+        "items": [
+          "Ihre Anfrage zu beantworten",
+          "bei Bedarf einen Nachweis der Korrespondenz zu führen"
+        ],
+        "note": "Wir verkaufen, vermieten oder teilen Ihre Daten nicht zu Marketingzwecken mit Dritten."
+      },
+      "storage": {
+        "title": "Speicherung & Aufbewahrung",
+        "body": "Über das Kontaktformular gesendete Nachrichten gehen an das E-Mail-Postfach unseres Unternehmens und werden nur so lange aufbewahrt, wie es zur Bearbeitung Ihrer Anfrage erforderlich ist, sofern das Gesetz keine längere Frist vorschreibt."
+      },
+      "sharing": {
+        "title": "Weitergabe",
+        "intro": "Wir geben Daten ausschließlich weiter an:",
+        "items": [
+          "unseren E-Mail-/Hosting-Anbieter — ausschließlich zur Zustellung des Kontaktformulars",
+          "Behörden, sofern gesetzlich vorgeschrieben"
+        ]
+      },
+      "yourRights": {
+        "title": "Ihre Rechte",
+        "body": "Sie können Auskunft über, Berichtigung oder Löschung der von Ihnen an uns übermittelten personenbezogenen Daten verlangen. Um diese Rechte auszuüben, kontaktieren Sie uns über die unten angegebenen Kontaktdaten."
+      },
+      "children": {
+        "title": "Kinder",
+        "body": "Diese Website richtet sich nicht an Kinder, und wir erheben wissentlich keine Daten von Minderjährigen."
+      },
+      "changes": {
+        "title": "Änderungen",
+        "body": "Wir können diese Erklärung von Zeit zu Zeit aktualisieren. Wesentliche Änderungen werden auf dieser Seite mit aktualisiertem Datum kenntlich gemacht."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "name": "FITOFARM-2024 LLC",
+        "address": "Georgien, Tkibuli, Dorf Dabadzveli",
+        "telLabel": "Tel:",
+        "emailLabel": "E-Mail:"
+      }
+    }
+  },
   "footer": {
-  "legalTitle": "Rechtliches",
-  "termsOfUse": "Nutzungsbedingungen",
-  "dataPrivacy": "Datenschutz",
-  "cookieManagement": "Cookie-Einstellungen",
-  "sitemap": "Sitemap",
-  "followTitle": "Folgen Sie uns",
-  "contactTitle": "Kontakt",
-  "media": "Medien",
-  "infoTitle": "Kontaktinformationen",
-  "slogan": "Der natürliche Weg zum Wohlbefinden",
-  "copyright": "© {{year}} FitoFarm-2024. Alle Rechte vorbehalten."
-}
+    "legalTitle": "Rechtliches",
+    "privacyPolicy": "Datenschutzerklärung",
+    "terms": "Allgemeine Geschäftsbedingungen",
+    "followTitle": "Folgen Sie uns",
+    "contactTitle": "Kontakt",
+    "media": "Medien",
+    "infoTitle": "Kontaktinformationen",
+    "slogan": "Der natürliche Weg zum Wohlbefinden",
+    "copyright": "© {{year}} FitoFarm-2024. Alle Rechte vorbehalten."
+  }
 }

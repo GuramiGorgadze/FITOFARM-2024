@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import * as api from '../api/api';
+import { useLoader } from '../context/LoaderContext';
 
 function Contact() {
   const { t } = useTranslation();
+
+  const { useFakeLoader } = useLoader();
+  useEffect(() => useFakeLoader(), []);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -60,9 +64,15 @@ function Contact() {
       <h2 className="contact__title">{t('contact.title')}</h2>
       <p className="contact__text">{t('contact.text')}</p>
 
-      <form className="contact__form" onSubmit={handleSubmit}>
+      <form
+        className="contact__form"
+        onSubmit={handleSubmit}
+      >
         <div className="contact__field">
-          <label className="contact__label" htmlFor="name">
+          <label
+            className="contact__label"
+            htmlFor="name"
+          >
             {t('contact.name')}:
           </label>
           <input
@@ -77,7 +87,10 @@ function Contact() {
         </div>
 
         <div className="contact__field">
-          <label className="contact__label" htmlFor="email">
+          <label
+            className="contact__label"
+            htmlFor="email"
+          >
             {t('contact.email')}:
           </label>
           <input
@@ -92,7 +105,10 @@ function Contact() {
         </div>
 
         <div className="contact__field">
-          <label className="contact__label" htmlFor="subject">
+          <label
+            className="contact__label"
+            htmlFor="subject"
+          >
             {t('contact.topic')}:
           </label>
           <input
@@ -107,7 +123,10 @@ function Contact() {
         </div>
 
         <div className="contact__field">
-          <label className="contact__label" htmlFor="message">
+          <label
+            className="contact__label"
+            htmlFor="message"
+          >
             {t('contact.message')}:
           </label>
           <textarea
@@ -120,7 +139,11 @@ function Contact() {
           />
         </div>
 
-        <button className="contact__button" type="submit" disabled={isSubmitting}>
+        <button
+          className="contact__button"
+          type="submit"
+          disabled={isSubmitting}
+        >
           {isSubmitting ? t('contact.sending') : t('contact.button')}
         </button>
 

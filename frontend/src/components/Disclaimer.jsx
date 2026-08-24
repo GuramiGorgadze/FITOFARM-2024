@@ -1,15 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function disclaimer() {
+  const { t } = useTranslation();
   return (
-    <div className='disclaimer'>
+    <div className="disclaimer">
       <i class="bi bi-exclamation-circle-fill"></i>
 
-      <p className='text'>
-        გაფრთხილება: ეს პროდუქტები არის ბიოლოგიურად აქტიური დანამატები და არ წარმოადგენს სამკურნალო
-        საშუალებებს. ისინი არ არის განკუთვნილი დაავადებების დიაგნოსტირების, მკურნალობის, განკურნების
-        ან პრევენციისთვის. გამოყენებამდე გაიარეთ კონსულტაცია ექიმთან.
-      </p>
+      <p className="text">{t('disclaimer')}</p>
     </div>
   );
 }

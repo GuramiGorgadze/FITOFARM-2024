@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Navbar, Footer, Main } from './layouts';
 import { Routes, Route } from 'react-router-dom';
-import { Home, About, Contact, Products, ProductSingle } from './routes';
-import { ScrollToTopButton, Disclaimer } from './components';
+import { Home, About, Contact, Products, ProductSingle, PrivacyPolicy, Terms } from './routes';
+import { ScrollToTopButton, Disclaimer, LoadingScreen } from './components';
 import { Toaster } from 'react-hot-toast';
 import './styles/style.scss';
 import useDocumentTitle from './hooks/useDocumentTitle';
@@ -53,10 +53,19 @@ function App() {
             path="/products/:id"
             element={<ProductSingle />}
           />
+          <Route
+            path="/privacy-policy"
+            element={<PrivacyPolicy />}
+          />
+          <Route
+            path="/terms"
+            element={<Terms />}
+          />
         </Routes>
       </Main>
       <Disclaimer />
       <Footer />
+      <LoadingScreen />
     </>
   );
 }

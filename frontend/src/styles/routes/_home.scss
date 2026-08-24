@@ -6,7 +6,7 @@ $color-ink-dim: rgba(22, 36, 26, 0.64);
 $color-gold: #c9a15a;
 $color-gold-dark: #b78e4c;
 $color-sage: #6b8f71;
-$color-sage-text: mix(#6b8f71, #16241a, 45%);
+$color-sage-text: #6b8f71;
 $color-hairline: rgba(22, 36, 26, 0.1);
 $color-shadow: rgba(22, 36, 26, 0.16);
 
@@ -24,6 +24,7 @@ $nav-height-mobile: 64px;
   background-color: $color-bg;
   overflow: hidden;
   isolation: isolate;
+  margin: 50px 0;
 
   &::after {
     content: '';

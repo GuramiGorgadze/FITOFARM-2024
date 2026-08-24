@@ -28,15 +28,16 @@
     "mountainAlt": "Mountain view",
     "farmAlt": "Aerial view of the farm"
   },
-"info": {
-  "office1Title": "Address 1",
-  "office1Address": "Georgia, Tbilisi, Tsereteli St. 142a",
-  "office2Title": "Address 2",
-  "office2Address": "Georgia, Tkibuli, Dabadzveli village",
-  "phone": "599 142 118",
-  "email": "info@fitofarm.ge",
-  "logoAlt": "Fitofarm-2024 logo"
-},
+  "info": {
+    "office1Title": "Address 1",
+    "office1Address": "Georgia, Tbilisi, Tsereteli St. 142a",
+    "office2Title": "Address 2",
+    "office2Address": "Georgia, Tkibuli, Dabadzveli village",
+    "phone": "599 142 118",
+    "email": "info@fitofarm.ge",
+    "logoAlt": "Fitofarm-2024 logo"
+  },
+    "disclaimer": "Warning: These products are dietary supplements and are not intended to diagnose, treat, cure, or prevent disease. Consult a physician before use.",
   "contact": {
     "title": "Get in Touch",
     "text": "Our team is prepared to collaborate on any public relations matters you might have. Whether it’s a proposal, expanding a partnership, or a pertinent inquiry, we invite you to fill out our contact form. This will ensure your message reaches us directly via email, enabling us to address your needs efficiently and effectively.",
@@ -55,17 +56,137 @@
       "error": "Something went wrong. Please try again."
     }
   },
+  "terms": {
+    "eyebrow": "Legal",
+    "title": "Terms & Conditions",
+    "lastUpdated": "Last updated: 24/08/2026",
+    "intro": "By accessing or using this website (the “Site”), you agree to the following terms.",
+    "toc": {
+      "label": "On this page",
+      "purpose": "Purpose of the Site",
+      "ip": "Intellectual Property",
+      "noAccounts": "No Accounts",
+      "liability": "Limitation of Liability",
+      "productUse": "Product Use",
+      "changes": "Changes to These Terms",
+      "governingLaw": "Governing Law",
+      "contact": "Contact"
+    },
+    "sections": {
+      "purpose": {
+        "title": "Purpose of the Site",
+        "body": "This Site provides information about FITOFARM-2024 LLC and the biologically active dietary supplements (BAS) we manufacture. Content on this Site is for general informational purposes and does not constitute medical advice — see the Medical Disclaimer displayed throughout the Site."
+      },
+      "ip": {
+        "title": "Intellectual Property",
+        "body": "All content on this Site — text, logos, photos, and design — is the property of FITOFARM-2024 LLC and protected by copyright. It may not be copied, reproduced, or distributed without our written permission."
+      },
+      "noAccounts": {
+        "title": "No Accounts, No E-commerce",
+        "body": "This Site does not offer user registration, login, or online purchasing. It is an informational site with a contact form only. Any correspondence submitted through the contact form is handled as described in our {{privacyPolicyLink}}.",
+        "linkText": "Privacy Policy"
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "intro": "We are not liable for:",
+        "items": [
+          "Any misuse or misinterpretation of information provided on the Site",
+          "Temporary unavailability of the Site due to technical issues",
+          "Content on third-party websites linked from this Site"
+        ]
+      },
+      "productUse": {
+        "title": "Product Use",
+        "body": "Before using any product described on this Site, users must read the product instructions and consult a licensed healthcare professional. The Company is not liable for outcomes resulting from improper or unsupervised use of its products."
+      },
+      "changes": {
+        "title": "Changes to These Terms",
+        "body": "We may update these Terms at any time. The revised version will be posted on this page."
+      },
+      "governingLaw": {
+        "title": "Governing Law",
+        "body": "These Terms are governed by the laws of Georgia. Any dispute will be resolved in the competent courts of Georgia."
+      },
+      "contact": {
+        "title": "Contact",
+        "name": "FITOFARM-2024 LLC",
+        "address": "Georgia, Tkibuli, village of Dabadzveli",
+        "telLabel": "Tel:",
+        "emailLabel": "Email:"
+      }
+    }
+  },
+  "privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 24/08/2026",
+    "intro": "FITOFARM-2024 LLC (“Company,” “we,” “us”) respects your privacy. This policy explains what information we collect through this website and how we use it.",
+    "toc": {
+      "label": "On this page",
+      "whatWeCollect": "What We Collect",
+      "howWeUseIt": "How We Use It",
+      "storage": "Storage & Retention",
+      "sharing": "Sharing",
+      "yourRights": "Your Rights",
+      "children": "Children",
+      "changes": "Changes",
+      "contact": "Contact"
+    },
+    "sections": {
+      "whatWeCollect": {
+        "title": "What We Collect",
+        "intro": "We only collect personal data when you submit our contact form:",
+        "items": ["Name", "Email address", "Subject and message content"],
+        "note": "We do not use cookies, accounts, or tracking scripts on this site. Your browser may still send standard technical information (like IP address) to our hosting provider as part of normal web traffic — this is not something we actively collect or store separately."
+      },
+      "howWeUseIt": {
+        "title": "How We Use It",
+        "intro": "Data submitted through the contact form is used solely to:",
+        "items": ["Respond to your inquiry", "Keep a record of correspondence, where necessary"],
+        "note": "We do not sell, rent, or share your data with third parties for marketing purposes."
+      },
+      "storage": {
+        "title": "Storage & Retention",
+        "body": "Contact form submissions are delivered to our company email inbox and retained only as long as needed to handle your inquiry, unless a longer period is required by law."
+      },
+      "sharing": {
+        "title": "Sharing",
+        "intro": "We may share data only with:",
+        "items": [
+          "Our email/hosting provider, strictly to deliver the contact form",
+          "Public authorities, if legally required"
+        ]
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "body": "You may request access to, correction of, or deletion of any personal data you've submitted to us. Contact us using the details below to exercise these rights."
+      },
+      "children": {
+        "title": "Children",
+        "body": "This site is not directed at children, and we do not knowingly collect data from minors."
+      },
+      "changes": {
+        "title": "Changes",
+        "body": "We may update this policy from time to time. Material changes will be reflected on this page with an updated date."
+      },
+      "contact": {
+        "title": "Contact",
+        "name": "FITOFARM-2024 LLC",
+        "address": "Georgia, Tkibuli, village of Dabadzveli",
+        "telLabel": "Tel:",
+        "emailLabel": "Email:"
+      }
+    }
+  },
   "footer": {
-  "legalTitle": "Legal",
-  "termsOfUse": "Terms of Use",
-  "dataPrivacy": "Data Privacy",
-  "cookieManagement": "Cookie Management",
-  "sitemap": "Sitemap",
-  "followTitle": "Follow Us",
-  "contactTitle": "Contact Us",
-  "media": "Media",
-  "infoTitle": "Contact Information",
-  "slogan": "A Natural Path to Well-Being",
-  "copyright": "© {{year}} FitoFarm-2024. All rights reserved."
-}
+    "legalTitle": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "followTitle": "Follow Us",
+    "contactTitle": "Contact Us",
+    "media": "Media",
+    "infoTitle": "Contact Information",
+    "slogan": "A Natural Path to Well-Being",
+    "copyright": "© {{year}} FitoFarm-2024. All rights reserved."
+  }
 }

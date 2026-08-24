@@ -3,3 +3,5 @@ export { default as About } from './About';
 export { default as Contact } from './Contact';
 export { default as Products } from './Products';
 export { default as ProductSingle } from './ProductSingle';
+export { default as PrivacyPolicy } from './PrivacyPolicy';
+export { default as Terms } from './Terms';

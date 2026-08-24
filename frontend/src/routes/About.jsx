@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useLoader } from '../context/LoaderContext';
+import { useEffect } from 'react';
 
 function about() {
-  return (
-    <div>about</div>
-  )
+  const { useFakeLoader } = useLoader();
+  useEffect(() => useFakeLoader(), []);
+  return <div>about</div>;
 }
 
-export default about
+export default about;
