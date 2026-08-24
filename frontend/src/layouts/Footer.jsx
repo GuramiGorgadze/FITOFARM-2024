@@ -52,11 +52,9 @@ function Footer() {
           <h2>{t('footer.infoTitle')}</h2>
           <div className="links">
             <div className="link static">
-              <i className="bi bi-geo-alt" aria-hidden="true" />
               {t('info.office1Address')}
             </div>
             <div className="link static">
-              <i className="bi bi-geo-alt" aria-hidden="true" />
               {t('info.office2Address')}
             </div>
             <div className="link static">
