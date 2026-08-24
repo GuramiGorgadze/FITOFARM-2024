@@ -1,118 +1,213 @@
 @use '../abstracts' as *;
 
+// ── Palette ──────────────────────────────────────────────
+$color-ink-deep: #101b13;
+$color-ivory: #f6f2e9;
+$color-gold: #c9a15a;
+$color-sage: #6b8f71;
+
+// shared container: centers content, scales side padding smoothly
+%footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: clamp(24px, 5vw, 64px);
+}
+
 .footer {
-  background-color: #eaeaec;
+  position: relative;
   display: flex;
   flex-direction: column;
+  background: $color-ink-deep;
+
+  // subtle seam separating this section from Info above
+  &::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba($color-gold, 0.35), transparent);
+  }
 
   .top {
-    display: flex;
-    align-items: start;
-    justify-content: space-evenly;
-    padding: 70px 20px;
-    flex-wrap: wrap;
-    gap: 40px 60px;
+    @extend %footer-container;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 48px 32px;
+    padding-top: clamp(56px, 8vw, 88px);
+    padding-bottom: clamp(56px, 8vw, 88px);
 
     .column {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      max-width: 250px;
+      gap: 12px;
+      min-width: 0;
 
       h2 {
-        color: #1a5e1e;
-        font-size: 20px;
-        font-weight: 100;
+        margin: 0 0 4px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: $color-gold;
       }
 
       .links {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
+      }
 
-        .link {
-          color: #2b2929;
-          text-decoration: none;
+      .link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        font-size: 15px;
+        color: rgba($color-ivory, 0.78);
+        text-decoration: none;
+        cursor: pointer;
 
+        i {
+          flex-shrink: 0;
+          font-size: 15px;
+          color: $color-sage;
+          transition: color 0.3s;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -3px;
+          height: 1px;
+          background: $color-gold;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        &:hover {
+          color: $color-ivory;
+
+          &::after { transform: scaleX(1); }
+          i { color: $color-gold; }
+        }
+
+        &:focus-visible {
+          outline: 2px solid $color-gold;
+          outline-offset: 4px;
+          border-radius: 2px;
+        }
+
+        &.static {
+          cursor: default;
+          align-items: flex-start;
+
+          i { margin-top: 2px; }
+
+          &::after { display: none; }
           &:hover {
-            text-decoration: underline;
+            color: rgba($color-ivory, 0.78);
+            i { color: $color-sage; }
           }
         }
       }
+    }
+
+    // brand acts as a centered signature, not just another link column
+    .brand {
+      align-items: center;
+      text-align: center;
 
       .title {
         display: flex;
-        gap: 10px;
-        .logo {
-          height: 30px;
-        }
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
 
-        .title-text {
-          text-transform: uppercase;
-          font-size: 25px;
-          font-weight: 900;
-          color: #1a5e1e;
+      .logo {
+        height: 34px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .wordmark {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: $color-ivory;
+
+        &__year {
+          color: $color-gold;
         }
       }
 
       .slogan {
-        font-size: 15px;
-        color: #2b2929;
-        text-align: center;
+        margin: 0;
+        font-size: 14px;
+        color: rgba($color-ivory, 0.6);
       }
     }
   }
 
   .divider {
     height: 1px;
-    background-color: #393944;
-    width: auto;
-    margin: 20px 50px;
-    box-sizing: border-box;
+    background: linear-gradient(90deg, transparent, rgba($color-ivory, 0.14), transparent);
   }
 
   .bottom {
-    padding: 10px 50px;
-    margin-bottom: 10px;
+    @extend %footer-container;
+    padding-top: 20px;
+    padding-bottom: 28px;
 
     p {
-      font-size: 15px;
-      font-weight: 100;
-      color: #2b2929;
+      margin: 0;
+      font-size: 13px;
+      color: rgba($color-ivory, 0.5);
     }
   }
 
-  @media (max-width: 900px) {
+
+  @media (max-width: 1024px) {
     .top {
+      grid-template-columns: 1fr  1fr;
       justify-content: center;
-      padding: 50px 20px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .top {
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      gap: 32px;
-    }
-
-    .column {
-      align-items: center;
-      max-width: 100%;
       text-align: center;
 
-      .title {
-        justify-content: center;
+      .links {
+        align-items: center;
+      }
+
+            .brand {
+        grid-column: 1 / -1;
+        padding-top: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .top {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+
+      .column .link.static {
+        align-items: center;
+      }
+
+      .links {
+        align-items: center;
       }
     }
 
-    .divider {
-      margin: 20px;
-    }
-
     .bottom {
-      padding: 10px 20px;
       text-align: center;
     }
   }

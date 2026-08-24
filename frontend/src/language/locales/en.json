@@ -54,5 +54,18 @@
       "success": "Message sent successfully!",
       "error": "Something went wrong. Please try again."
     }
-  }
+  },
+  "footer": {
+  "legalTitle": "Legal",
+  "termsOfUse": "Terms of Use",
+  "dataPrivacy": "Data Privacy",
+  "cookieManagement": "Cookie Management",
+  "sitemap": "Sitemap",
+  "followTitle": "Follow Us",
+  "contactTitle": "Contact Us",
+  "media": "Media",
+  "infoTitle": "Contact Information",
+  "slogan": "A Natural Path to Well-Being",
+  "copyright": "© {{year}} FitoFarm-2024. All rights reserved."
+}
 }

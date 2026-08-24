@@ -54,5 +54,18 @@
       "success": "Nachricht erfolgreich gesendet!",
       "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
     }
-  }
+  },
+  "footer": {
+  "legalTitle": "Rechtliches",
+  "termsOfUse": "Nutzungsbedingungen",
+  "dataPrivacy": "Datenschutz",
+  "cookieManagement": "Cookie-Einstellungen",
+  "sitemap": "Sitemap",
+  "followTitle": "Folgen Sie uns",
+  "contactTitle": "Kontakt",
+  "media": "Medien",
+  "infoTitle": "Kontaktinformationen",
+  "slogan": "Der natürliche Weg zum Wohlbefinden",
+  "copyright": "© {{year}} FitoFarm-2024. Alle Rechte vorbehalten."
+}
 }
