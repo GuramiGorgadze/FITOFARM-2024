@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-$color-ink: #16241a;
+$color-ink: #1D5734;
 $color-ivory: #f6f2e9;
 $color-gold: #c9a15a;
 $color-gold-dark: #b78e4c;
@@ -12,11 +12,15 @@ $color-sage: #6b8f71;
   align-items: center;
   justify-content: space-between;
   gap: clamp(32px, 5vw, 72px);
-  padding: clamp(64px, 10vw, 120px) clamp(24px, 6vw, 96px);
+padding: clamp(32px, 6vw, 64px) clamp(24px, 6vw, 96px);
   background: $color-ink;
   color: $color-ivory;
   overflow: hidden;
   isolation: isolate;
+
+  * {
+    font-family: TBCContractica-Regular;
+  }
 
   &::after {
     content: '';

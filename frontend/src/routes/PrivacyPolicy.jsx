@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLoader } from '../context/LoaderContext';
 
 const SECTIONS = [
   { key: 'whatWeCollect', domId: 'what-we-collect' },
@@ -16,6 +17,9 @@ function PrivacyPolicy() {
   const { t } = useTranslation();
   const [active, setActive] = useState(SECTIONS[0].domId);
   const sectionRefs = useRef({});
+
+  const { useFakeLoader } = useLoader();
+  useEffect(() => useFakeLoader(), []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

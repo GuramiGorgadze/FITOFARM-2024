@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLoader } from '../context/LoaderContext';
 
-// camelCase key (matches en.json) -> kebab-case DOM id (used for #anchors / CSS)
 const SECTIONS = [
   { key: 'purpose', domId: 'purpose' },
   { key: 'ip', domId: 'ip' },
@@ -17,6 +17,9 @@ function Terms() {
   const { t } = useTranslation();
   const [active, setActive] = useState(SECTIONS[0].domId);
   const sectionRefs = useRef({});
+
+  const { useFakeLoader } = useLoader();
+  useEffect(() => useFakeLoader(), []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

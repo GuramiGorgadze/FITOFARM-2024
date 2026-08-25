@@ -106,6 +106,13 @@ function Footer() {
               />
               {t('info.phone')}
             </div>
+            <div className="link static">
+              <i
+                className="bi bi-envelope"
+                aria-hidden="true"
+              />
+              info@fitofarm.ge
+            </div>
           </div>
         </div>
 
@@ -117,7 +124,8 @@ function Footer() {
               alt={t('info.logoAlt')}
             />
             <p className="wordmark">
-              {t('home.title')}<span className="wordmark__year">-2024</span>
+              {t('home.title')}
+              <span className="wordmark__year">-2024</span>
             </p>
           </div>
           <p className="slogan">{t('footer.slogan')}</p>

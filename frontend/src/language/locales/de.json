@@ -9,25 +9,25 @@
   "home": {
     "slogan": "Der natürliche Weg zur Ruhe",
     "title": "FITOFARM",
-    "text1": "FitoFarm-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das biologisch aktive Nahrungsergänzungsmittel herstellt.",
+    "text1": "FITOFARM-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das biologisch aktive Nahrungsergänzungsmittel herstellt.",
     "text2": "Die vom Unternehmen hergestellten Produkte bestehen aus natürlichen pflanzlichen Rohstoffen, die sichere und wirksame Heilmittel ergeben.",
     "button": "Unsere Produkte ansehen",
     "fitoAlt": "Phyto-Produktfoto"
   },
   "about": {
-    "aboutTitle": "Über FitoFarm-2024",
+    "title": "Über FITOFARM-2024",
     "whoTitle": "Wer wir sind",
-    "whoText1": "FitoFarm-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das sich auf die Herstellung biologisch aktiver Nahrungsergänzungsmittel spezialisiert hat.",
+    "whoText1": "FITOFARM-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das sich auf die Herstellung biologisch aktiver Nahrungsergänzungsmittel spezialisiert hat.",
     "whoText2": "Wir glauben, dass Gesundheit kein Privileg ist - sie ist das Recht eines jeden Menschen. Deshalb entwickeln wir Produkte, die wirksam, sicher und zugänglich sind.",
     "productsTitle": "Unsere Produkte",
-    "productsText": "Die Produktionsstätte von FitoFarm-2024 befindet sich in einer Hochgebirgsregion Georgiens, in der Gemeinde Tkibuli, wo wir in einer ökologisch sauberen Umgebung Produkte mit 100% natürlicher pflanzlicher Zusammensetzung herstellen. Jedes Produkt durchläuft strenge Qualitätskontrollverfahren, um unseren Kunden die besten Erzeugnisse zu liefern.",
+    "productsText": "Die Produktionsstätte von FITOFARM-2024 befindet sich in einer Hochgebirgsregion Georgiens, in der Gemeinde Tkibuli, wo wir in einer ökologisch sauberen Umgebung Produkte mit 100% natürlicher pflanzlicher Zusammensetzung herstellen. Jedes Produkt durchläuft strenge Qualitätskontrollverfahren, um unseren Kunden die besten Erzeugnisse zu liefern.",
     "whyTitle": "Warum man sich für uns entscheidet",
     "reason1Title": "Hohe georgische Qualität – 100 % natürliche pflanzliche Formel.",
     "reason1Text": "Wir vereinen den Reichtum der georgischen Natur mit modernen pharmazeutischen Herstellungsmethoden nach internationalen Standards, um ein Produkt von Weltklasse zu schaffen, das keine künstlichen Farbstoffe, Konservierungsstoffe oder synthetischen Zusatzstoffe enthält - nur eine natürliche, ökologische und reine Zusammensetzung.",
     "reason2Title": "Transparenz und Vertrauenswürdigkeit.",
     "reason2Text": "Alle Inhaltsstoffe des Produkts sind auf dem Etikett angegeben. Wir verbergen die Zusammensetzung nicht - unsere Kunden sind immer darüber informiert, was sie ihrem Körper zuführen.",
     "reason3Title": "Ein registriertes und zertifiziertes Unternehmen.",
-    "reason3Text": "FitoFarm-2024 verfügt über alle von den zuständigen georgischen Behörden ausgestellten Genehmigungen. Unsere Produkte entsprechen allen geltenden Normen und Standards. Die Fitosedi-Tropfen sind seit 30 Jahren auf dem internationalen Markt gefragt.",
+    "reason3Text": "FITOFARM-2024 verfügt über alle von den zuständigen georgischen Behörden ausgestellten Genehmigungen. Unsere Produkte entsprechen allen geltenden Normen und Standards. Die Fitosedi-Tropfen sind seit 30 Jahren auf dem internationalen Markt gefragt.",
     "mountainAlt": "Bergblick",
     "farmAlt": "Luftaufnahme der Farm"
   },
@@ -37,8 +37,8 @@
     "office2Title": "Adresse 2",
     "office2Address": "Georgien, Tkibuli, Dorf Dabadzveli",
     "phone": "599 142 118",
-    "email": "info@fitofarm.ge",
-    "logoAlt": "Fitofarm-2024-Logo"
+    "email": "info@FITOFARM.ge",
+    "logoAlt": "FITOFARM-2024-Logo"
   },
   "disclaimer": "Warnhinweis: Diese Produkte sind Nahrungsergänzungsmittel und dienen nicht der Diagnose, Behandlung, Heilung oder Vorbeugung von Krankheiten. Konsultieren Sie vor der Anwendung einen Arzt.",
   "contact": {
@@ -193,6 +193,6 @@
     "contact": "Kontakt",
     "infoTitle": "Kontaktinformationen",
     "slogan": "Der natürliche Weg zum Wohlbefinden",
-    "copyright": "© {{year}} FitoFarm-2024. Alle Rechte vorbehalten."
+    "copyright": "© {{year}} FITOFARM-2024. Alle Rechte vorbehalten."
   }
 }

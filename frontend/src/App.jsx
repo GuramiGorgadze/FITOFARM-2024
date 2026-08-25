@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navbar, Footer, Main } from './layouts';
 import { Routes, Route } from 'react-router-dom';
 import { Home, About, Contact, Products, ProductSingle, PrivacyPolicy, Terms } from './routes';
-import { ScrollToTopButton, Disclaimer, LoadingScreen } from './components';
+import { ScrollToTopButton, LoadingScreen } from './components';
 import { Toaster } from 'react-hot-toast';
 import './styles/style.scss';
 import useDocumentTitle from './hooks/useDocumentTitle';
@@ -63,7 +63,6 @@ function App() {
           />
         </Routes>
       </Main>
-      <Disclaimer />
       <Footer />
       <LoadingScreen />
     </>

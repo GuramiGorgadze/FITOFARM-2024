@@ -1,35 +1,37 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
 import UsersRouter from "./routes/users.js";
 
 dotenv.config();
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
-const allowedOrigins = (process.env.CLIENT_URLS || 'http://localhost:5173').split(',');
+app.set("trust proxy", 1);
 
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-}));
+const allowedOrigins = process.env.CLIENT_URL
+  ? process.env.CLIENT_URL.split(",")
+  : "*";
 
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 
 app.use("/api/users", UsersRouter);
 
-const startServer = () => {
-  app.listen(PORT, () => {
-    console.log(`Server has started on port ${PORT}`);
-  });
-};
+app.use((req, res) => {
+  res.status(404).json({ err: "Route not found" });
+});
 
-startServer();
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ err: "Something went wrong" });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server has started on port ${PORT}`);
+});

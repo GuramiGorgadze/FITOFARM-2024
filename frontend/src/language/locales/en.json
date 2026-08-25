@@ -9,25 +9,25 @@
   "home": {
     "slogan": "A Natural Path to Peacefulness",
     "title": "FITOFARM",
-    "text1": "FitoFarm-2024 is a pharmaceutical company founded in Georgia, producing biologically active dietary supplements (BAS).",
+    "text1": "FITOFARM-2024 is a pharmaceutical company founded in Georgia, producing biologically active dietary supplements (BAS).",
     "text2": "The products manufactured by the company are made from natural plant-based materials, creating safe and effective remedies.",
     "button": "See Our Products",
     "fitoAlt": "Fito Product Picture"
   },
   "about": {
-    "title": "About FitoFarm-2024",
+    "title": "About FITOFARM-2024",
     "whoTitle": "Who We Are",
-    "whoText1": "FitoFarm-2024 is a pharmaceutical company established in Georgia, specializing in the production of biologically active dietary supplements (BAS).",
+    "whoText1": "FITOFARM-2024 is a pharmaceutical company established in Georgia, specializing in the production of biologically active dietary supplements (BAS).",
     "whoText2": "We believe that health is not a privilege - it is the right of every person. That is why we create products that are effective, safe, and accessible.",
     "productsTitle": "Our Products",
-    "productsText": "The FitoFarm-2024 manufacturing facility is located in a high-mountain region of Georgia, in the Tkibuli municipality, where we produce products with 100% natural plant-based composition in an ecologically clean environment. Each product undergoes strict quality control procedures to ensure we provide our customers with the finest goods.",
+    "productsText": "The FITOFARM-2024 manufacturing facility is located in a high-mountain region of Georgia, in the Tkibuli municipality, where we produce products with 100% natural plant-based composition in an ecologically clean environment. Each product undergoes strict quality control procedures to ensure we provide our customers with the finest goods.",
     "whyTitle": "Why Choose Us",
     "reason1Title": "High Georgian quality - 100% natural plant-based formula.",
     "reason1Text": "We combine the richness of Georgian nature with modern pharmaceutical manufacturing methods to international standards, creating a world-class product that contains no artificial colorants, preservatives, or synthetic additives - only a natural, ecological, and pure composition.",
     "reason2Title": "Transparency and Trustworthiness.",
     "reason2Text": "Every ingredient in the product is listed on the label. We do not hide the composition - our customers are always informed about what they are giving their body.",
     "reason3Title": "Registered and certified company.",
-    "reason3Text": "FitoFarm-2024 holds all permits issued by the relevant authorities of Georgia. Our products meet all applicable norms and standards. Fitosedi drops have been in demand on the international market for 30 years.",
+    "reason3Text": "FITOFARM-2024 holds all permits issued by the relevant authorities of Georgia. Our products meet all applicable norms and standards. Fitosedi drops have been in demand on the international market for 30 years.",
     "mountainAlt": "Mountain view",
     "farmAlt": "Aerial view of the farm"
   },
@@ -37,8 +37,8 @@
     "office2Title": "Address 2",
     "office2Address": "Georgia, Tkibuli, Dabadzveli village",
     "phone": "599 142 118",
-    "email": "info@fitofarm.ge",
-    "logoAlt": "Fitofarm-2024 logo"
+    "email": "info@FITOFARM.ge",
+    "logoAlt": "FITOFARM-2024 logo"
   },
   "disclaimer": "Warning: These products are dietary supplements and are not intended to diagnose, treat, cure, or prevent disease. Consult a physician before use.",
   "contact": {
@@ -190,6 +190,6 @@
     "contact": "Contact Us",
     "infoTitle": "Contact Information",
     "slogan": "A Natural Path to Peacefulness",
-    "copyright": "© {{year}} FitoFarm-2024. All rights reserved."
+    "copyright": "© {{year}} FITOFARM-2024. All rights reserved."
   }
 }
