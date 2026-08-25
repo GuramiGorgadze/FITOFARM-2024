@@ -98,15 +98,20 @@ $nav-height-mobile: 64px;
 .name {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; // each child sizes to its own text — stretch was
+  // forcing .big and .small to share one box width, which fed .small's
+  // font-size math back into .big's measured width and caused runaway growth
   line-height: 1;
 
   .big {
     margin: 0;
+    font-family: TBCContracticaCAPS-Black;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     color: $color-ink;
     text-transform: uppercase;
+    white-space: nowrap;
 
     @media (max-width: 768px) {
       font-size: 1.25rem;
@@ -115,11 +120,16 @@ $nav-height-mobile: 64px;
 
   .small {
     margin: 0.15rem 0 0;
-    font-size: 0.5rem;
+    font-family: TBCContractica-Regular;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: $color-green;
+    white-space: nowrap;
+
+    // Font-size is set inline by Navbar.jsx to match .big's rendered width.
+    // The value below only applies before that JS runs (first paint / no-JS).
+    font-size: 0.5rem;
 
     @media (max-width: 768px) {
       font-size: 0.4rem;

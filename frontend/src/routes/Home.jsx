@@ -20,16 +20,13 @@ function Home() {
     const titleEl = titleRef.current;
     if (!titleEl) return;
 
-    const BASELINE = 100; // px, arbitrary reference size for measuring
+    const BASELINE = 100;
 
     const fit = () => {
       const spans = titleEl.querySelectorAll('.title__text');
 
-      // .title's own box width == .left's content width == same width as
-      // .divider / .text2 / .text3 at any viewport size.
       const availableWidth = titleEl.clientWidth;
 
-      // Reset to baseline so we can measure the text's natural width.
       spans.forEach((el) => (el.style.fontSize = `${BASELINE}px`));
       const naturalWidth = titleEl.scrollWidth;
 
@@ -41,7 +38,6 @@ function Home() {
 
     fit();
 
-    // Custom webfont may still be loading when we first measure — refit once it's ready.
     if (document.fonts?.ready) {
       document.fonts.ready.then(fit);
     }

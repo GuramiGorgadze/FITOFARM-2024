@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import flagEN from '../assets/flags/flag-en.png';
@@ -21,6 +21,9 @@ function Navbar() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [currentLangCode, setCurrentLangCode] = useState(i18n.resolvedLanguage || i18n.language);
   const langDropdownRef = useRef(null);
+
+  const bigRef = useRef(null);
+  const smallRef = useRef(null);
 
   useEffect(() => {
     const handleLanguageChanged = (lng) => setCurrentLangCode(lng);
@@ -46,13 +49,56 @@ function Navbar() {
     setIsLangOpen(false);
   };
 
+  useLayoutEffect(() => {
+    const bigEl = bigRef.current;
+    const smallEl = smallRef.current;
+    if (!bigEl || !smallEl) return;
+
+    const BASELINE = 20;
+    const MIN_SIZE = 6;
+    const MAX_SIZE = 24;
+
+    const fit = () => {
+      const targetWidth = bigEl.getBoundingClientRect().width;
+      if (!targetWidth) return;
+
+      smallEl.style.fontSize = `${BASELINE}px`;
+      const naturalWidth = smallEl.scrollWidth;
+      if (!naturalWidth) return;
+
+      const raw = (BASELINE * targetWidth) / naturalWidth;
+      smallEl.style.fontSize = `${Math.min(MAX_SIZE, Math.max(MIN_SIZE, raw))}px`;
+    };
+
+    fit();
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(fit);
+    }
+
+    const ro = new ResizeObserver(fit);
+    ro.observe(bigEl);
+
+    return () => ro.disconnect();
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="left">
         <Link to="/">
           <div className="name">
-            <h2 className="big">FITOFARM-2024</h2>
-            <h2 className="small">A Natural Path to Peacefulness</h2>
+            <h2
+              className="big"
+              ref={bigRef}
+            >
+              {t('nav.title')}
+            </h2>
+            <h2
+              className="small"
+              ref={smallRef}
+            >
+              {t('nav.slogan')}
+            </h2>
           </div>
           <img
             src={Logo}

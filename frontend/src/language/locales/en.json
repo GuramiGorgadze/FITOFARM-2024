@@ -1,11 +1,13 @@
 {
   "nav": {
+    "slogan": "A Natural Path to Peacefulness",
+    "title": "FITOFARM-2024",
     "about": "About Us",
     "products": "Products",
     "contact": "Contact Us"
   },
   "home": {
-    "slogan": "A Natural Path to Well-Being",
+    "slogan": "A Natural Path to Peacefulness",
     "title": "FITOFARM",
     "text1": "FitoFarm-2024 is a pharmaceutical company founded in Georgia, producing biologically active dietary supplements (BAS).",
     "text2": "The products manufactured by the company are made from natural plant-based materials, creating safe and effective remedies.",
@@ -38,7 +40,7 @@
     "email": "info@fitofarm.ge",
     "logoAlt": "Fitofarm-2024 logo"
   },
-    "disclaimer": "Warning: These products are dietary supplements and are not intended to diagnose, treat, cure, or prevent disease. Consult a physician before use.",
+  "disclaimer": "Warning: These products are dietary supplements and are not intended to diagnose, treat, cure, or prevent disease. Consult a physician before use.",
   "contact": {
     "title": "Get in Touch",
     "text": "Our team is prepared to collaborate on any public relations matters you might have. Whether it’s a proposal, expanding a partnership, or a pertinent inquiry, we invite you to fill out our contact form. This will ensure your message reaches us directly via email, enabling us to address your needs efficiently and effectively.",
@@ -187,7 +189,7 @@
     "contactTitle": "Contact Us",
     "media": "Media",
     "infoTitle": "Contact Information",
-    "slogan": "A Natural Path to Well-Being",
+    "slogan": "A Natural Path to Peacefulness",
     "copyright": "© {{year}} FitoFarm-2024. All rights reserved."
   }
 }
