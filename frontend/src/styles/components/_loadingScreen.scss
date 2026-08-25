@@ -31,7 +31,7 @@
     display: inline-block;
     position: relative;
     border: calc(3px * var(--app-scale)) solid;
-    border-color: #2f7d33 #2f7d33 transparent transparent;
+    border-color: #2f8a4f #2f8a4f transparent transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
@@ -47,7 +47,7 @@
     bottom: 0;
     margin: auto;
     border: calc(3px * var(--app-scale)) solid;
-    border-color: transparent transparent #1a5e1e #1a5e1e;
+    border-color: transparent transparent #188038 #188038;
     width: calc(80px * var(--app-scale));
     height: calc(80px * var(--app-scale));
     border-radius: 50%;
@@ -59,27 +59,17 @@
   .loader::before {
     width: calc(62px * var(--app-scale));
     height: calc(62px * var(--app-scale));
-    border-color: #2f7d33 #2f7d33 transparent transparent;
+    border-color: #2f8a4f #2f8a4f transparent transparent;
     animation: rotation 1.5s linear infinite;
   }
 
   @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
   @keyframes rotationBack {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(-360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
   }
 }

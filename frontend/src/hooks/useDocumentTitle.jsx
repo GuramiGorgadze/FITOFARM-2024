@@ -7,22 +7,22 @@ const useDocumentTitle = () => {
   useEffect(() => {
     switch (pathname) {
       case '/':
-        document.title = 'FitoFarm-2024 - A Natural Path to Well-Being';
+        document.title = 'FITOFARM-2024 - A Natural Path to Well-Being';
         break;
       case '/products':
-        document.title = 'Products - FitoFarm-2024';
+        document.title = 'Products - FITOFARM-2024';
         break;
       case '/products/:id':
-        document.title = 'Products - FitoFarm-2024';
+        document.title = 'Products - FITOFARM-2024';
         break;
       case '/about':
-        document.title = 'About - FitoFarm-2024';
+        document.title = 'About - FITOFARM-2024';
         break;
       case '/contact':
-        document.title = 'Contact - FitoFarm-2024';
+        document.title = 'Contact - FITOFARM-2024';
         break;
       default:
-        document.title = 'FitoFarm-2024 - A Natural Path to Well-Being';
+        document.title = 'FITOFARM-2024 - A Natural Path to Well-Being';
     }
   }, [pathname]);
 };

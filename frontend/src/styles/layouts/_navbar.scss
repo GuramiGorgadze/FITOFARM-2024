@@ -1,18 +1,21 @@
-$color-bg:          #16241A; 
-$color-ivory:        #F6F2E9; 
-$color-ivory-dim:    rgba(246, 242, 233, 0.62);
-$color-gold:         #C9A15A; 
-$color-gold-soft:    rgba(201, 161, 90, 0.14);
-$color-sage:         #6B8F71; 
-$color-hairline:     rgba(246, 242, 233, 0.1);
-$color-shadow:       rgba(10, 16, 10, 0.35);
-$color-text-dark:    #22301E; 
+@use '../abstracts' as *;
+
+$color-bg: #ffffff;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-gold: #fbbc05;
+$color-gold-soft: rgba(251, 188, 5, 0.14);
+$color-green: #2f8a4f;
+$color-green-dark: #188038;
+$color-hairline: rgba(19, 20, 24, 0.1);
+$color-shadow: rgba(19, 20, 24, 0.16);
+$color-text-dark: #2d2f32;
 
 $radius-sm: 8px;
 $radius-md: 14px;
 $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
-$nav-height:        84px;
+$nav-height: 84px;
 $nav-height-mobile: 64px;
 
 .navbar {
@@ -28,12 +31,20 @@ $nav-height-mobile: 64px;
   height: $nav-height;
   padding: 0 clamp(1.25rem, 4vw, 3.5rem);
 
-  background: #16241a;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(239, 248, 241, 0.8) 25%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(239, 248, 241, 0.8) 75%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
   border-bottom: 1px solid $color-hairline;
 
-  color: $color-ivory;
+  color: $color-ink;
 
   @media (max-width: 768px) {
     flex-wrap: wrap;
@@ -53,7 +64,9 @@ $nav-height-mobile: 64px;
     color: inherit;
     transition: opacity 0.3s $ease-organic;
 
-    &:hover { opacity: 0.85; }
+    &:hover {
+      opacity: 0.85;
+    }
 
     &:focus-visible {
       outline: 2px solid $color-gold;
@@ -62,7 +75,9 @@ $nav-height-mobile: 64px;
     }
   }
 
-  .name { order: 2; }
+  .name {
+    order: 2;
+  }
 
   img {
     order: 1;
@@ -90,9 +105,8 @@ $nav-height-mobile: 64px;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    color: $color-ivory;
+    color: $color-ink;
     text-transform: uppercase;
-
 
     @media (max-width: 768px) {
       font-size: 1.25rem;
@@ -105,7 +119,7 @@ $nav-height-mobile: 64px;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: $color-gold;
+    color: $color-green;
 
     @media (max-width: 768px) {
       font-size: 0.4rem;
@@ -124,9 +138,10 @@ $nav-height-mobile: 64px;
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.01em;
-    color: $color-ivory-dim;
+    color: $color-ink-dim;
     text-decoration: none;
     transition: color 0.3s $ease-organic;
+    font-family: TBCContractica-Regular;
 
     &::after {
       content: '';
@@ -136,7 +151,7 @@ $nav-height-mobile: 64px;
       width: 100%;
       height: 3px;
       border-radius: 999px;
-      background: $color-gold;
+      background: $color-green;
       transform: translateX(-50%) scaleX(0);
       transform-origin: center;
       transition: transform 0.45s $ease-organic;
@@ -144,9 +159,11 @@ $nav-height-mobile: 64px;
 
     &:hover,
     &:focus-visible {
-      color: $color-ivory;
+      color: $color-ink;
 
-      &::after { transform: translateX(-50%) scaleX(0.55); }
+      &::after {
+        transform: translateX(-50%) scaleX(0.55);
+      }
     }
 
     &:focus-visible {
@@ -154,9 +171,11 @@ $nav-height-mobile: 64px;
     }
 
     &.active {
-      color: $color-ivory;
+      color: $color-ink;
 
-      &::after { transform: translateX(-50%) scaleX(1); }
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
     }
   }
 
@@ -168,7 +187,9 @@ $nav-height-mobile: 64px;
     padding-top: 0.35rem;
     border-top: 1px solid $color-hairline;
 
-    a { font-size: 0.85rem; }
+    a {
+      font-size: 0.85rem;
+    }
   }
 }
 
@@ -188,18 +209,20 @@ $nav-height-mobile: 64px;
   padding: 0.45rem 0.85rem 0.45rem 0.5rem;
   border-radius: 999px;
   border: 1px solid $color-hairline;
-  background: rgba(246, 242, 233, 0.04);
+  background: rgba(19, 20, 24, 0.03);
 
   font-size: 0.85rem;
   font-weight: 500;
-  color: $color-ivory;
+  color: $color-ink;
   cursor: pointer;
 
-  transition: background 0.25s $ease-organic, border-color 0.25s $ease-organic;
+  transition:
+    background 0.25s $ease-organic,
+    border-color 0.25s $ease-organic;
 
   &:hover {
     background: $color-gold-soft;
-    border-color: rgba(201, 161, 90, 0.4);
+    border-color: rgba(251, 188, 5, 0.4);
   }
 
   &:focus-visible {
@@ -212,7 +235,7 @@ $nav-height-mobile: 64px;
     height: 20px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid rgba(246, 242, 233, 0.25);
+    border: 1px solid rgba(19, 20, 24, 0.15);
     flex-shrink: 0;
   }
 
@@ -227,7 +250,7 @@ $nav-height-mobile: 64px;
   .arrow {
     display: inline-flex;
     margin-left: 0.1rem;
-    color: $color-gold;
+    color: $color-green;
     transition: transform 0.3s $ease-organic;
 
     i {
@@ -249,10 +272,12 @@ $nav-height-mobile: 64px;
   padding: 0.5rem;
   list-style: none;
 
-  background: $color-ivory;
+  background: #ffffff;
   border-radius: $radius-md;
   border-top: 3px solid $color-gold;
-  box-shadow: 0 18px 40px $color-shadow, 0 2px 8px rgba(10, 16, 10, 0.15);
+  box-shadow:
+    0 18px 40px $color-shadow,
+    0 2px 8px rgba(19, 20, 24, 0.15);
 
   animation: dropdown-in 0.28s $ease-organic;
   z-index: 60;
@@ -298,7 +323,7 @@ $nav-height-mobile: 64px;
   }
 
   &:hover {
-    background: rgba(107, 143, 113, 0.14); 
+    background: rgba(47, 138, 79, 0.12);
   }
 
   &.active {

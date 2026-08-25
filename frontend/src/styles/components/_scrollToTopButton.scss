@@ -9,7 +9,7 @@
   font-size: calc(17px * var(--app-scale));
   border-radius: 50%;
   border: none;
-  background-color: #16241a;
+  background-color: #2f8a4f;
   color: white;
   cursor: pointer;
   z-index: 40;
@@ -34,7 +34,7 @@
   }
 
   &:hover {
-    background-color: #0e0e0e;
+    background-color: #188038;
     transform: scale(1.08);
 
     * {
