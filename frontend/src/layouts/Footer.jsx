@@ -117,7 +117,7 @@ function Footer() {
               alt={t('info.logoAlt')}
             />
             <p className="wordmark">
-              FITOFARM-<span className="wordmark__year">2024</span>
+              {t('home.title')}<span className="wordmark__year">-2024</span>
             </p>
           </div>
           <p className="slogan">{t('footer.slogan')}</p>
