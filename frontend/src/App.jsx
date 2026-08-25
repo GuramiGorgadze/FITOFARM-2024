@@ -63,8 +63,8 @@ function App() {
           />
         </Routes>
       </Main>
-      {/* <Disclaimer />
-      <Footer /> */}
+      <Disclaimer />
+      <Footer />
       <LoadingScreen />
     </>
   );

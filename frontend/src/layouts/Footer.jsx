@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 
 function Footer() {
@@ -12,18 +13,18 @@ function Footer() {
         <div className="column">
           <h2>{t('footer.legalTitle')}</h2>
           <div className="links">
-            <a
+            <Link
               className="link"
-              href="/privacy-policy"
+              to="/privacy-policy"
             >
               {t('footer.privacyPolicy')}
-            </a>
-            <a
+            </Link>
+            <Link
               className="link"
-              href="/terms"
+              to="/terms"
             >
               {t('footer.terms')}
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -84,7 +85,12 @@ function Footer() {
         <div className="column">
           <h2>{t('footer.contactTitle')}</h2>
           <div className="links">
-            <div className="link static">{t('footer.media')}</div>
+            <Link
+              className="link"
+              to="/contact"
+            >
+              {t('footer.contact')}
+            </Link>
           </div>
         </div>
 
@@ -118,7 +124,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="divider" />
+      <div className="divider-footer" />
 
       <div className="bottom">
         <p>{t('footer.copyright', { year })}</p>

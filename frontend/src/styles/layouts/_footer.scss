@@ -1,214 +1,270 @@
 @use '../abstracts' as *;
 
-// ── Palette ──────────────────────────────────────────────
-$color-ink-deep: #101b13;
-$color-ivory: #f6f2e9;
-$color-gold: #c9a15a;
-$color-sage: #6b8f71;
-
-// shared container: centers content, scales side padding smoothly
-%footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: clamp(24px, 5vw, 64px);
-  padding-right: clamp(24px, 5vw, 64px);
-}
+$color-page-bg: #eff8f1;
+$color-grid-line: #e2ebe4;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-ink-faint: rgba(19, 20, 24, 0.45);
+$color-gold: #fbbc05;
+$color-green: #2f8a4f;
+$color-green-dark: #188038;
+$color-hairline: rgba(19, 20, 24, 0.1);
+$ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
 .footer {
-  position: relative;
+  box-sizing: border-box;
+
+  padding: 72px clamp(24px, 8vw, 140px) 0;
+  border-top: 1px solid $color-hairline;
+
+  background-color: $color-page-bg;
+  background-image:
+    linear-gradient(to right, $color-grid-line 1px, transparent 1px),
+    linear-gradient(to bottom, $color-grid-line 1px, transparent 1px);
+  background-size: 47px 47px;
+
+  color: $color-ink;
+
+  @media (max-width: 960px) {
+    padding: 52px clamp(20px, 6vw, 60px) 0;
+  }
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.15fr 1.4fr;
+  gap: 44px clamp(20px, 3vw, 48px);
+  padding-bottom: 48px;
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 32px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+}
+
+.column {
   display: flex;
   flex-direction: column;
-  background: $color-ink-deep;
+  gap: 16px;
+  min-width: 0;
 
-  // subtle seam separating this section from Info above
-  &::before {
-    content: '';
-    display: block;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba($color-gold, 0.35), transparent);
-  }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
 
-  .top {
-    @extend %footer-container;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 48px 32px;
-    padding-top: clamp(56px, 8vw, 88px);
-    padding-bottom: clamp(56px, 8vw, 88px);
+    font-family: TBCContractica-Regular;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-green;
 
-    .column {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      min-width: 0;
-
-      h2 {
-        margin: 0 0 4px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: $color-gold;
-      }
-
-      .links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .link {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        width: fit-content;
-        font-size: 15px;
-        color: rgba($color-ivory, 0.78);
-        text-decoration: none;
-        cursor: pointer;
-
-        i {
-          flex-shrink: 0;
-          font-size: 15px;
-          color: $color-sage;
-          transition: color 0.3s;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: -3px;
-          height: 1px;
-          background: $color-gold;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        &:hover {
-          color: $color-ivory;
-
-          &::after { transform: scaleX(1); }
-          i { color: $color-gold; }
-        }
-
-        &:focus-visible {
-          outline: 2px solid $color-gold;
-          outline-offset: 4px;
-          border-radius: 2px;
-        }
-
-        &.static {
-          cursor: default;
-          align-items: flex-start;
-
-          i { margin-top: 2px; }
-
-          &::after { display: none; }
-          &:hover {
-            color: rgba($color-ivory, 0.78);
-            i { color: $color-sage; }
-          }
-        }
-      }
+    &::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 3px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background-color: $color-green;
     }
 
-    // brand acts as a centered signature, not just another link column
-    .brand {
+    @media (max-width: 600px) {
+      justify-content: center;
+    }
+  }
+
+  &.brand {
+    gap: 18px;
+
+    @media (max-width: 960px) {
+      grid-column: 1 / -1;
       align-items: center;
       text-align: center;
+    }
 
-      .title {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        margin-bottom: 10px;
-      }
+    @media (max-width: 600px) {
+      grid-column: auto;
+    }
+  }
+}
 
-      .logo {
-        height: 34px;
-        width: auto;
-        object-fit: contain;
-      }
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
-      .wordmark {
-        margin: 0;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: $color-ivory;
+  @media (max-width: 600px) {
+    align-items: center;
+  }
+}
 
-        &__year {
-          color: $color-gold;
-        }
-      }
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.6rem;
+  padding: 2px 0;
 
-      .slogan {
-        margin: 0;
-        font-size: 14px;
-        color: rgba($color-ivory, 0.6);
+  font-family: TBCContractica-Regular;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $color-ink-dim;
+  text-decoration: none;
+
+  transition: color 0.25s $ease-organic;
+
+  i {
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    color: $color-green;
+    transition: color 0.25s $ease-organic;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: $color-green;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s $ease-organic;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-ink;
+
+    i {
+      color: $color-green-dark;
+    }
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-gold;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+
+  &.static {
+    cursor: default;
+    color: $color-ink-dim;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      color: $color-ink-dim;
+
+      i {
+        color: $color-green;
       }
     }
   }
 
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba($color-ivory, 0.14), transparent);
+  @media (max-width: 600px) {
+    justify-content: center;
   }
+}
 
-  .bottom {
-    @extend %footer-container;
-    padding-top: 20px;
-    padding-bottom: 28px;
+.brand {
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
 
-    p {
-      margin: 0;
-      font-size: 13px;
-      color: rgba($color-ivory, 0.5);
-    }
-  }
-
-
-  @media (max-width: 1024px) {
-    .top {
-      grid-template-columns: 1fr  1fr;
+    @media (max-width: 600px) {
       justify-content: center;
-      text-align: center;
-
-      .links {
-        align-items: center;
-      }
-
-            .brand {
-        grid-column: 1 / -1;
-        padding-top: 12px;
-      }
     }
   }
 
-  @media (max-width: 480px) {
-    .top {
-      grid-template-columns: 1fr;
-      justify-items: center;
-      text-align: center;
+  .logo {
+    height: 40px;
+    width: auto;
+    flex-shrink: 0;
+  }
 
-      .column .link.static {
-        align-items: center;
-      }
+  .wordmark {
+    margin: 0;
+    font-family: TBCContracticaCAPS-Black;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: $color-ink;
+    white-space: nowrap;
 
-      .links {
-        align-items: center;
-      }
+    &__year {
+      color: $color-green;
+    }
+  }
+
+  .slogan {
+    margin: 0;
+    max-width: 280px;
+    font-family: TBCContractica-Regular;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: $color-ink-faint;
+
+    @media (max-width: 960px) {
+      margin: 0 auto;
     }
 
-    .bottom {
-      text-align: center;
+    @media (max-width: 600px) {
+      max-width: 100%;
+      margin: 0 auto;
     }
+  }
+}
+
+.divider-footer {
+  height: 3px;
+  width: 100%;
+  max-width: 140px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: $color-gold;
+}
+
+.bottom {
+  padding: 22px 0 32px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-family: TBCContractica-Regular;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $color-ink-faint;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer,
+  .footer * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
