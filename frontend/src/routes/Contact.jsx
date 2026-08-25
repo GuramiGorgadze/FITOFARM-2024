@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import * as api from '../api/api';
@@ -17,6 +17,36 @@ function Contact() {
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const titleRef = useRef(null);
+  const titleText = t('contact.title');
+
+  useLayoutEffect(() => {
+    const titleEl = titleRef.current;
+    if (!titleEl) return;
+
+    const BASELINE = 46;
+
+    const fit = () => {
+      const availableWidth = titleEl.parentElement?.clientWidth;
+      if (!availableWidth) return;
+
+      titleEl.style.fontSize = `${BASELINE}px`;
+      const naturalWidth = titleEl.scrollWidth;
+      if (!naturalWidth) return;
+
+      titleEl.style.fontSize = `${(BASELINE * availableWidth) / naturalWidth}px`;
+    };
+
+    fit();
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(fit);
+    }
+
+    window.addEventListener('resize', fit);
+    return () => window.removeEventListener('resize', fit);
+  }, [titleText]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,94 +91,113 @@ function Contact() {
 
   return (
     <div className="contact">
-      <h2 className="contact__title">{t('contact.title')}</h2>
-      <p className="contact__text">{t('contact.text')}</p>
-
-      <form
-        className="contact__form"
-        onSubmit={handleSubmit}
-      >
-        <div className="contact__field">
-          <label
-            className="contact__label"
-            htmlFor="name"
-          >
-            {t('contact.name')}:
-          </label>
-          <input
-            className="contact__input"
-            id="name"
-            name="name"
-            type="text"
-            placeholder={t('contact.name')}
-            value={formData.name}
-            onChange={handleChange}
-          />
+      <div className="contact__intro">
+        <div className="contact__subtext">
+          <span className="line"></span>
+          <p>{t('contact.title')}</p>
         </div>
 
-        <div className="contact__field">
-          <label
-            className="contact__label"
-            htmlFor="email"
-          >
-            {t('contact.email')}:
-          </label>
-          <input
-            className="contact__input"
-            id="email"
-            name="email"
-            type="text"
-            placeholder={t('contact.email')}
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="contact__field">
-          <label
-            className="contact__label"
-            htmlFor="subject"
-          >
-            {t('contact.topic')}:
-          </label>
-          <input
-            className="contact__input"
-            id="subject"
-            name="subject"
-            type="text"
-            placeholder={t('contact.topic')}
-            value={formData.subject}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="contact__field">
-          <label
-            className="contact__label"
-            htmlFor="message"
-          >
-            {t('contact.message')}:
-          </label>
-          <textarea
-            className="contact__textarea"
-            id="message"
-            name="message"
-            placeholder={t('contact.message')}
-            value={formData.message}
-            onChange={handleChange}
-          />
-        </div>
-
-        <button
-          className="contact__button"
-          type="submit"
-          disabled={isSubmitting}
+        <h2
+          className="contact__title"
+          ref={titleRef}
         >
-          {isSubmitting ? t('contact.sending') : t('contact.button')}
-        </button>
+          {titleText}
+        </h2>
+        <p className="contact__text">{t('contact.text')}</p>
+      </div>
 
-        <p className="contact__warning">{t('contact.warning')}</p>
-      </form>
+      <div className="contact__card">
+        <form
+          className="contact__form"
+          onSubmit={handleSubmit}
+        >
+          <div className="contact__field">
+            <label
+              className="contact__label"
+              htmlFor="name"
+            >
+              {t('contact.name')}
+            </label>
+            <input
+              className="contact__input"
+              id="name"
+              name="name"
+              type="text"
+              placeholder={t('contact.name')}
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="contact__field">
+            <label
+              className="contact__label"
+              htmlFor="email"
+            >
+              {t('contact.email')}
+            </label>
+            <input
+              className="contact__input"
+              id="email"
+              name="email"
+              type="text"
+              placeholder={t('contact.email')}
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="contact__field">
+            <label
+              className="contact__label"
+              htmlFor="subject"
+            >
+              {t('contact.topic')}
+            </label>
+            <input
+              className="contact__input"
+              id="subject"
+              name="subject"
+              type="text"
+              placeholder={t('contact.topic')}
+              value={formData.subject}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="contact__field">
+            <label
+              className="contact__label"
+              htmlFor="message"
+            >
+              {t('contact.message')}
+            </label>
+            <textarea
+              className="contact__textarea"
+              id="message"
+              name="message"
+              placeholder={t('contact.message')}
+              value={formData.message}
+              onChange={handleChange}
+            />
+          </div>
+
+          <button
+            className="contact__button"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? t('contact.sending') : t('contact.button')}
+          </button>
+
+          <p className="contact__warning">{t('contact.warning')}</p>
+        </form>
+
+        <div
+          className="contact__card-bg"
+          aria-hidden="true"
+        ></div>
+      </div>
     </div>
   );
 }

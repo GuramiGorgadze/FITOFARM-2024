@@ -25,7 +25,7 @@ function App() {
           duration: 3000,
           className: 'custom-toast',
           iconTheme: {
-            primary: '#1a5e1e',
+            primary: '#2f8a4f',
           },
         }}
       />
@@ -63,8 +63,8 @@ function App() {
           />
         </Routes>
       </Main>
-      <Disclaimer />
-      <Footer />
+      {/* <Disclaimer />
+      <Footer /> */}
       <LoadingScreen />
     </>
   );
