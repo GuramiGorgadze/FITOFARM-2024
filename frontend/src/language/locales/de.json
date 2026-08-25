@@ -5,9 +5,10 @@
     "contact": "Kontakt"
   },
   "home": {
-    "text1": "FitoFarm-2024 – Der natürliche Weg zur Ruhe",
-    "text2": "FitoFarm-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das biologisch aktive Nahrungsergänzungsmittel herstellt.",
-    "text3": "Die vom Unternehmen hergestellten Produkte bestehen aus natürlichen pflanzlichen Rohstoffen, die sichere und wirksame Heilmittel ergeben.",
+    "slogan": "Der natürliche Weg zur Ruhe",
+    "title": "FITOFARM",
+    "text1": "FitoFarm-2024 ist ein in Georgien gegründetes Pharmaunternehmen, das biologisch aktive Nahrungsergänzungsmittel herstellt.",
+    "text2": "Die vom Unternehmen hergestellten Produkte bestehen aus natürlichen pflanzlichen Rohstoffen, die sichere und wirksame Heilmittel ergeben.",
     "button": "Unsere Produkte ansehen",
     "fitoAlt": "Phyto-Produktfoto"
   },

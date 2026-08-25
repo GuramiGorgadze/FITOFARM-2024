@@ -17,20 +17,20 @@ function Home() {
       <div className="home">
         <div className="left">
           <div className="subtext">
-            <div className="line"></div> <p>ბუნებრივი გზა სიმშვიდისკენ</p>
+            <div className="line"></div> <p>{t('home.slogan')}</p>
           </div>
 
           <p className="text1 text"> </p>
           <div className="title">
-            <p className="title__text">ფიტოფარმ</p>
+            <p className="title__text">{t('home.title')}</p>
             <p className="title__text green">-2024</p>
           </div>
 
           <div className="divider"></div>
 
-          <p className="text2 text">{t('home.text2')}</p>
+          <p className="text2 text">{t('home.text1')}</p>
 
-          <p className="text3 text">{t('home.text3')}</p>
+          <p className="text3 text">{t('home.text2')}</p>
 
           <Link
             to="/products"
