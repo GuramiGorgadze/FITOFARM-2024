@@ -71,7 +71,8 @@ function Info() {
           alt={t('info.logoAlt')}
         />
         <p className="wordmark">
-          FITOFARM-<span className="wordmark__year">2024</span>
+          {t('nav.title')}
+          <span className="wordmark__year">-2024</span>
         </p>
       </div>
     </section>

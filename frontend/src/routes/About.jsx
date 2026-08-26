@@ -12,10 +12,6 @@ function About() {
   useEffect(() => useFakeLoader(), []);
 
   const titleText = t('about.title');
-  const titleSuffix = '-2024';
-  const titleBase = titleText.endsWith(titleSuffix)
-    ? titleText.slice(0, -titleSuffix.length)
-    : titleText;
 
   const reasons = [
     { title: t('about.reason1Title'), text: t('about.reason1Text') },
@@ -27,29 +23,9 @@ function About() {
     <div className="about">
       <div className="hero">
         <div className="hero__title">
-          <p className="hero__title-text">{titleBase}</p>
-          {titleText !== titleBase && <p className="hero__title-text green">{titleSuffix}</p>}
+          <p className="hero__title-text">{titleText}</p>
         </div>
         <div className="hero__divider"></div>
-      </div>
-
-      <div className="products">
-        <div className="products__content">
-          <div className="subtext">
-            <div className="line"></div>
-            <p>{t('about.productsTitle')}</p>
-          </div>
-
-          <p className="text">{t('about.productsText')}</p>
-        </div>
-
-        <div className="products__media">
-          <img
-            src={MountainImage}
-            alt={t('about.mountainAlt')}
-          />
-          <div className="products__media-bg"></div>
-        </div>
       </div>
 
       <div className="who">
@@ -69,6 +45,25 @@ function About() {
 
           <p className="text">{t('about.whoText1')}</p>
           <p className="text">{t('about.whoText2')}</p>
+        </div>
+      </div>
+
+      <div className="products">
+        <div className="products__content">
+          <div className="subtext">
+            <div className="line"></div>
+            <p>{t('about.productsTitle')}</p>
+          </div>
+
+          <p className="text">{t('about.productsText')}</p>
+        </div>
+
+        <div className="products__media">
+          <img
+            src={MountainImage}
+            alt={t('about.mountainAlt')}
+          />
+          <div className="products__media-bg"></div>
         </div>
       </div>
 

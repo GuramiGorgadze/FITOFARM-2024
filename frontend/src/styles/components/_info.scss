@@ -180,9 +180,11 @@ $color-sage: #6b8f71;
       font-weight: 900;
       letter-spacing: 0.02em;
       color: $color-ivory;
+      font-family: $font-bold;
 
       &__year {
         color: $color-gold;
+        font-family: $font-bold;
       }
     }
   }
@@ -207,6 +209,11 @@ $color-sage: #6b8f71;
       width: 60%;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba($color-ivory, 0.16), transparent);
+      align-self: center;
+    }
+
+    .contact-link {
+      align-self: center;
     }
   }
 }

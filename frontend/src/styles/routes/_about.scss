@@ -93,14 +93,15 @@ $section-py-mobile: 32px;
   &__title-text {
     margin: 0;
     font-family: $font-bold;
-    font-size: clamp(28px, 6vw, 56px);
+    font-size: 56px;
     font-weight: 900;
     text-transform: uppercase;
     color: $color-ink;
     line-height: 1.1;
+    white-space: nowrap;
 
-    &.green {
-      color: $color-green;
+    @media (max-width: 960px) {
+      font-size: 34px;
     }
   }
 

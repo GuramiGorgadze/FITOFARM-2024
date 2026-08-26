@@ -10,3 +10,12 @@
   border: #2f8a4f solid 1px !important;
   color: #2f8a4f !important;
 }
+
+html,
+body {
+  background-color: #cfe8d6;
+}
+
+body {
+  padding-top: env(safe-area-inset-top);
+}

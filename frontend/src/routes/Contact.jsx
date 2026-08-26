@@ -94,7 +94,7 @@ function Contact() {
       <div className="contact__intro">
         <div className="contact__subtext">
           <span className="line"></span>
-          <p>{t('contact.title')}</p>
+          <p>{t('nav.contact')}</p>
         </div>
 
         <h2

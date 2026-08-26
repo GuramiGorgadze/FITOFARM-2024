@@ -1,5 +1,8 @@
 @use '../abstracts' as *;
 
+$color-gold: #fbbc05;
+$color-green: #2f8a4f;
+
 .loadingScreen {
   position: fixed;
   width: 100%;
@@ -31,7 +34,7 @@
     display: inline-block;
     position: relative;
     border: calc(3px * var(--app-scale)) solid;
-    border-color: #2f8a4f #2f8a4f transparent transparent;
+    border-color: $color-green $color-green transparent transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
@@ -47,7 +50,7 @@
     bottom: 0;
     margin: auto;
     border: calc(3px * var(--app-scale)) solid;
-    border-color: transparent transparent #188038 #188038;
+    border-color: transparent transparent $color-gold $color-gold;
     width: calc(80px * var(--app-scale));
     height: calc(80px * var(--app-scale));
     border-radius: 50%;
@@ -59,7 +62,7 @@
   .loader::before {
     width: calc(62px * var(--app-scale));
     height: calc(62px * var(--app-scale));
-    border-color: #2f8a4f #2f8a4f transparent transparent;
+    border-color: $color-green $color-green transparent transparent;
     animation: rotation 1.5s linear infinite;
   }
 
@@ -71,5 +74,13 @@
   @keyframes rotationBack {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(-360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loader,
+    .loader::after,
+    .loader::before {
+      animation-duration: 0.01ms !important;
+    }
   }
 }

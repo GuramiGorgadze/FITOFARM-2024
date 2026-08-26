@@ -47,6 +47,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     padding-top: 8px;
 
     @media (max-width: 960px) {
+      flex: 0 1 auto;
       max-width: 100%;
     }
   }
@@ -112,6 +113,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     width: 100%;
 
     @media (max-width: 960px) {
+      flex: 0 1 auto;
       max-width: 100%;
     }
   }

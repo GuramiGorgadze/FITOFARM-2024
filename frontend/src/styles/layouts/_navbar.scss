@@ -111,6 +111,11 @@ $nav-height-mobile: 64px;
     text-transform: uppercase;
     white-space: nowrap;
 
+    .year {
+      color: $color-green; 
+      font-family: $font-bold;
+    }
+
     @media (max-width: 768px) {
       font-size: 1.25rem;
     }
@@ -268,8 +273,6 @@ $nav-height-mobile: 64px;
       transform: rotate(180deg) translateY(5px);
     }
   }
-
-  
 }
 
 .dropdown-options {

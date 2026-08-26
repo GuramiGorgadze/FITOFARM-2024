@@ -92,6 +92,7 @@ function Navbar() {
               ref={bigRef}
             >
               {t('nav.title')}
+              <span className="year">-2024</span>
             </h2>
             <h2
               className="small"
