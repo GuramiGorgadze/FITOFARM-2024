@@ -175,7 +175,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   &__label {
     font-family: $font-regular;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 900;
     color: $color-ink;
   }
 
@@ -221,7 +221,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     margin-top: 6px;
 
     font-family: $font-regular;
-    font-weight: 700;
+    font-weight: 900;
     font-size: clamp(14px, 1.1vw, 16px);
     text-transform: uppercase;
     letter-spacing: 0.01em;

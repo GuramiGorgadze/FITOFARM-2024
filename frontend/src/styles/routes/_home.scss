@@ -102,7 +102,7 @@ $color-shadow: rgba(22, 36, 26, 0.16);
 
     .text2 {
       color: #188038;
-      font-weight: 700;
+      font-weight: 900;
       line-height: 1.45;
       font-size: clamp(18px, 2vw, 25px);
       font-family: $font-regular;
@@ -144,7 +144,7 @@ $color-shadow: rgba(22, 36, 26, 0.16);
         z-index: 1;
 
         font-family: $font-regular;
-        font-weight: 700;
+        font-weight: 900;
         font-size: clamp(14px, 1.1vw, 16px);
         line-height: 24px;
         padding: clamp(12px, 1.6vw, 16px) clamp(20px, 3vw, 30px);
