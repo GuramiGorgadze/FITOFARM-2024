@@ -71,7 +71,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
     p {
       color: $color-green;
-      font-family: TBCContractica-Regular;
+      font-family: $font-regular;
       font-size: clamp(12px, 1vw, 13px);
       font-weight: 800;
       text-transform: uppercase;
@@ -82,7 +82,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
   &__title {
     margin: 0 0 18px;
-    font-family: TBCContracticaCAPS-Black;
+    font-family: $font-bold;
     font-size: 46px;
     font-weight: 900;
     text-transform: uppercase;
@@ -93,7 +93,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
   &__text {
     margin: 0;
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-weight: 500;
     color: $color-ink-dim;
     font-size: clamp(15px, 1.3vw, 18px);
@@ -173,7 +173,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &__label {
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-size: 0.85rem;
     font-weight: 700;
     color: $color-ink;
@@ -181,7 +181,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
   &__input,
   &__textarea {
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-size: 0.95rem;
     color: $color-ink;
 
@@ -220,7 +220,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     align-self: flex-start;
     margin-top: 6px;
 
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-weight: 700;
     font-size: clamp(14px, 1.1vw, 16px);
     text-transform: uppercase;
@@ -267,7 +267,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     padding-left: 0.65rem;
     border-left: 3px solid $color-gold;
 
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-size: 0.7rem;
     line-height: 1.5;
     text-align: justify;

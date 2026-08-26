@@ -47,7 +47,7 @@ $section-py-mobile: 32px;
   p {
     margin: 0;
     color: $color-green;
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-size: clamp(12px, 1vw, 13px);
     font-weight: 800;
     text-transform: uppercase;
@@ -58,7 +58,7 @@ $section-py-mobile: 32px;
 
 .text {
   margin: 0;
-  font-family: TBCContractica-Regular;
+  font-family: $font-regular;
   font-weight: 500;
   color: $color-ink-dim;
   font-size: clamp(15px, 1.3vw, 18px);
@@ -92,7 +92,7 @@ $section-py-mobile: 32px;
 
   &__title-text {
     margin: 0;
-    font-family: TBCContracticaCAPS-Black;
+    font-family: $font-bold;
     font-size: clamp(28px, 6vw, 56px);
     font-weight: 900;
     text-transform: uppercase;
@@ -277,7 +277,7 @@ $section-py-mobile: 32px;
   &__index {
     display: inline-block;
     margin-bottom: 14px;
-    font-family: TBCContracticaCAPS-Black;
+    font-family: $font-bold;
     font-size: 1.1rem;
     font-weight: 900;
     color: $color-gold;
@@ -285,7 +285,7 @@ $section-py-mobile: 32px;
 
   &__title {
     margin: 0 0 12px;
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.4;
@@ -294,7 +294,7 @@ $section-py-mobile: 32px;
 
   &__text {
     margin: 0;
-    font-family: TBCContractica-Regular;
+    font-family: $font-regular;
     font-weight: 500;
     font-size: 0.92rem;
     line-height: 1.6;

@@ -1,22 +1,28 @@
+@use '../abstracts' as *;
+
 .disclaimer {
-    display: flex;
-    background-color: #fffce4;
-    border: 1px solid #ecdab2;
-    padding: 20px;
-    border-radius: 5px;
-    margin: 40px;
-    gap: 10px;
+  display: flex;
+  background-color: #fffce4;
+  border: 1px solid #ecdab2;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 40px;
+  gap: 10px;
 
-    i {
-        color: #c9922b;
-    }
+  * {
+    font-family: $font-regular;
+  }
 
-    .text {
-        color: #403c2e;
-    }
+  i {
+    color: #c9922b;
+  }
 
-    @media (max-width: 768px) {
-        margin: 20px;
-        text-align: justify;
-    }
+  .text {
+    color: #403c2e;
+  }
+
+  @media (max-width: 768px) {
+    margin: 20px;
+    text-align: justify;
+  }
 }
