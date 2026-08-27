@@ -136,6 +136,22 @@ function Footer() {
 
       <div className="bottom">
         <p>{t('footer.copyright', { year })}</p>
+        <p className="credit">
+          <i
+            className="bi bi-code-slash"
+            aria-hidden="true"
+          />
+          {t('footer.createdBy')}{' '}
+          <a
+            className="link"
+            href="https://linktr.ee/gurami.gorgadze"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('footer.name')}
+          </a>{' '}
+          {t('footer.tail')}
+        </p>
       </div>
     </footer>
   );

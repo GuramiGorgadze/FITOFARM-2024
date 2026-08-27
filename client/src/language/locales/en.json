@@ -191,6 +191,9 @@
     "contact": "Contact Us",
     "infoTitle": "Contact Information",
     "slogan": "A Natural Path to Peacefulness",
-    "copyright": "© {{year}} FITOFARM-2024. All rights reserved."
+    "copyright": "© {{year}} FITOFARM-2024. All rights reserved.",
+    "createdBy": "Created By",
+    "name": "Gurami Gorgadze",
+    "tail": ""
   }
 }

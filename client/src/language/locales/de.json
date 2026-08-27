@@ -194,6 +194,9 @@
     "contact": "Kontakt",
     "infoTitle": "Kontaktinformationen",
     "slogan": "Der natürliche Weg zum Wohlbefinden",
-    "copyright": "© {{year}} FITOFARM-2024. Alle Rechte vorbehalten."
+    "copyright": "© {{year}} FITOFARM-2024. Alle Rechte vorbehalten.",
+    "createdBy": "Erstellt Von",
+    "name": "Gurami Gorgadze",
+    "tail": ""
   }
 }
