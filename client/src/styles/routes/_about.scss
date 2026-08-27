@@ -4,7 +4,7 @@ $color-page-bg: #eff8f1;
 $color-grid-line: #e2ebe4;
 $color-ink: #131418;
 $color-ink-dim: rgba(19, 20, 24, 0.64);
-$color-gold: #ed3d43;
+$color-gold: #fbbc05;
 $color-green: #2f8a4f;
 $color-green-dark: #188038;
 $color-hairline: rgba(19, 20, 24, 0.1);
@@ -164,9 +164,9 @@ $section-py-mobile: 32px;
     background-color: $color-card-bg;
   }
 
-   &-link {
+  &-link {
     position: absolute;
-    z-index: 2; 
+    z-index: 2;
     bottom: 14px;
     right: 14px;
 
@@ -182,7 +182,9 @@ $section-py-mobile: 32px;
     background: #ffffff;
     border-radius: $radius-sm;
     box-shadow: 0 4px 12px $color-shadow;
-    transition: background-color 0.2s $ease-organic, color 0.2s $ease-organic;
+    transition:
+      background-color 0.2s $ease-organic,
+      color 0.2s $ease-organic;
 
     &:hover {
       background: $color-green;

@@ -9,7 +9,7 @@ const COLOR = {
   ink: "#131418",
   inkDim: "rgba(19, 20, 24, 0.64)",
   inkFaint: "rgba(19, 20, 24, 0.45)",
-  gold: "#ed3d43",
+  gold: "#fbbc05",
   green: "#2f8a4f",
   greenDark: "#188038",
   greenTint: "#a9d9b6",
