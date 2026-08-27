@@ -4,7 +4,7 @@ $color-page-bg: #eff8f1;
 $color-grid-line: #e2ebe4;
 $color-ink: #131418;
 $color-ink-dim: rgba(19, 20, 24, 0.64);
-$color-gold: #fbbc05;
+$color-gold: #ed3d43;
 $color-green: #2f8a4f;
 $color-green-dark: #188038;
 $color-hairline: rgba(19, 20, 24, 0.1);
@@ -15,8 +15,6 @@ $radius-sm: 8px;
 $radius-lg: 25px;
 $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
-// single source of truth for section rhythm — was 60/90px per side and
-// stacking sections doubled up into huge gutters
 $section-py: 40px;
 $section-py-mobile: 32px;
 
@@ -162,13 +160,45 @@ $section-py-mobile: 32px;
     max-width: 360px;
   }
 
-  img {
+  &-map {
+    background-color: $color-card-bg;
+  }
+
+   &-link {
+    position: absolute;
+    z-index: 2; 
+    bottom: 14px;
+    right: 14px;
+
+    padding: 6px 12px;
+    font-family: $font-regular;
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: $color-ink;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+
+    background: #ffffff;
+    border-radius: $radius-sm;
+    box-shadow: 0 4px 12px $color-shadow;
+    transition: background-color 0.2s $ease-organic, color 0.2s $ease-organic;
+
+    &:hover {
+      background: $color-green;
+      color: #ffffff;
+    }
+  }
+
+  img,
+  &-map {
     position: relative;
     z-index: 1;
     display: block;
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    border: none;
     border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
     transition:
       border-radius 0.25s $ease-organic,
@@ -191,7 +221,9 @@ $section-py-mobile: 32px;
   }
 
   &:hover {
-    img {
+    img,
+    .who__media-map,
+    .products__media-map {
       border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
       transform: translate(-10px, -10px);
     }

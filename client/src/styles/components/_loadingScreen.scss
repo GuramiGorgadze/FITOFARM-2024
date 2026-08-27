@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-$color-gold: #fbbc05;
+$color-gold: #ed3d43;
 $color-green: #2f8a4f;
 
 .loadingScreen {
@@ -67,13 +67,21 @@ $color-green: #2f8a4f;
   }
 
   @keyframes rotation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes rotationBack {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

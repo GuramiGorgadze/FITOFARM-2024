@@ -1,20 +1,20 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
-const SITE_NAME = 'FITOFARM-2024';
+const SITE_NAME = "FITOFARM-2024";
 
-  const COLOR = {
-  pageBg: '#eff8f1',
-  cardBg: '#ffffff',
-  darkCard: '#1d5734',
-  ink: '#131418',
-  inkDim: 'rgba(19, 20, 24, 0.64)',
-  inkFaint: 'rgba(19, 20, 24, 0.45)',
-  gold: '#fbbc05',
-  green: '#2f8a4f',
-  greenDark: '#188038',
-  greenTint: '#a9d9b6',
-  hairline: 'rgba(19, 20, 24, 0.1)',
-  fieldBg: 'rgba(19, 20, 24, 0.025)',
+const COLOR = {
+  pageBg: "#eff8f1",
+  cardBg: "#ffffff",
+  darkCard: "#1d5734",
+  ink: "#131418",
+  inkDim: "rgba(19, 20, 24, 0.64)",
+  inkFaint: "rgba(19, 20, 24, 0.45)",
+  gold: "#ed3d43",
+  green: "#2f8a4f",
+  greenDark: "#188038",
+  greenTint: "#a9d9b6",
+  hairline: "rgba(19, 20, 24, 0.1)",
+  fieldBg: "rgba(19, 20, 24, 0.025)",
 };
 
 const FONT_HEAD = "'TBCContracticaCAPS-Black', Arial, Helvetica, sans-serif";
@@ -22,7 +22,7 @@ const FONT_BODY = "'TBCContractica-Regular', Arial, Helvetica, sans-serif";
 
 const createTransporter = () =>
   nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
       user: process.env.MAIL_SENDER_EMAIL,
       pass: process.env.MAIL_SENDER_PASS,
@@ -79,7 +79,7 @@ const wrapEmail = ({ eyebrow, bodyHtml, footerNote }) => `
               <p style="margin:0 0 4px; font-family:${FONT_BODY}; font-size:12px; letter-spacing:0.01em; color:${COLOR.inkFaint};">
                 ${SITE_NAME} &mdash; sent from the contact form
               </p>
-              ${footerNote ? `<p style="margin:0; font-family:${FONT_BODY}; font-size:11px; color:${COLOR.inkFaint};">${footerNote}</p>` : ''}
+              ${footerNote ? `<p style="margin:0; font-family:${FONT_BODY}; font-size:11px; color:${COLOR.inkFaint};">${footerNote}</p>` : ""}
             </td>
           </tr>
 
@@ -116,11 +116,11 @@ const sendContactMail = async (name, email, subject, message) => {
 
   const adminBody = `
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:6px;">
-      ${fieldRow('Name', name)}
-      ${fieldRow('Email', `<a href="mailto:${email}" style="color:${COLOR.ink}; text-decoration:none; border-bottom:1px solid ${COLOR.greenDark};">${email}</a>`)}
-      ${fieldRow('Subject', subject)}
+      ${fieldRow("Name", name)}
+      ${fieldRow("Email", `<a href="mailto:${email}" style="color:${COLOR.ink}; text-decoration:none; border-bottom:1px solid ${COLOR.greenDark};">${email}</a>`)}
+      ${fieldRow("Subject", subject)}
     </table>
-    ${messageBlock('Message', message)}
+    ${messageBlock("Message", message)}
   `;
 
   await transporter.sendMail({
@@ -129,7 +129,7 @@ const sendContactMail = async (name, email, subject, message) => {
     replyTo: email,
     subject: `[${SITE_NAME}] New contact form message: ${subject}`,
     html: wrapEmail({
-      eyebrow: 'New Contact Message',
+      eyebrow: "New Contact Message",
       bodyHtml: adminBody,
     }),
   });
@@ -141,7 +141,7 @@ const sendContactMail = async (name, email, subject, message) => {
     <p style="margin:0 0 24px; font-family:${FONT_BODY}; font-size:15px; line-height:1.7; color:${COLOR.inkDim};">
       Thanks for reaching out. We've got your message, and someone from the team will follow up soon.
     </p>
-    ${messageBlock('Your Message', message)}
+    ${messageBlock("Your Message", message)}
   `;
 
   await transporter.sendMail({
@@ -149,7 +149,7 @@ const sendContactMail = async (name, email, subject, message) => {
     to: email,
     subject: `[${SITE_NAME}] Got your message`,
     html: wrapEmail({
-      eyebrow: 'Message Received',
+      eyebrow: "Message Received",
       bodyHtml: userBody,
       footerNote: "Didn't send this? You can ignore this email.",
     }),
