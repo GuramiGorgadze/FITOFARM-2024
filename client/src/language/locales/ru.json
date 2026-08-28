@@ -182,6 +182,18 @@
       }
     }
   },
+  "productCard": {
+    "readMore": "Читать далее"
+  },
+  "products": {
+    "title": "Продукты"
+  },
+  "productSingle": {
+    "characteristics": "Характеристики",
+    "shortDesc": "Краткое Описание",
+    "fullAnnotation": "Полная аннотация"
+  },
+  "productAnnotation": "Полная аннотация",
   "footer": {
     "legalTitle": "Правовая информация",
     "privacyPolicy": "Политика конфиденциальности",

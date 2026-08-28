@@ -1,0 +1,140 @@
+@use '../abstracts' as *;
+
+$radius-sm: calc(8px * var(--app-scale));
+$radius-lg: calc(25px * var(--app-scale));
+$ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+
+.product-card {
+  position: relative;
+  width: 100%;
+  max-width: calc(300px * var(--app-scale));
+  min-width: 0;
+  margin-inline: auto;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  &__bg {
+    position: absolute;
+    inset: calc(4px * var(--app-scale)) calc(-4px * var(--app-scale)) calc(-4px * var(--app-scale))
+      calc(4px * var(--app-scale));
+    z-index: 0;
+    background: #2d2f32;
+    border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+    transition:
+      background-color 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid #000;
+    border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+    transition:
+      transform 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+  }
+
+  &:hover &__content,
+  &:focus-within &__content {
+    transform: translate(calc(-3px * var(--app-scale)), calc(-3px * var(--app-scale)));
+    border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
+  }
+
+  &:hover &__bg,
+  &:focus-within &__bg {
+    background-color: #2f8a4f;
+    border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
+  }
+
+  &__image-wrap {
+    padding: calc(10px * var(--app-scale));
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: calc(10px * var(--app-scale));
+    height: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(20px * var(--app-scale));
+    padding-left: calc(10px * var(--app-scale));
+    gap: calc(5px * var(--app-scale));
+  }
+
+  &__title {
+    font-family: $font-bold;
+    color: #131418;
+  }
+
+  &__size {
+    font-family: $font-regular;
+    color: #626666;
+  }
+
+  &__button-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-self: flex-start;
+    text-decoration: none;
+    margin: calc(20px * var(--app-scale)) calc(10px * var(--app-scale));
+
+    @media (max-width: 960px) {
+      align-self: center;
+    }
+
+    .button {
+      position: relative;
+      z-index: 1;
+      font-family: $font-regular;
+      font-weight: 900;
+      font-size: clamp(calc(14px * var(--app-scale)), 1.1vw, calc(16px * var(--app-scale)));
+      padding: clamp(calc(9px * var(--app-scale)), 1vw, calc(13px * var(--app-scale)))
+        clamp(calc(20px * var(--app-scale)), 3vw, calc(30px * var(--app-scale)));
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #ffffff;
+      background-color: #2f8a4f;
+      border-radius: calc(999px * var(--app-scale));
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: calc(10px * var(--app-scale));
+      transition:
+        transform 0.2s ease,
+        border-radius 0.2s ease;
+    }
+
+    .button-background {
+      position: absolute;
+      inset: calc(5px * var(--app-scale)) calc(-5px * var(--app-scale))
+        calc(-5px * var(--app-scale)) calc(5px * var(--app-scale));
+      background: #2d2f32;
+      border-radius: calc(999px * var(--app-scale));
+      z-index: 0;
+      transition:
+        background-color 0.2s ease,
+        border-radius 0.2s ease;
+    }
+
+    &:hover {
+      .button {
+        transform: translate(calc(-2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+      }
+      .button-background {
+        background-color: #24613a;
+      }
+    }
+  }
+}

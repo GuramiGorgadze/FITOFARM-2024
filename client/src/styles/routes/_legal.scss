@@ -23,18 +23,18 @@ $nav-height-mobile: 64px;
 .legal-page {
   box-sizing: border-box;
   min-height: 100vh;
-  padding: 0 clamp(24px, 8vw, 140px) 96px;
+  padding: 0 clamp(calc(24px * var(--app-scale)), 8vw, calc(140px * var(--app-scale))) calc(96px * var(--app-scale));
 
   background-color: $color-page-bg;
   background-image:
-    linear-gradient(to right, $color-grid-line 1px, transparent 1px),
-    linear-gradient(to bottom, $color-grid-line 1px, transparent 1px);
-  background-size: 47px 47px;
+    linear-gradient(to right, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale))),
+    linear-gradient(to bottom, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale)));
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
 
   color: $color-ink;
 
   @media (max-width: 960px) {
-    padding: 0 clamp(20px, 6vw, 60px) 72px;
+    padding: 0 clamp(calc(20px * var(--app-scale)), 6vw, calc(60px * var(--app-scale))) calc(72px * var(--app-scale));
   }
 
   @supports selector(:has(a)) {
@@ -44,24 +44,24 @@ $nav-height-mobile: 64px;
   }
 
   .legal-hero {
-    max-width: 720px;
+    max-width: calc(720px * var(--app-scale));
     margin: 0 auto;
-    padding: 72px 0 44px;
+    padding: calc(72px * var(--app-scale)) 0 calc(44px * var(--app-scale));
     text-align: center;
 
     @media (max-width: 600px) {
-      padding: 52px 0 32px;
+      padding: calc(52px * var(--app-scale)) 0 calc(32px * var(--app-scale));
     }
   }
 
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin: 0 0 18px;
+    gap: calc(10px * var(--app-scale));
+    margin: 0 0 calc(18px * var(--app-scale));
 
     font-family: $font-regular;
-    font-size: clamp(12px, 1vw, 13px);
+    font-size: clamp(calc(12px * var(--app-scale)), 1vw, calc(13px * var(--app-scale)));
     font-weight: 800;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -70,19 +70,19 @@ $nav-height-mobile: 64px;
     &::before {
       content: '';
       display: block;
-      width: 18px;
-      height: 3px;
+      width: calc(18px * var(--app-scale));
+      height: calc(3px * var(--app-scale));
       flex-shrink: 0;
-      border-radius: 10px;
+      border-radius: calc(10px * var(--app-scale));
       background-color: $color-green;
     }
   }
 
   h1 {
-    margin: 0 0 14px;
+    margin: 0 0 calc(14px * var(--app-scale));
     max-width: 100%;
     font-family: $font-bold;
-    font-size: clamp(28px, 4.5vw, 46px);
+    font-size: clamp(calc(28px * var(--app-scale)), 4.5vw, calc(46px * var(--app-scale)));
     font-weight: 900;
     line-height: 1.15;
     text-transform: uppercase;
@@ -102,49 +102,49 @@ $nav-height-mobile: 64px;
   }
 
   .legal-divider {
-    height: 3px;
+    height: calc(3px * var(--app-scale));
     width: 100%;
-    max-width: 140px;
-    margin: 28px auto 0;
-    border-radius: 10px;
+    max-width: calc(140px * var(--app-scale));
+    margin: calc(28px * var(--app-scale)) auto 0;
+    border-radius: calc(10px * var(--app-scale));
     background-color: $color-gold;
   }
 
   .legal-body {
     display: grid;
-    grid-template-columns: 260px minmax(0, 1fr);
-    gap: clamp(32px, 5vw, 64px);
-    max-width: 1180px;
+    grid-template-columns: calc(260px * var(--app-scale)) minmax(0, 1fr);
+    gap: clamp(calc(32px * var(--app-scale)), 5vw, calc(64px * var(--app-scale)));
+    max-width: calc(1180px * var(--app-scale));
     margin: 0 auto;
     align-items: start;
 
     @media (max-width: 960px) {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: calc(24px * var(--app-scale));
     }
   }
 
   .legal-toc {
     position: sticky;
-    top: $nav-height + 24px;
+    top: calc((#{$nav-height} + 24px) * var(--app-scale));
 
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding: 18px;
+    gap: calc(2px * var(--app-scale));
+    padding: calc(18px * var(--app-scale));
 
     background: #ffffff;
-    border-radius: $radius-md;
-    border-top: 3px solid $color-gold;
+    border-radius: calc(#{$radius-md} * var(--app-scale));
+    border-top: calc(3px * var(--app-scale)) solid $color-gold;
     box-shadow:
-      0 18px 40px $color-shadow,
-      0 2px 8px rgba(19, 20, 24, 0.1);
+      0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
+      0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.1);
 
     @media (max-width: 960px) {
       position: static;
       flex-direction: row;
-      gap: 8px;
-      padding: 12px;
+      gap: calc(8px * var(--app-scale));
+      padding: calc(12px * var(--app-scale));
       overflow-x: auto;
       scrollbar-width: none;
 
@@ -155,7 +155,7 @@ $nav-height-mobile: 64px;
 
     .toc-label {
       display: block;
-      margin: 2px 0 10px 10px;
+      margin: calc(2px * var(--app-scale)) 0 calc(10px * var(--app-scale)) calc(10px * var(--app-scale));
 
       font-family: $font-regular;
       font-size: 0.7rem;
@@ -172,7 +172,7 @@ $nav-height-mobile: 64px;
     a {
       position: relative;
       padding: 0.55rem 0.7rem;
-      border-radius: $radius-sm;
+      border-radius: calc(#{$radius-sm} * var(--app-scale));
 
       font-family: $font-regular;
       font-size: 0.88rem;
@@ -192,8 +192,8 @@ $nav-height-mobile: 64px;
       }
 
       &:focus-visible {
-        outline: 2px solid $color-gold;
-        outline-offset: 2px;
+        outline: calc(2px * var(--app-scale)) solid $color-gold;
+        outline-offset: calc(2px * var(--app-scale));
       }
 
       &.active {
@@ -207,9 +207,9 @@ $nav-height-mobile: 64px;
           left: 0;
           top: 50%;
           transform: translateY(-50%);
-          width: 3px;
+          width: calc(3px * var(--app-scale));
           height: 60%;
-          border-radius: 999px;
+          border-radius: calc(999px * var(--app-scale));
           background: $color-gold;
         }
       }
@@ -220,9 +220,9 @@ $nav-height-mobile: 64px;
         &.active::before {
           left: 50%;
           top: auto;
-          bottom: 2px;
+          bottom: calc(2px * var(--app-scale));
           width: 60%;
-          height: 3px;
+          height: calc(3px * var(--app-scale));
           transform: translateX(-50%);
         }
       }
@@ -233,18 +233,18 @@ $nav-height-mobile: 64px;
     min-width: 0;
 
     > p {
-      margin: 0 0 40px;
+      margin: 0 0 calc(40px * var(--app-scale));
       font-family: $font-regular;
-      font-size: clamp(15px, 1.2vw, 17px);
+      font-size: clamp(calc(15px * var(--app-scale)), 1.2vw, calc(17px * var(--app-scale)));
       font-weight: 500;
       line-height: 1.7;
       color: $color-ink-dim;
     }
 
     section {
-      padding: 36px 0;
-      border-top: 1px solid $color-hairline;
-      scroll-margin-top: $nav-height + 24px;
+      padding: calc(36px * var(--app-scale)) 0;
+      border-top: calc(1px * var(--app-scale)) solid $color-hairline;
+      scroll-margin-top: calc((#{$nav-height} + 24px) * var(--app-scale));
 
       &:first-of-type {
         padding-top: 0;
@@ -252,18 +252,18 @@ $nav-height-mobile: 64px;
       }
 
       @media (max-width: 768px) {
-        scroll-margin-top: $nav-height-mobile + 16px;
+        scroll-margin-top: calc((#{$nav-height-mobile} + 16px) * var(--app-scale));
       }
     }
 
     h2 {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin: 0 0 16px;
+      gap: calc(12px * var(--app-scale));
+      margin: 0 0 calc(16px * var(--app-scale));
 
       font-family: $font-bold;
-      font-size: clamp(19px, 2vw, 23px);
+      font-size: clamp(calc(19px * var(--app-scale)), 2vw, calc(23px * var(--app-scale)));
       font-weight: 900;
       text-transform: uppercase;
       color: $color-ink;
@@ -274,16 +274,16 @@ $nav-height-mobile: 64px;
 
       &::before {
         content: '';
-        width: 18px;
-        height: 3px;
+        width: calc(18px * var(--app-scale));
+        height: calc(3px * var(--app-scale));
         flex-shrink: 0;
-        border-radius: 10px;
+        border-radius: calc(10px * var(--app-scale));
         background-color: $color-green;
       }
     }
 
     p {
-      margin: 0 0 14px;
+      margin: 0 0 calc(14px * var(--app-scale));
       font-family: $font-regular;
       font-size: 0.98rem;
       font-weight: 500;
@@ -299,15 +299,15 @@ $nav-height-mobile: 64px;
     ul {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin: 0 0 18px;
+      gap: calc(10px * var(--app-scale));
+      margin: 0 0 calc(18px * var(--app-scale));
       padding: 0;
       list-style: none;
     }
 
     li {
       position: relative;
-      padding-left: 22px;
+      padding-left: calc(22px * var(--app-scale));
 
       font-family: $font-regular;
       font-size: 0.98rem;
@@ -320,9 +320,9 @@ $nav-height-mobile: 64px;
         position: absolute;
         left: 0;
         top: 0.6em;
-        width: 6px;
-        height: 6px;
-        border-radius: 2px;
+        width: calc(6px * var(--app-scale));
+        height: calc(6px * var(--app-scale));
+        border-radius: calc(2px * var(--app-scale));
         background-color: $color-green;
       }
     }
@@ -332,7 +332,7 @@ $nav-height-mobile: 64px;
       font-weight: 900;
       text-decoration: underline;
       text-decoration-color: rgba(47, 138, 79, 0.35);
-      text-underline-offset: 3px;
+      text-underline-offset: calc(3px * var(--app-scale));
 
       transition:
         color 0.2s $ease-organic,
@@ -344,25 +344,25 @@ $nav-height-mobile: 64px;
       }
 
       &:focus-visible {
-        outline: 2px solid $color-gold;
-        outline-offset: 2px;
-        border-radius: 2px;
+        outline: calc(2px * var(--app-scale)) solid $color-gold;
+        outline-offset: calc(2px * var(--app-scale));
+        border-radius: calc(2px * var(--app-scale));
       }
     }
 
     .contact-card {
-      margin-top: 4px;
-      padding: 22px clamp(20px, 3vw, 28px);
+      margin-top: calc(4px * var(--app-scale));
+      padding: calc(22px * var(--app-scale)) clamp(calc(20px * var(--app-scale)), 3vw, calc(28px * var(--app-scale)));
 
       background: #ffffff;
-      border: 1px solid $color-hairline;
-      border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+      border: calc(1px * var(--app-scale)) solid $color-hairline;
+      border-radius: calc(#{$radius-lg} * var(--app-scale)) calc(#{$radius-sm} * var(--app-scale)) calc(#{$radius-lg} * var(--app-scale)) calc(#{$radius-sm} * var(--app-scale));
       box-shadow:
-        0 18px 40px $color-shadow,
-        0 2px 8px rgba(19, 20, 24, 0.1);
+        0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
+        0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.1);
 
       p {
-        margin: 0 0 6px;
+        margin: 0 0 calc(6px * var(--app-scale));
         font-size: 0.94rem;
         text-align: left;
 
@@ -379,14 +379,5 @@ $nav-height-mobile: 64px;
         color: $color-ink;
       }
     }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .legal-page,
-  .legal-page * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

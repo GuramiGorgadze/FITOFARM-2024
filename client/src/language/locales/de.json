@@ -185,6 +185,18 @@
       }
     }
   },
+  "productCard": {
+    "readMore": "Mehr lesen"
+  },
+  "products": {
+    "title": "Produkte"
+  },
+  "productSingle": {
+    "characteristics": "Merkmale",
+    "shortDesc": "Kurzbeschreibung",
+    "fullAnnotation": "Vollständige Annotation"
+  },
+  "productAnnotation": "Vollständige Annotation",
   "footer": {
     "legalTitle": "Rechtliches",
     "privacyPolicy": "Datenschutzerklärung",

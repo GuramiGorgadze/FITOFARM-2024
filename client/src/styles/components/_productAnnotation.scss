@@ -1,0 +1,241 @@
+@use '../abstracts' as *;
+
+$color-page-bg: #ffffff;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-gold: #fbbc05;
+$color-green: #2f8a4f;
+$color-hairline: rgba(19, 20, 24, 0.1);
+
+.product-annotation {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: calc(72px * var(--app-scale));
+  padding-bottom: calc(96px * var(--app-scale));
+  padding-left: max(calc(24px * var(--app-scale)), calc((100% - calc(1040px * var(--app-scale))) / 2));
+  padding-right: max(calc(24px * var(--app-scale)), calc((100% - calc(1040px * var(--app-scale))) / 2));
+  background-color: $color-page-bg;
+  scroll-margin-top: calc(32px * var(--app-scale));
+
+  &__title {
+    position: relative;
+    margin: 0 0 calc(28px * var(--app-scale));
+    padding-bottom: calc(16px * var(--app-scale));
+
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: clamp(calc(24px * var(--app-scale)), 2.6vw, calc(32px * var(--app-scale)));
+    line-height: 1.3;
+    color: $color-ink;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: calc(48px * var(--app-scale));
+      height: calc(4px * var(--app-scale));
+      border-radius: calc(10px * var(--app-scale));
+      background: $color-gold;
+    }
+  }
+
+  &__name {
+    margin: 0 0 calc(6px * var(--app-scale));
+    font-family: $font-regular;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: $color-ink;
+
+    span {
+      font-weight: 500;
+      font-style: italic;
+      color: $color-ink-dim;
+    }
+  }
+
+  &__form {
+    margin: 0 0 calc(20px * var(--app-scale));
+    font-family: $font-regular;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: $color-ink-dim;
+  }
+
+  &__lead {
+    margin: 0 0 calc(40px * var(--app-scale));
+    padding-bottom: calc(32px * var(--app-scale));
+    border-bottom: calc(1px * var(--app-scale)) solid $color-hairline;
+
+    font-family: $font-regular;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: $color-ink;
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section {
+    padding: calc(28px * var(--app-scale)) 0;
+
+    &:not(:last-child) {
+      border-bottom: calc(1px * var(--app-scale)) solid $color-hairline;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__section-title {
+    display: flex;
+    align-items: center;
+    gap: calc(10px * var(--app-scale));
+    margin: 0 0 calc(12px * var(--app-scale));
+
+    font-family: $font-regular;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-green;
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: calc(20px * var(--app-scale));
+      height: calc(3px * var(--app-scale));
+      border-radius: calc(10px * var(--app-scale));
+      background: $color-green;
+    }
+  }
+
+  &__section-text {
+    margin: 0;
+    font-family: $font-regular;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: $color-ink-dim;
+  }
+
+  &__section-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: calc(20px * var(--app-scale));
+      margin-bottom: calc(8px * var(--app-scale));
+
+      font-family: $font-regular;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $color-ink-dim;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.65em;
+        width: calc(6px * var(--app-scale));
+        height: calc(6px * var(--app-scale));
+        border-radius: 50%;
+        background: $color-green;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__category {
+    display: inline-block;
+    margin: 0 0 calc(12px * var(--app-scale));
+    padding: calc(6px * var(--app-scale)) calc(14px * var(--app-scale));
+    border-radius: calc(999px * var(--app-scale));
+
+    background: rgba(47, 138, 79, 0.08);
+    border: calc(1px * var(--app-scale)) solid rgba(47, 138, 79, 0.24);
+
+    font-family: $font-regular;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: $color-green;
+  }
+
+  &__table-wrap {
+    margin-top: calc(16px * var(--app-scale));
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: calc(480px * var(--app-scale));
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: calc(8px * var(--app-scale));
+    overflow: hidden;
+
+    th,
+    td {
+      padding: calc(10px * var(--app-scale)) calc(14px * var(--app-scale));
+      text-align: left;
+      font-family: $font-regular;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    thead th {
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $color-green;
+      background: rgba(47, 138, 79, 0.06);
+      border-bottom: calc(1px * var(--app-scale)) solid $color-hairline;
+    }
+
+    tbody td {
+      color: $color-ink-dim;
+      border-bottom: calc(1px * var(--app-scale)) solid $color-hairline;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(47, 138, 79, 0.03);
+    }
+  }
+
+  &__table-footnotes {
+    margin: calc(10px * var(--app-scale)) 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      font-family: $font-regular;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: $color-ink-dim;
+      opacity: 0.85;
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: calc(56px * var(--app-scale)) calc(20px * var(--app-scale)) calc(72px * var(--app-scale));
+  }
+}

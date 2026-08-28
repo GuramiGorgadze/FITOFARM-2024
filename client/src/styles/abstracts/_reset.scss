@@ -19,3 +19,25 @@ body {
 body {
   padding-top: env(safe-area-inset-top);
 }
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #2f8a4f #eff8f1;
+  scroll-behavior: smooth;
+  font-size: calc(16px * var(--app-scale));
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #eff8f1;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #3f9c5f, #2f8a4f);
+    border-radius: 10px;
+    border: 2px solid #eff8f1;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #188038;
+  }
+}

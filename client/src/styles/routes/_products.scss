@@ -1,0 +1,34 @@
+@use '../abstracts' as *;
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eff8f1;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  padding-bottom: calc(100px * var(--app-scale));
+  overflow-x: hidden; 
+
+  background-image:
+    linear-gradient(to right, #e2ebe4 calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale))),
+    linear-gradient(to bottom, #e2ebe4 calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale)));
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
+
+  &__grid {
+    margin-top: calc(40px * var(--app-scale));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(220px * var(--app-scale)), calc(300px * var(--app-scale))));
+    justify-content: center; 
+    gap: calc(40px * var(--app-scale));
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 calc(40px * var(--app-scale));
+
+    @media (max-width: 600px) {
+      gap: calc(24px * var(--app-scale));
+      padding: 0 calc(20px * var(--app-scale));
+    }
+  }
+}

@@ -83,12 +83,4 @@ $color-green: #2f8a4f;
       transform: rotate(-360deg);
     }
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .loader,
-    .loader::after,
-    .loader::before {
-      animation-duration: 0.01ms !important;
-    }
-  }
 }

@@ -3,11 +3,11 @@
 .disclaimer {
   display: flex;
   background-color: #fffce4;
-  border: 1px solid #ecdab2;
-  padding: 20px;
-  border-radius: 5px;
-  margin: 40px;
-  gap: 10px;
+  border: calc(1px * var(--app-scale)) solid #ecdab2;
+  padding: calc(20px * var(--app-scale));
+  border-radius: calc(5px * var(--app-scale));
+  margin: calc(40px * var(--app-scale));
+  gap: calc(10px * var(--app-scale));
 
   * {
     font-family: $font-regular;
@@ -22,7 +22,7 @@
   }
 
   @media (max-width: 768px) {
-    margin: 20px;
+    margin: calc(20px * var(--app-scale));
     text-align: justify;
   }
 }

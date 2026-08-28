@@ -6,6 +6,8 @@
 @use 'components/scrollToTopButton';
 @use 'components/disclaimer';
 @use 'components/loadingScreen';
+@use 'components/productCard';
+@use 'components/productAnnotation';
 
 @use 'layouts/navbar';
 @use 'layouts/footer';
@@ -14,3 +16,5 @@
 @use 'routes/about';
 @use 'routes/contact';
 @use 'routes/legal';
+@use 'routes/products';
+@use 'routes/productSingle';

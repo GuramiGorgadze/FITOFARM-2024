@@ -12,3 +12,25 @@ export const contact = async (data) => {
     throw new Error(message);
   }
 };
+
+export const getProducts = async () => {
+  try {
+    const response = await axios.get(`http://localhost:3000/api/products`, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.message || 'Error fetching products');
+  }
+};
+
+export const getProductById = async (id) => {
+  try {
+    const response = await axios.get(`http://localhost:3000/api/products/${id}`, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.message || 'Error fetching product');
+  }
+};

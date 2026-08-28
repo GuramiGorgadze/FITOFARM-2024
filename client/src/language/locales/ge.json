@@ -185,6 +185,18 @@
       }
     }
   },
+  "productCard": {
+    "readMore": "ვრცლად"
+  },
+  "products": {
+    "title": "პროდუქცია"
+  },
+  "productSingle": {
+    "characteristics": "მახასიათებლები",
+    "shortDesc": "მოკლე აღწერა",
+    "fullAnnotation": "სრული ანოტაცია"
+  },
+  "productAnnotation": "სრული ანოტაცია",
   "footer": {
     "legalTitle": "სამართლებრივი ინფორმაცია",
     "privacyPolicy": "კონფიდენციალურობის პოლიტიკა",

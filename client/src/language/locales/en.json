@@ -182,6 +182,18 @@
       }
     }
   },
+  "productCard": {
+    "readMore": "Read more"
+  },
+  "products": {
+    "title": "Products"
+  },
+  "productSingle": {
+    "characteristics": "Characteristics",
+    "shortDesc": "Short Description",
+    "fullAnnotation": "Full Annotation"
+  },
+  "productAnnotation": "Full Annotation",
   "footer": {
     "legalTitle": "Legal",
     "privacyPolicy": "Privacy Policy",

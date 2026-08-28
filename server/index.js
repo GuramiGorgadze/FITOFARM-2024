@@ -6,18 +6,27 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import connectDB from "./db/connection.js";
+
 import UsersRouter from "./routes/users.js";
+import ProductsRouter from "./routes/products.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL }));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.set("trust proxy", 1);
 
 // API routes
 app.use("/api/users", UsersRouter);
+app.use("/api/products", ProductsRouter);
 
 // Frontend
 const __filename = fileURLToPath(import.meta.url);
@@ -38,6 +47,12 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-});
+const startServer = async () => {
+  await connectDB(process.env.CONNECTION_STRING);
+
+  app.listen(PORT, () => {
+    console.log("server has started");
+  });
+};
+
+startServer();

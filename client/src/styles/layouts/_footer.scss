@@ -16,34 +16,40 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 .footer {
   box-sizing: border-box;
 
-  padding: 72px clamp(24px, 8vw, 140px) 0;
-  border-top: 1px solid $color-hairline;
+  padding: calc(72px * var(--app-scale))
+    clamp(calc(24px * var(--app-scale)), 8vw, calc(140px * var(--app-scale))) 0;
+  border-top: calc(1px * var(--app-scale)) solid $color-hairline;
 
   background-color: $color-footer-bg;
-  background-image: radial-gradient($color-footer-grid-line 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(
+    $color-footer-grid-line calc(1.5px * var(--app-scale)),
+    transparent calc(1.5px * var(--app-scale))
+  );
+  background-size: calc(24px * var(--app-scale)) calc(24px * var(--app-scale));
 
   color: $color-ink;
 
   @media (max-width: 960px) {
-    padding: 52px clamp(20px, 6vw, 60px) 0;
+    padding: calc(52px * var(--app-scale))
+      clamp(calc(20px * var(--app-scale)), 6vw, calc(60px * var(--app-scale))) 0;
   }
 }
 
 .top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1.5fr 1.3fr;
-  gap: 44px clamp(20px, 3vw, 48px);
-  padding-bottom: 48px;
+  gap: calc(44px * var(--app-scale))
+    clamp(calc(20px * var(--app-scale)), 3vw, calc(48px * var(--app-scale)));
+  padding-bottom: calc(48px * var(--app-scale));
 
   @media (max-width: 960px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px 32px;
+    gap: calc(40px * var(--app-scale)) calc(32px * var(--app-scale));
   }
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: calc(36px * var(--app-scale));
     text-align: center;
   }
 }
@@ -51,13 +57,13 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 .column {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: calc(16px * var(--app-scale));
   min-width: 0;
 
   h2 {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: calc(10px * var(--app-scale));
     margin: 0;
 
     font-family: $font-regular;
@@ -70,10 +76,10 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     &::before {
       content: '';
       display: block;
-      width: 18px;
-      height: 3px;
+      width: calc(18px * var(--app-scale));
+      height: calc(3px * var(--app-scale));
       flex-shrink: 0;
-      border-radius: 10px;
+      border-radius: calc(10px * var(--app-scale));
       background-color: $color-green;
     }
 
@@ -83,7 +89,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &.brand {
-    gap: 18px;
+    gap: calc(18px * var(--app-scale));
 
     @media (max-width: 960px) {
       grid-column: 1 / -1;
@@ -100,7 +106,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 .links {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: calc(12px * var(--app-scale));
 
   @media (max-width: 600px) {
     align-items: center;
@@ -113,7 +119,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   align-items: center;
   width: fit-content;
   gap: 0.6rem;
-  padding: 2px 0;
+  padding: calc(2px * var(--app-scale)) 0;
 
   font-family: $font-regular;
   font-size: 0.92rem;
@@ -135,10 +141,10 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     content: '';
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: calc(-1px * var(--app-scale));
     width: 100%;
-    height: 2px;
-    border-radius: 999px;
+    height: calc(2px * var(--app-scale));
+    border-radius: calc(999px * var(--app-scale));
     background: $color-green;
     transform: scaleX(0);
     transform-origin: left;
@@ -159,9 +165,9 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   &:focus-visible {
-    outline: 2px solid $color-gold;
-    outline-offset: 4px;
-    border-radius: 4px;
+    outline: calc(2px * var(--app-scale)) solid $color-gold;
+    outline-offset: calc(4px * var(--app-scale));
+    border-radius: calc(4px * var(--app-scale));
   }
 
   &.static {
@@ -198,7 +204,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .logo {
-    height: 40px;
+    height: calc(40px * var(--app-scale));
     width: auto;
     flex-shrink: 0;
   }
@@ -221,7 +227,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
   .slogan {
     margin: 0;
-    max-width: 280px;
+    max-width: calc(280px * var(--app-scale));
     font-family: $font-regular;
     font-size: 0.88rem;
     font-weight: 500;
@@ -240,26 +246,26 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .divider-footer {
-  height: 3px;
+  height: calc(3px * var(--app-scale));
   width: 100%;
-  max-width: 140px;
+  max-width: calc(140px * var(--app-scale));
   margin: 0 auto;
-  border-radius: 10px;
+  border-radius: calc(10px * var(--app-scale));
   background-color: $color-gold;
 }
 
 .bottom {
-  padding: 22px 0 32px;
+  padding: calc(22px * var(--app-scale)) 0 calc(32px * var(--app-scale));
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: calc(6px * var(--app-scale));
   text-align: center;
 
   @media (min-width: 640px) {
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: calc(10px * var(--app-scale));
   }
 
   p {
@@ -277,7 +283,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
+  gap: calc(6px * var(--app-scale));
   color: $color-ink-dim;
 
   &::before {
@@ -295,30 +301,22 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   i {
     font-size: 0.82rem;
     color: $color-green;
-    margin-left: 5px;
+    margin-left: calc(5px * var(--app-scale));
   }
 
   .link {
     font-size: 0.78rem;
     font-weight: 700;
-    padding: 2px 0;
+    padding: calc(2px * var(--app-scale)) 0;
     color: $color-green-dark;
 
     &::after {
-      bottom: -2px;
+      bottom: calc(-2px * var(--app-scale));
     }
 
     &:hover,
     &:focus-visible {
       color: $color-ink;
     }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .footer,
-  .footer * {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
   }
 }
