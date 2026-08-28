@@ -58,7 +58,6 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   &__image {
     display: block;
     width: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: calc(10px * var(--app-scale));
     height: 100%;
