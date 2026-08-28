@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const contact = async (data) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/users/contact', data, {
+    const response = await axios.post('/api/users/contact', data, {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -15,7 +15,7 @@ export const contact = async (data) => {
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/products`, {
+    const response = await axios.get(`/api/products`, {
       withCredentials: true,
     });
     return response.data;
@@ -26,7 +26,7 @@ export const getProducts = async () => {
 
 export const getProductById = async (id) => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/products/${id}`, {
+    const response = await axios.get(`/api/products/${id}`, {
       withCredentials: true,
     });
     return response.data;
