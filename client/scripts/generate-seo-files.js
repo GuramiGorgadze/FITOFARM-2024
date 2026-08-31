@@ -18,7 +18,7 @@ const STATIC_ROUTES = [
 
 async function fetchProducts() {
   try {
-    const res = await fetch(`${API_BASE_URL}/products`);
+    const res = await fetch(`${API_BASE_URL}/api/products`);
     const { data } = await res.json();
     return data || [];
   } catch (err) {
