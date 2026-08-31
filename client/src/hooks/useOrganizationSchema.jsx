@@ -17,9 +17,9 @@ export function useOrganizationSchema() {
       '@context': 'https://schema.org',
       '@type': 'Pharmacy',
       name: 'FITOFARM',
-      url: 'https://fitofarm.ge',
+      url: 'https://fitofarm2024.ge',
       telephone: '+995 599 14 21 18',
-      email: 'info@fitofarm.ge',
+      email: 'info@fitofarm2024.ge',
     });
   }, []);
 }

@@ -1,11 +1,60 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+const CONTACT_REGEX = /([\w.+-]+@[\w-]+\.[\w.-]+)|(\+?\d[\d\s-]{7,}\d)/g;
+
+function linkifyLine(line) {
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+
+  while ((match = CONTACT_REGEX.exec(line)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(line.slice(lastIndex, match.index));
+    }
+
+    const matchedText = match[0];
+    if (match[1]) {
+      parts.push(
+        <a
+          key={key++}
+          className="product-annotation__link"
+          href={`mailto:${matchedText}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {matchedText}
+        </a>
+      );
+    } else {
+      const cleaned = matchedText.replace(/\s+/g, '');
+      parts.push(
+        <a
+          key={key++}
+          className="product-annotation__link"
+          href={`tel:${cleaned}`}
+        >
+          {matchedText}
+        </a>
+      );
+    }
+
+    lastIndex = CONTACT_REGEX.lastIndex;
+  }
+
+  if (lastIndex < line.length) {
+    parts.push(line.slice(lastIndex));
+  }
+
+  return parts;
+}
+
 function renderMultiline(text) {
   const lines = text.split('\n');
   return lines.map((line, i) => (
     <React.Fragment key={i}>
-      {line}
+      {linkifyLine(line)}
       {i < lines.length - 1 && <br />}
     </React.Fragment>
   ));

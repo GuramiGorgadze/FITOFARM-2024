@@ -196,6 +196,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
   .title {
     display: flex;
     align-items: center;
+    text-decoration: none;
     gap: 0.85rem;
 
     @media (max-width: 600px) {
@@ -218,7 +219,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     text-transform: uppercase;
     color: $color-ink;
     white-space: nowrap;
-
+    
     &__year {
       color: $color-green;
       font-family: $font-bold;

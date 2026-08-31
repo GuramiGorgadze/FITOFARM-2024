@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ProductCard } from '../components';
+import { ProductCard, Disclaimer } from '../components';
 import { useTranslation } from 'react-i18next';
 import { useLoader } from '../context/LoaderContext';
 import { getProducts } from '../api/api';
@@ -25,23 +25,27 @@ const Products = () => {
   }, []);
 
   return (
-    <section className="product-page">
-      <div className="hero">
-        <div className="hero__title">
-          <p className="hero__title-text">{t('products.title')}</p>
+    <>
+      {' '}
+      <section className="product-page">
+        <div className="hero">
+          <div className="hero__title">
+            <p className="hero__title-text">{t('products.title')}</p>
+          </div>
+          <div className="hero__divider"></div>
         </div>
-        <div className="hero__divider"></div>
-      </div>
 
-      <div className="product-page__grid">
-        {products.map((product) => (
-          <ProductCard
-            key={product._id}
-            product={product}
-          />
-        ))}
-      </div>
-    </section>
+        <div className="product-page__grid">
+          {products.map((product) => (
+            <ProductCard
+              key={product._id}
+              product={product}
+            />
+          ))}
+        </div>
+      </section>
+      <Disclaimer />
+    </>
   );
 };
 

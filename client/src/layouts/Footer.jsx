@@ -6,6 +6,8 @@ import Logo from '../assets/logo.png';
 function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
+  const phone = t('info.phone');
+  const email = t('info.email');
 
   return (
     <footer className="footer">
@@ -67,18 +69,6 @@ function Footer() {
               />
               Instagram
             </a>
-            <a
-              className="link"
-              href="https://www.youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i
-                className="bi bi-youtube"
-                aria-hidden="true"
-              />
-              YouTube
-            </a>
           </div>
         </div>
 
@@ -97,27 +87,52 @@ function Footer() {
         <div className="column">
           <h2>{t('footer.infoTitle')}</h2>
           <div className="links">
-            <div className="link static">{t('info.office1Address')}</div>
-            <div className="link static">{t('info.office2Address')}</div>
-            <div className="link static">
-              <i
-                className="bi bi-telephone"
-                aria-hidden="true"
-              />
-              {t('info.phone')}
-            </div>
-            <div className="link static">
-              <i
-                className="bi bi-envelope"
-                aria-hidden="true"
-              />
-              info@fitofarm.ge
-            </div>
+            <a
+              target="blank"
+              href="https://maps.app.goo.gl/JRX2r2tAQVmSMSjY7"
+              rel="noopener noreferrer"
+            >
+              <div className="link ">{t('info.office1Address')}</div>
+            </a>
+            <a
+              target="blank"
+              href="https://maps.app.goo.gl/RyFjZqjN9iscru2S6"
+              rel="noopener noreferrer"
+            >
+              <div className="link ">{t('info.office2Address')}</div>
+            </a>
+            <a href={`tel:${phone.replace(/\s+/g, '')}`}>
+              {' '}
+              <div className="link">
+                <i
+                  className="bi bi-telephone"
+                  aria-hidden="true"
+                />
+                {t('info.phone')}
+              </div>
+            </a>
+            <a
+              className="contact-link"
+              href={`mailto:${email}`}
+              target="blank"
+            >
+              <div className="link">
+                <i
+                  className="bi bi-envelope"
+                  aria-hidden="true"
+                />
+                info@fitofarm2024.ge
+              </div>
+            </a>
           </div>
         </div>
 
         <div className="column brand">
-          <div className="title">
+          <Link
+            to="/"
+            className="title"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <img
               className="logo"
               src={Logo}
@@ -127,7 +142,7 @@ function Footer() {
               {t('home.title')}
               <span className="wordmark__year">-2024</span>
             </p>
-          </div>
+          </Link>
           <p className="slogan">{t('footer.slogan')}</p>
         </div>
       </div>

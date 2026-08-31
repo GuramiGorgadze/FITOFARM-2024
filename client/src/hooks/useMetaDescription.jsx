@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const SITE_URL = 'https://fitofarm.ge';
+const SITE_URL = 'https://fitofarm2024.ge';
 
 const ROUTE_KEYS = {
   '/': 'seo.home.description',

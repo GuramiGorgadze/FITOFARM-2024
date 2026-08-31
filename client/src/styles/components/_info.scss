@@ -167,6 +167,7 @@ $color-sage: #6b8f71;
     align-items: center;
     justify-content: center;
     gap: calc(18px * var(--app-scale));
+    text-decoration: none;
 
     .logo {
       width: calc(69px * var(--app-scale));

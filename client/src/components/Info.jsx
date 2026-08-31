@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function Info() {
   const { t } = useTranslation();
@@ -18,7 +19,13 @@ function Info() {
             />
             <div>
               <p className="address__title">{t('info.office1Title')}</p>
-              <p className="address__line">{t('info.office1Address')}</p>
+              <a
+                target="blank"
+                href="https://maps.app.goo.gl/JRX2r2tAQVmSMSjY7"
+                rel="noopener noreferrer"
+              >
+                <p className="address__line">{t('info.office1Address')}</p>
+              </a>
             </div>
           </div>
 
@@ -29,7 +36,14 @@ function Info() {
             />
             <div>
               <p className="address__title">{t('info.office2Title')}</p>
-              <p className="address__line">{t('info.office2Address')}</p>
+
+              <a
+                target="blank"
+                href="https://maps.app.goo.gl/RyFjZqjN9iscru2S6"
+                rel="noopener noreferrer"
+              >
+                <p className="address__line">{t('info.office2Address')}</p>
+              </a>
             </div>
           </div>
         </div>
@@ -49,6 +63,7 @@ function Info() {
           <a
             className="contact-link"
             href={`mailto:${email}`}
+            target="blank"
           >
             <i
               className="icon bi bi-envelope"
@@ -64,7 +79,11 @@ function Info() {
         aria-hidden="true"
       />
 
-      <div className="right">
+      <Link
+        to="/"
+        className="right"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
         <img
           className="logo"
           src={Logo}
@@ -74,7 +93,7 @@ function Info() {
           {t('nav.title')}
           <span className="wordmark__year">-2024</span>
         </p>
-      </div>
+      </Link>
     </section>
   );
 }

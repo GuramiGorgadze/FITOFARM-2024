@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLoader } from '../context/LoaderContext';
-import { ProductAnnotation } from '../components';
+import { ProductAnnotation, Disclaimer } from '../components';
 import { getProductById } from '../api/api';
 import useMetaDescription from '../hooks/useMetaDescription';
 import useDocumentTitle from '../hooks/useDocumentTitle';
@@ -170,6 +170,8 @@ function ProductSingle() {
       </div>
 
       {annotationData && <ProductAnnotation data={annotationData} />}
+
+      <Disclaimer />
     </>
   );
 }

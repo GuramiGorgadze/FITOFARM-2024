@@ -133,7 +133,7 @@ function Terms() {
               </p>
               <p>{t('terms.sections.contact.address')}</p>
               <p>{t('terms.sections.contact.telLabel')} +995 599 14 21 18</p>
-              <p>{t('terms.sections.contact.emailLabel')} info@fitofarm.ge</p>
+              <p>{t('terms.sections.contact.emailLabel')} info@fitofarm2024.ge</p>
             </div>
           </section>
         </div>
