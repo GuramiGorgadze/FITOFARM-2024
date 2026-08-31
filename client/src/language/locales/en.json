@@ -207,5 +207,36 @@
     "createdBy": "Created By",
     "name": "Gurami Gorgadze",
     "tail": ""
+  },
+  "seo": {
+    "default": {
+      "title": "FITOFARM-2024 — A Natural Path to Well-Being",
+      "description": "FITOFARM-2024 — a natural path to well-being. Biologically active supplements (BAA) made from natural raw materials, produced in Georgia."
+    },
+    "home": {
+      "title": "FITOFARM-2024 — A Natural Path to Well-Being",
+      "description": "FITOFARM-2024 offers biologically active supplements (BAA) made from natural plant-based raw materials."
+    },
+    "products": {
+      "title": "Products — FITOFARM-2024",
+      "description": "Browse FITOFARM-2024's products — natural biologically active supplements (BAA) for your health."
+    },
+    "about": {
+      "title": "About — FITOFARM-2024",
+      "description": "Meet FITOFARM-2024 — a natural products manufacturer specializing in biologically active health supplements (BAA)."
+    },
+    "contact": {
+      "title": "Contact — FITOFARM-2024",
+      "description": "Get in touch with the FITOFARM-2024 team for questions, collaboration, or more information about our products."
+    },
+    "privacy": {
+      "title": "Privacy Policy — FITOFARM-2024",
+      "description": "Read FITOFARM-2024's privacy policy — how we collect, use, and protect your personal data."
+    },
+    "terms": {
+      "title": "Terms & Conditions — FITOFARM-2024",
+      "description": "Terms and conditions for using the FITOFARM-2024 website."
+    },
+    "productSingle": "FITOFARM-2024"
   }
 }

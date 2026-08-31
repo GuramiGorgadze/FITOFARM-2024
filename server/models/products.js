@@ -90,13 +90,17 @@ const fullAnnotationSchema = new mongoose.Schema(
   { _id: false },
 );
 
-const ProductSchema = new mongoose.Schema({
-  handle: { type: String, required: true, unique: true, trim: true },
-  title: { type: translationSchema, required: true },
-  brandName: { type: brandNameSchema },
-  characteristics: { type: characteristicsSchema },
-  shortDescription: { type: translationSchema },
-  fullAnnotation: { type: fullAnnotationSchema },
-});
+const ProductSchema = new mongoose.Schema(
+  {
+    handle: { type: String, required: true, unique: true, trim: true },
+    title: { type: translationSchema, required: true },
+    brandName: { type: brandNameSchema },
+    characteristics: { type: characteristicsSchema },
+    shortDescription: { type: translationSchema },
+    fullAnnotation: { type: fullAnnotationSchema },
+    images: { type: [String], default: [] },
+  },
+  { timestamps: true },
+);
 
 export default mongoose.model("Product", ProductSchema);

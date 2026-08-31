@@ -210,5 +210,36 @@
     "createdBy": "Erstellt Von",
     "name": "Gurami Gorgadze",
     "tail": ""
+  },
+  "seo": {
+    "default": {
+      "title": "FITOFARM-2024 — Ein natürlicher Weg zum Wohlbefinden",
+      "description": "FITOFARM-2024 — ein natürlicher Weg zum Wohlbefinden. Biologisch aktive Nahrungsergänzungsmittel aus natürlichen Rohstoffen, hergestellt in Georgien."
+    },
+    "home": {
+      "title": "FITOFARM-2024 — Ein natürlicher Weg zum Wohlbefinden",
+      "description": "FITOFARM-2024 bietet biologisch aktive Nahrungsergänzungsmittel aus natürlichen pflanzlichen Rohstoffen."
+    },
+    "products": {
+      "title": "Produkte — FITOFARM-2024",
+      "description": "Entdecken Sie die Produkte von FITOFARM-2024 — natürliche, biologisch aktive Nahrungsergänzungsmittel für Ihre Gesundheit."
+    },
+    "about": {
+      "title": "Über uns — FITOFARM-2024",
+      "description": "Lernen Sie FITOFARM-2024 kennen — einen Hersteller natürlicher Produkte, spezialisiert auf biologisch aktive Nahrungsergänzungsmittel."
+    },
+    "contact": {
+      "title": "Kontakt — FITOFARM-2024",
+      "description": "Kontaktieren Sie das Team von FITOFARM-2024 bei Fragen, für eine Zusammenarbeit oder weitere Informationen zu unseren Produkten."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung — FITOFARM-2024",
+      "description": "Lesen Sie die Datenschutzerklärung von FITOFARM-2024 — wie wir Ihre personenbezogenen Daten erheben, verwenden und schützen."
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen — FITOFARM-2024",
+      "description": "Nutzungsbedingungen für die Website von FITOFARM-2024."
+    },
+    "productSingle": "FITOFARM-2024"
   }
 }

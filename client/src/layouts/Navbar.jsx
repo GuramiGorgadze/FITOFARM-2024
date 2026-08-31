@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import flagEN from '../assets/flags/flag-en.png';
 import flagRU from '../assets/flags/flag-ru.png';
 import flagDE from '../assets/flags/flag-de.png';
-import flagGE from '../assets/flags/flag-ge.png';
+import flagKA from '../assets/flags/flag-ka.png';
 import clsx from 'clsx';
 import Logo from '../assets/logo.png';
 
@@ -12,7 +12,7 @@ const languages = [
   { code: 'en', label: 'English', flag: flagEN },
   { code: 'ru', label: 'Русский', flag: flagRU },
   { code: 'de', label: 'Deutsch', flag: flagDE },
-  { code: 'ge', label: 'ქართული', flag: flagGE },
+  { code: 'ka', label: 'ქართული', flag: flagKA },
 ];
 
 function Navbar() {

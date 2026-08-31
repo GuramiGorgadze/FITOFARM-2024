@@ -1,30 +1,24 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-const useDocumentTitle = () => {
+const TITLE_KEYS = {
+  '/': 'seo.home.title',
+  '/about': 'seo.about.title',
+  '/products': 'seo.products.title',
+  '/contact': 'seo.contact.title',
+  '/privacy-policy': 'seo.privacy.title',
+  '/terms': 'seo.terms.title',
+};
+
+function useDocumentTitle(overrideTitle) {
   const { pathname } = useLocation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    switch (pathname) {
-      case '/':
-        document.title = 'FITOFARM-2024 - A Natural Path to Well-Being';
-        break;
-      case '/products':
-        document.title = 'Products - FITOFARM-2024';
-        break;
-      case '/products/:id':
-        document.title = 'Products - FITOFARM-2024';
-        break;
-      case '/about':
-        document.title = 'About - FITOFARM-2024';
-        break;
-      case '/contact':
-        document.title = 'Contact - FITOFARM-2024';
-        break;
-      default:
-        document.title = 'FITOFARM-2024 - A Natural Path to Well-Being';
-    }
-  }, [pathname]);
-};
+    const key = TITLE_KEYS[pathname];
+    document.title = overrideTitle || (key ? t(key) : t('seo.default.title'));
+  }, [pathname, overrideTitle, t, i18n.language]);
+}
 
 export default useDocumentTitle;

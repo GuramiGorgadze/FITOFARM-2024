@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Phytosedium from '../assets/home.png';
 
 const SUPPORTED_LANGS = ['ka', 'en', 'ru', 'de'];
 
@@ -19,7 +18,7 @@ function ProductCard({ product }) {
 
   const title = product.title?.[lang] || product.title?.ka || '';
   const size = product.characteristics?.dosage?.[lang] || '';
-  const image = product.image || Phytosedium;
+  const image = product.images?.[0];
 
   return (
     <Link

@@ -6,11 +6,15 @@ import { ScrollToTopButton, LoadingScreen } from './components';
 import { Toaster } from 'react-hot-toast';
 import './styles/style.scss';
 import useDocumentTitle from './hooks/useDocumentTitle';
+import useMetaDescription from './hooks/useMetaDescription';
+import useOrganizationSchema from './hooks/useOrganizationSchema';
 import useScrollTop from './hooks/useScrollTop';
 import useAppScale from './hooks/useAppScale';
 
 function App() {
   useDocumentTitle();
+  useMetaDescription();
+  useOrganizationSchema();
   useScrollTop();
   useAppScale();
 

@@ -137,7 +137,7 @@ function PrivacyPolicy() {
               </p>
               <p>{t('privacy.sections.contact.address')}</p>
               <p>{t('privacy.sections.contact.telLabel')} +995 599 14 21 18</p>
-              <p>{t('privacy.sections.contact.emailLabel')} info@fitofarm2024.ge</p>
+              <p>{t('privacy.sections.contact.emailLabel')} info@fitofarm.ge</p>
             </div>
           </section>
         </div>

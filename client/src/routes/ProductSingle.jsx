@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { useLoader } from '../context/LoaderContext';
 import { ProductAnnotation } from '../components';
 import { getProductById } from '../api/api';
-import Phytosedium from '../assets/home.png';
+import useMetaDescription from '../hooks/useMetaDescription';
+import useDocumentTitle from '../hooks/useDocumentTitle';
+import useProductSchema from '../hooks/useProductSchema';
 
 const SUPPORTED_LANGS = ['ka', 'en', 'ru', 'de'];
 
@@ -86,6 +88,12 @@ function ProductSingle() {
     };
   }, [id]);
 
+  useDocumentTitle(
+    product?.title?.[lang] ? `${product.title[lang]} — ${t('seo.productSingle')}` : undefined
+  );
+  useMetaDescription(product?.shortDescription?.[lang]);
+  useProductSchema(product, lang);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
   if (!product) return null;
@@ -96,7 +104,7 @@ function ProductSingle() {
     characteristics = {},
     shortDescription,
     fullAnnotation = {},
-    image,
+    images = [],
   } = product;
   const annotationForLang = fullAnnotation[lang];
 
@@ -117,7 +125,7 @@ function ProductSingle() {
         <div className="product-single__gallery">
           <img
             className="product-single__image"
-            src={image || Phytosedium}
+            src={images[0]}
             alt={title?.[lang]}
           />
         </div>
