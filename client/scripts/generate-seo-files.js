@@ -3,7 +3,7 @@ import path from 'path';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { Readable } from 'stream';
 
-const SITE_URL = 'https://fitofarm.ge';
+const SITE_URL = 'https://fitofarm2024.ge';
 const API_BASE_URL = 'https://fitofarm-2024.onrender.com';
 const ROBOTS_POLICY = 'index, follow';
 
