@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import flagEN from '../assets/flags/flag-en.png';
-import flagRU from '../assets/flags/flag-ru.png';
-import flagDE from '../assets/flags/flag-de.png';
-import flagKA from '../assets/flags/flag-ka.png';
+import flagEN from '../assets/flags/flag-en.webp';
+import flagRU from '../assets/flags/flag-ru.webp';
+import flagDE from '../assets/flags/flag-de.webp';
+import flagKA from '../assets/flags/flag-ka.webp';
 import clsx from 'clsx';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo.webp';
 
 const languages = [
   { code: 'en', label: 'English', flag: flagEN },
@@ -104,6 +104,7 @@ function Navbar() {
           <img
             src={Logo}
             alt="Fito Farm logo"
+            loading="lazy"
           />
         </Link>
       </div>
@@ -128,6 +129,7 @@ function Navbar() {
               src={currentLanguage.flag}
               alt={currentLanguage.label}
               className="flag"
+              loading="lazy"
             />
             <span>{currentLanguage.label}</span>
             <span className={clsx('arrow', { open: isLangOpen })}>
@@ -149,6 +151,7 @@ function Navbar() {
                     src={lang.flag}
                     alt={lang.label}
                     className="flag"
+                    loading="lazy"
                   />
                   <span>{lang.label}</span>
                 </li>

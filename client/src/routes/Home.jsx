@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import HomePic from '../assets/home.png';
+import HomePic from '../assets/home.webp';
 import { Info } from '../components';
 import { useLoader } from '../context/LoaderContext';
 import { useEffect } from 'react';
@@ -86,6 +86,7 @@ function Home() {
           <img
             src={HomePic}
             alt={t('home.fitoAlt')}
+            loading="lazy"
           />
 
           <div className="background"></div>

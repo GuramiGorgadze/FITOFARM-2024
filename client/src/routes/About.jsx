@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { useLoader } from '../context/LoaderContext';
-import PharmacyImage from '../assets/pharmacy-image.jpg';
+import PharmacyImage from '../assets/pharmacy-image.webp';
 
 const FARM_MAP = {
   lat: 42.317539,
@@ -84,6 +84,7 @@ function About() {
           <img
             src={PharmacyImage}
             alt={t('about.mountainAlt')}
+            loading="lazy"
           />
           <div className="products__media-bg"></div>
         </div>

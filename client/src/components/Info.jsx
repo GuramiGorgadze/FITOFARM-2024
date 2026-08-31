@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo.webp';
 import { Link } from 'react-router-dom';
 
 function Info() {
@@ -88,6 +88,7 @@ function Info() {
           className="logo"
           src={Logo}
           alt={t('info.logoAlt')}
+          loading="lazy"
         />
         <p className="wordmark">
           {t('nav.title')}

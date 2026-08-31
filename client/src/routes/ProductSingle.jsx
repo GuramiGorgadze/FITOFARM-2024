@@ -127,6 +127,7 @@ function ProductSingle() {
             className="product-single__image"
             src={images[0]}
             alt={title?.[lang]}
+            loading="lazy"
           />
         </div>
 

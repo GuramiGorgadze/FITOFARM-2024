@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo.webp';
 
 function Footer() {
   const { t } = useTranslation();
@@ -137,6 +137,7 @@ function Footer() {
               className="logo"
               src={Logo}
               alt={t('info.logoAlt')}
+              loading="lazy"
             />
             <p className="wordmark">
               {t('home.title')}
