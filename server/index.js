@@ -5,6 +5,8 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import compression from "compression";
+import helmet from "helmet";
 
 import connectDB from "./db/connection.js";
 
@@ -15,6 +17,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "style-src": ["'self'", "'unsafe-inline'"],
+      },
+    },
+  }),
+);
+app.use(compression());
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
