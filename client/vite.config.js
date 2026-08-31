@@ -10,11 +10,11 @@ export default defineConfig({
       criticalUrl: './dist/',
       criticalBase: './dist/',
       criticalPages: [
-        { uri: '', template: 'index' },
+        { uri: 'index.html', template: 'index' },
       ],
       criticalConfig: {
         inline: true,
-        extract: true, 
+        extract: true,
         width: 1300,
         height: 900,
       },
