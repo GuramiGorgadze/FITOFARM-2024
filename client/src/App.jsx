@@ -1,7 +1,16 @@
 import { useState } from 'react';
 import { Navbar, Footer, Main } from './layouts';
 import { Routes, Route } from 'react-router-dom';
-import { Home, About, Contact, Products, ProductSingle, PrivacyPolicy, Terms } from './routes';
+import {
+  Home,
+  About,
+  Contact,
+  Products,
+  ProductSingle,
+  PrivacyPolicy,
+  Terms,
+  NotFound,
+} from './routes';
 import { ScrollToTopButton, LoadingScreen } from './components';
 import { Toaster } from 'react-hot-toast';
 import './styles/style.scss';
@@ -64,6 +73,10 @@ function App() {
           <Route
             path="/terms"
             element={<Terms />}
+          />
+          <Route
+            path="*"
+            element={<NotFound />}
           />
         </Routes>
       </Main>

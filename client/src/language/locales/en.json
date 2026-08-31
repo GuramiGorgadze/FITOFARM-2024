@@ -238,5 +238,11 @@
       "description": "Terms and conditions for using the FITOFARM-2024 website."
     },
     "productSingle": "FITOFARM-2024"
+  },
+  "notFound": {
+    "eyebrow": "ERROR 404",
+    "title": "PAGE NOT FOUND",
+    "text": "That page doesn't exist anymore, or it never did. Double check the address, or just head back home.",
+    "button": "Back to homepage"
   }
 }

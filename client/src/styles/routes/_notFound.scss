@@ -1,0 +1,253 @@
+@use '../abstracts' as *;
+
+$color-page-bg: #eff8f1;
+$color-grid-line: #e2ebe4;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-gold: #fbbc05;
+$color-green: #2f8a4f;
+$color-green-dark: #188038;
+$color-hairline: rgba(19, 20, 24, 0.1);
+$color-shadow: rgba(19, 20, 24, 0.16);
+$color-card-bg: #2d2f32;
+
+$radius-sm: calc(8px * var(--app-scale));
+$radius-lg: calc(25px * var(--app-scale));
+$ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+
+.notfound {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(calc(32px * var(--app-scale)), 5vw, calc(80px * var(--app-scale)));
+
+  min-height: 100vh;
+  padding: calc(60px * var(--app-scale))
+    clamp(calc(24px * var(--app-scale)), 8vw, calc(200px * var(--app-scale)));
+
+  background-color: $color-page-bg;
+  background-image:
+    linear-gradient(to right, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale))),
+    linear-gradient(to bottom, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale)));
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: calc(40px * var(--app-scale));
+    min-height: auto;
+    padding: calc(48px * var(--app-scale))
+      clamp(calc(20px * var(--app-scale)), 6vw, calc(60px * var(--app-scale)));
+    text-align: center;
+  }
+
+  &__content {
+    flex: 1 1 calc(420px * var(--app-scale));
+    max-width: calc(560px * var(--app-scale));
+    min-width: calc(280px * var(--app-scale));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: 960px) {
+      max-width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__subtext {
+    display: flex;
+    align-items: center;
+    gap: calc(10px * var(--app-scale));
+    margin-bottom: calc(20px * var(--app-scale));
+
+    .line {
+      height: calc(3px * var(--app-scale));
+      width: calc(30px * var(--app-scale));
+      background-color: $color-green;
+      border-radius: calc(10px * var(--app-scale));
+      flex-shrink: 0;
+    }
+
+    p {
+      margin: 0;
+      color: $color-green;
+      font-family: $font-regular;
+      font-size: clamp(calc(12px * var(--app-scale)), 1vw, calc(13px * var(--app-scale)));
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+  }
+
+  &__title {
+    margin: 0 0 calc(18px * var(--app-scale));
+    font-family: $font-bold;
+    font-size: calc(44px * var(--app-scale));
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-ink;
+    line-height: 1.1;
+    white-space: nowrap;
+
+    @media (max-width: 960px) {
+      white-space: normal;
+    }
+  }
+
+  &__divider {
+    height: calc(5px * var(--app-scale));
+    width: calc(90px * var(--app-scale));
+    margin-bottom: calc(24px * var(--app-scale));
+    border-radius: calc(10px * var(--app-scale));
+    background-color: $color-gold;
+  }
+
+  &__text {
+    margin: 0 0 calc(40px * var(--app-scale));
+    max-width: calc(440px * var(--app-scale));
+    font-family: $font-regular;
+    font-weight: 500;
+    color: $color-ink-dim;
+    font-size: clamp(calc(15px * var(--app-scale)), 1.3vw, calc(18px * var(--app-scale)));
+    line-height: 1.6;
+    text-align: justify;
+
+    @media (max-width: 960px) {
+      text-align: center;
+    }
+  }
+
+  &__cta-wrapper {
+    position: relative;
+    display: inline-flex;
+    text-decoration: none;
+
+    @media (max-width: 960px) {
+      align-self: center;
+    }
+  }
+
+  &__cta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: calc(10px * var(--app-scale));
+
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: clamp(calc(14px * var(--app-scale)), 1.1vw, calc(16px * var(--app-scale)));
+    padding: clamp(calc(12px * var(--app-scale)), 1.6vw, calc(16px * var(--app-scale)))
+      clamp(calc(20px * var(--app-scale)), 3vw, calc(30px * var(--app-scale)));
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    color: #ffffff;
+    background-color: $color-green;
+    border-radius: 999px;
+
+    transition:
+      transform 0.2s ease,
+      border-radius 0.2s ease;
+  }
+
+  &__cta-background {
+    position: absolute;
+    inset: calc(5px * var(--app-scale)) calc(-5px * var(--app-scale)) calc(-5px * var(--app-scale))
+      calc(5px * var(--app-scale));
+
+    background: $color-card-bg;
+    border-radius: 999px;
+    z-index: 0;
+
+    transition:
+      background-color 0.2s ease,
+      border-radius 0.2s ease;
+  }
+
+  &__cta-wrapper:hover &__cta,
+  &__cta-wrapper:focus-visible &__cta {
+    transform: translate(calc(-2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+    outline: none;
+  }
+
+  &__cta-wrapper:hover &__cta-background,
+  &__cta-wrapper:focus-visible &__cta-background {
+    background-color: $color-green-dark;
+  }
+
+  &__cta-wrapper:focus-visible &__cta {
+    outline: 2px solid $color-gold;
+    outline-offset: calc(3px * var(--app-scale));
+  }
+
+  &__visual {
+    position: relative;
+    flex: 1 1 calc(340px * var(--app-scale));
+    max-width: calc(360px * var(--app-scale));
+    min-width: calc(220px * var(--app-scale));
+
+    @media (max-width: 960px) {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: calc(280px * var(--app-scale));
+    }
+  }
+
+  &__badge {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: 4 / 5;
+    width: 100%;
+
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+    box-shadow:
+      0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
+      0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.1);
+
+    transition:
+      transform 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+  }
+
+  &__code {
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: clamp(calc(64px * var(--app-scale)), 9vw, calc(110px * var(--app-scale)));
+    color: $color-ink;
+    line-height: 1;
+    user-select: none;
+  }
+
+  &__badge-bg {
+    position: absolute;
+    inset: calc(10px * var(--app-scale)) calc(-10px * var(--app-scale)) calc(-10px * var(--app-scale))
+      calc(10px * var(--app-scale));
+    z-index: 0;
+    background: $color-card-bg;
+    border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+    transition:
+      border-radius 0.25s $ease-organic,
+      background-color 0.25s $ease-organic;
+  }
+
+  &__visual:hover &__badge {
+    border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
+    transform: translate(calc(-10px * var(--app-scale)), calc(-10px * var(--app-scale)));
+  }
+
+  &__visual:hover &__badge-bg {
+    border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
+    background-color: $color-green;
+  }
+}

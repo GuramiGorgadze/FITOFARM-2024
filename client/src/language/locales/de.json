@@ -241,5 +241,11 @@
       "description": "Nutzungsbedingungen für die Website von FITOFARM-2024."
     },
     "productSingle": "FITOFARM-2024"
+  },
+  "notFound": {
+    "eyebrow": "FEHLER 404",
+    "title": "SEITE NICHT GEFUNDEN",
+    "text": "Diese Seite existiert nicht mehr oder hat nie existiert. Überprüfe die Adresse oder kehre einfach zur Startseite zurück.",
+    "button": "Zur Startseite"
   }
 }
