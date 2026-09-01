@@ -23,3 +23,12 @@ export const getProductById = async (req, res) => {
     res.status(500).json({ err: err.message });
   }
 };
+
+export const createProduct = async (req, res) => {
+  try {
+    const product = await Products.create(req.body);
+    res.status(201).json({ data: product });
+  } catch (err) {
+    res.status(500).json({ err: err.message });
+  }
+};

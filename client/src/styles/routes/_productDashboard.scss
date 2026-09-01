@@ -1,0 +1,718 @@
+// Assumes this file sits alongside about.scss / contact.scss / product-single.scss —
+// adjust the relative path below if your folder structure differs.
+@use '../abstracts' as *;
+
+// ---- tokens shared with the rest of the site ----
+$color-page-bg: #eff8f1;
+$color-grid-line: #e2ebe4;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-gold: #fbbc05;
+$color-gold-soft: rgba(251, 188, 5, 0.14);
+$color-green: #2f8a4f;
+$color-green-dark: #188038;
+$color-green-soft: rgba(47, 138, 79, 0.05);
+$color-green-soft-strong: rgba(47, 138, 79, 0.1);
+$color-hairline: rgba(19, 20, 24, 0.1);
+$color-surface: #ffffff;
+
+// ---- tokens specific to admin state feedback, kept in the same family ----
+$color-danger: #c0392b;
+$color-danger-bg: rgba(192, 57, 43, 0.08);
+$color-success: #188038;
+$color-success-bg: rgba(24, 128, 56, 0.08);
+
+$radius-sm: calc(8px * var(--app-scale));
+$ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+
+// visually hide an element without removing it from the accessibility tree
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.admin-dashboard {
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  background-color: $color-page-bg;
+  background-image:
+    linear-gradient(
+      to right,
+      $color-grid-line calc(1px * var(--app-scale)),
+      transparent calc(1px * var(--app-scale))
+    ),
+    linear-gradient(
+      to bottom,
+      $color-grid-line calc(1px * var(--app-scale)),
+      transparent calc(1px * var(--app-scale))
+    );
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
+
+  padding: calc(56px * var(--app-scale))
+    clamp(calc(20px * var(--app-scale)), 6vw, calc(120px * var(--app-scale)))
+    calc(90px * var(--app-scale));
+
+  @media (max-width: 960px) {
+    padding: calc(40px * var(--app-scale))
+      clamp(calc(16px * var(--app-scale)), 5vw, calc(40px * var(--app-scale)))
+      calc(64px * var(--app-scale));
+  }
+
+  &__inner {
+    max-width: calc(880px * var(--app-scale));
+    margin: 0 auto;
+  }
+
+  // ---- topbar: eyebrow on the left, logout on the right ----
+  &__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(16px * var(--app-scale));
+    margin-bottom: calc(16px * var(--app-scale));
+
+    @media (max-width: 560px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: calc(10px * var(--app-scale));
+    // spacing below is now owned by &__topbar, since the eyebrow shares
+    // a row with the logout button instead of sitting on its own
+    margin-bottom: 0;
+
+    .line {
+      height: calc(3px * var(--app-scale));
+      width: calc(30px * var(--app-scale));
+      background-color: $color-green;
+      border-radius: calc(10px * var(--app-scale));
+      flex-shrink: 0;
+    }
+
+    p {
+      margin: 0;
+      color: $color-green;
+      font-family: $font-regular;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  // ---- logout: a quiet pill that only reads as "destructive" on interaction ----
+  &__logout {
+    flex-shrink: 0;
+    appearance: none;
+    cursor: pointer;
+
+    background: $color-surface;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: calc(999px * var(--app-scale));
+    padding: 0.5rem 1.1rem;
+
+    font-family: $font-regular;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.01em;
+    color: $color-ink-dim;
+    white-space: nowrap;
+
+    transition:
+      border-color 0.2s $ease-organic,
+      background-color 0.2s $ease-organic,
+      color 0.2s $ease-organic;
+
+    &:hover {
+      border-color: $color-danger;
+      color: $color-danger;
+      background: $color-danger-bg;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-gold;
+      outline-offset: calc(3px * var(--app-scale));
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__header {
+    margin-bottom: calc(32px * var(--app-scale));
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 0 calc(18px * var(--app-scale));
+    padding-bottom: calc(16px * var(--app-scale));
+    display: inline-block;
+
+    text-transform: uppercase;
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: clamp(calc(28px * var(--app-scale)), 3vw, calc(38px * var(--app-scale)));
+    line-height: 1.2;
+    color: $color-ink;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: calc(56px * var(--app-scale));
+      height: calc(4px * var(--app-scale));
+      border-radius: calc(10px * var(--app-scale));
+      background: $color-gold;
+    }
+  }
+
+  &__intro {
+    max-width: calc(640px * var(--app-scale));
+    margin: 0;
+    font-family: $font-regular;
+    font-weight: 500;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: $color-ink-dim;
+  }
+
+  &__alert {
+    display: block;
+    margin-bottom: calc(24px * var(--app-scale));
+    padding: calc(12px * var(--app-scale)) calc(16px * var(--app-scale));
+    border-radius: $radius-sm;
+    border-left: calc(3px * var(--app-scale)) solid transparent;
+
+    font-family: $font-regular;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    &--error {
+      background: $color-danger-bg;
+      border-left-color: $color-danger;
+      color: $color-danger;
+    }
+
+    &--success {
+      background: $color-success-bg;
+      border-left-color: $color-success;
+      color: $color-success;
+    }
+  }
+}
+
+// ---- language tabs: a segmented pill control ----
+.admin-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: calc(4px * var(--app-scale));
+  padding: calc(4px * var(--app-scale));
+  margin-bottom: calc(4px * var(--app-scale));
+
+  background: $color-surface;
+  border: calc(1px * var(--app-scale)) solid $color-hairline;
+  border-radius: calc(999px * var(--app-scale));
+
+  &__tab {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0.55rem 1.1rem;
+    border-radius: calc(999px * var(--app-scale));
+
+    font-family: $font-regular;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: $color-ink-dim;
+
+    transition:
+      background-color 0.2s $ease-organic,
+      color 0.2s $ease-organic;
+
+    &:hover {
+      background: $color-green-soft;
+      color: $color-green-dark;
+    }
+
+    &.is-active {
+      background: $color-green;
+      color: #ffffff;
+    }
+  }
+}
+
+// ---- the form itself ----
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--app-scale));
+  margin-top: calc(24px * var(--app-scale));
+
+  &__section {
+    position: relative;
+    background: $color-surface;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: $radius-sm;
+    padding: clamp(calc(20px * var(--app-scale)), 3vw, calc(30px * var(--app-scale)));
+    box-shadow: 0 calc(8px * var(--app-scale)) calc(24px * var(--app-scale)) rgba(19, 20, 24, 0.05);
+
+    legend {
+      display: flex;
+      align-items: center;
+      gap: calc(10px * var(--app-scale));
+      margin: 0 0 calc(20px * var(--app-scale));
+      padding: 0;
+
+      font-family: $font-regular;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: $color-green;
+
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        width: calc(26px * var(--app-scale));
+        height: calc(3px * var(--app-scale));
+        border-radius: calc(10px * var(--app-scale));
+        background: $color-green;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 1rem;
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      font-family: $font-regular;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $color-ink;
+    }
+
+    // input[type='email'] and input[type='password'] are included here so
+    // that Login.jsx — which reuses this same .admin-form__field class —
+    // picks up the same field styling as the rest of the admin forms.
+    input[type='text'],
+    input[type='url'],
+    input[type='email'],
+    input[type='password'],
+    textarea {
+      font-family: $font-regular;
+      font-size: 0.92rem;
+      color: $color-ink;
+
+      background: rgba(19, 20, 24, 0.025);
+      border: calc(1px * var(--app-scale)) solid $color-hairline;
+      border-radius: $radius-sm;
+      padding: 0.65rem 0.8rem;
+      width: 100%;
+
+      transition:
+        border-color 0.2s $ease-organic,
+        background 0.2s $ease-organic,
+        box-shadow 0.2s $ease-organic;
+
+      &::placeholder {
+        color: rgba(19, 20, 24, 0.35);
+      }
+
+      &:hover {
+        border-color: rgba(19, 20, 24, 0.2);
+      }
+
+      &:focus {
+        outline: none;
+        background: $color-surface;
+        border-color: $color-gold;
+        box-shadow: 0 0 0 calc(3px * var(--app-scale)) $color-gold-soft;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 4.5rem;
+    }
+  }
+
+  &__visually-hidden-label {
+    @include sr-only;
+  }
+
+  &__hint {
+    margin: 0.15rem 0 0;
+    font-family: $font-regular;
+    font-size: 0.78rem;
+    color: $color-ink-dim;
+  }
+
+  &__list-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    input {
+      flex: 1;
+      font-family: $font-regular;
+      font-size: 0.9rem;
+      color: $color-ink;
+
+      background: rgba(19, 20, 24, 0.025);
+      border: calc(1px * var(--app-scale)) solid $color-hairline;
+      border-radius: $radius-sm;
+      padding: 0.55rem 0.7rem;
+
+      &:focus {
+        outline: none;
+        border-color: $color-gold;
+        box-shadow: 0 0 0 calc(3px * var(--app-scale)) $color-gold-soft;
+      }
+    }
+  }
+
+  &__image-row {
+    margin-bottom: 0.65rem;
+  }
+
+  &__image-row-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  &__image-preview {
+    width: calc(40px * var(--app-scale));
+    height: calc(40px * var(--app-scale));
+    object-fit: cover;
+    border-radius: $radius-sm;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    flex-shrink: 0;
+  }
+
+  &__image-url {
+    flex: 1;
+    min-width: 160px;
+    font-family: $font-regular;
+    font-size: 0.9rem;
+    color: $color-ink;
+
+    background: rgba(19, 20, 24, 0.025);
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: $radius-sm;
+    padding: 0.55rem 0.7rem;
+
+    &:focus {
+      outline: none;
+      border-color: $color-gold;
+      box-shadow: 0 0 0 calc(3px * var(--app-scale)) $color-gold-soft;
+    }
+  }
+
+  &__file-input {
+    @include sr-only;
+  }
+
+  &__file-label {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+
+    background: $color-surface;
+    border: calc(1px * var(--app-scale)) solid $color-green;
+    color: $color-green-dark;
+    border-radius: calc(999px * var(--app-scale));
+    padding: 0.5rem 0.9rem;
+    font-family: $font-regular;
+    font-weight: 700;
+    font-size: 0.82rem;
+
+    transition:
+      background-color 0.2s $ease-organic,
+      color 0.2s $ease-organic;
+
+    &:hover {
+      background: $color-green;
+      color: #ffffff;
+    }
+
+    &.is-uploading {
+      opacity: 0.6;
+      cursor: not-allowed;
+      border-style: dashed;
+
+      &:hover {
+        background: $color-surface;
+        color: $color-green-dark;
+      }
+    }
+  }
+
+  &__field-error {
+    margin: 0.3rem 0 0;
+    font-family: $font-regular;
+    font-size: 0.8rem;
+    color: $color-danger;
+  }
+
+  &__add-btn {
+    align-self: flex-start;
+    cursor: pointer;
+    background: none;
+    border: calc(1px * var(--app-scale)) dashed $color-green;
+    color: $color-green-dark;
+    border-radius: $radius-sm;
+    padding: 0.45rem 0.8rem;
+    font-family: $font-regular;
+    font-weight: 700;
+    font-size: 0.82rem;
+
+    transition: background-color 0.2s $ease-organic;
+
+    &:hover {
+      background: $color-green-soft;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    &--primary {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__remove-btn {
+    background: none;
+    border: calc(1px * var(--app-scale)) solid transparent;
+    color: $color-danger;
+    font-family: $font-regular;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      background: $color-danger-bg;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $font-regular;
+    font-size: 0.88rem;
+    color: $color-ink;
+    margin: 0.6rem 0;
+    cursor: pointer;
+
+    input {
+      width: 17px;
+      height: 17px;
+      accent-color: $color-green;
+    }
+  }
+
+  &__sections {
+    margin-top: calc(18px * var(--app-scale));
+
+    &-title {
+      font-family: $font-regular;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin: 0 0 calc(14px * var(--app-scale));
+      color: $color-ink-dim;
+    }
+  }
+
+  &__submit-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: calc(999px * var(--app-scale));
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    border: calc(1px * var(--app-scale)) solid transparent;
+
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      color 0.2s ease,
+      opacity 0.2s ease;
+
+    &--primary {
+      background: $color-green;
+      color: #ffffff;
+
+      &:hover:not(:disabled) {
+        background: $color-green-dark;
+        transform: translate(calc(-2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+    }
+
+    &--ghost {
+      background: none;
+      border-color: $color-hairline;
+      color: $color-ink;
+
+      &:hover {
+        background: $color-page-bg;
+      }
+    }
+  }
+}
+
+// ---- a single, reorderable annotation section ----
+.admin-section-card {
+  border: calc(1px * var(--app-scale)) solid $color-hairline;
+  border-radius: $radius-sm;
+  padding: calc(16px * var(--app-scale));
+  margin-bottom: calc(14px * var(--app-scale));
+  background: $color-page-bg;
+
+  transition: border-color 0.2s $ease-organic;
+
+  &:hover {
+    border-color: rgba(47, 138, 79, 0.3);
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: calc(12px * var(--app-scale));
+  }
+
+  &__index {
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: 1rem;
+    color: $color-gold;
+    letter-spacing: 0.02em;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.25rem;
+
+    button {
+      background: $color-surface;
+      border: calc(1px * var(--app-scale)) solid $color-hairline;
+      border-radius: calc(6px * var(--app-scale));
+      padding: 0.25rem 0.55rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+
+      &:hover:not(:disabled) {
+        border-color: $color-green;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// ---- optional table inside a section, reusing the specs-table row banding ----
+.admin-table-editor {
+  border-top: calc(1px * var(--app-scale)) dashed $color-hairline;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+
+  &__row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.4rem;
+    border-radius: calc(6px * var(--app-scale));
+
+    &:nth-child(even) {
+      background: $color-green-soft;
+    }
+
+    input {
+      flex: 1;
+      font-family: $font-regular;
+      font-size: 0.88rem;
+      color: $color-ink;
+
+      background: $color-surface;
+      border: calc(1px * var(--app-scale)) solid $color-hairline;
+      border-radius: $radius-sm;
+      padding: 0.5rem 0.65rem;
+
+      &:focus {
+        outline: none;
+        border-color: $color-gold;
+        box-shadow: 0 0 0 calc(3px * var(--app-scale)) $color-gold-soft;
+      }
+    }
+  }
+}

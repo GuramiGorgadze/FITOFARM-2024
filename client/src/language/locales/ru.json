@@ -244,5 +244,94 @@
     "title": "СТРАНИЦА НЕ НАЙДЕНА",
     "text": "Эта страница больше не существует или её никогда не было. Проверьте адрес или просто вернитесь на главную страницу.",
     "button": "Вернуться на главную"
+  },
+  "login": {
+    "title": "Вход администратора",
+    "emailLabel": "Эл. почта",
+    "passwordLabel": "Пароль",
+    "submit": "Войти",
+    "submitting": "Выполняется вход…",
+    "errors": {
+      "invalidCredentials": "Неверный email или пароль."
+    }
+  },
+  "productDashboard": {
+    "eyebrow": "Каталог товаров",
+    "title": "Добавить товар",
+    "intro": "Основная информация и изображения применяются ко всем языкам. Название, характеристики, описание и полная инструкция заполняются отдельно для каждого языка с помощью вкладок ниже.",
+    "alerts": {
+      "handleRequired": "Укажите handle (URL).",
+      "titleDefaultLangRequired": "Название (на грузинском) обязательно — это язык сайта по умолчанию.",
+      "waitForUpload": "Пожалуйста, дождитесь завершения загрузки изображения.",
+      "saveError": "Произошла ошибка при сохранении товара.",
+      "saveSuccess": "Товар успешно добавлен."
+    },
+    "basicInfo": {
+      "legend": "Основная информация",
+      "handleLabel": "Handle (URL-адрес)",
+      "handlePlaceholder": "fitosed-25ml",
+      "handleHint": "Используется в URL товара. Только строчные буквы, цифры и дефисы.",
+      "imageLabel": "Изображение",
+      "imageChoose": "Выбрать изображение",
+      "imageReplace": "Заменить изображение",
+      "imageUploading": "Загрузка…",
+      "imageUrlPlaceholder": "URL изображения (заполняется автоматически после загрузки)",
+      "imageUrlAriaLabel": "URL изображения",
+      "imageErrorType": "Пожалуйста, выберите файл изображения.",
+      "imageErrorSize": "Размер изображения не должен превышать 5 МБ.",
+      "imageErrorUpload": "Не удалось загрузить файл. Попробуйте снова."
+    },
+    "titleBrand": {
+      "legend": "Название и бренд",
+      "titleLabel": "Название товара",
+      "brandPrimaryLabel": "Название бренда",
+      "brandSecondaryLabel": "Название бренда (доп. / латиницей)"
+    },
+    "characteristics": {
+      "legend": "Характеристики",
+      "pharmacologicalGroup": "Фармакологическая группа",
+      "manufacturerCountry": "Страна производства",
+      "manufacturer": "Производитель",
+      "dispensingForm": "Форма выпуска",
+      "status": "Статус",
+      "activeSubstance": "Действующее вещество (через запятую)",
+      "dosage": "Дозировка"
+    },
+    "shortDescription": {
+      "legend": "Краткое описание"
+    },
+    "fullAnnotation": {
+      "legend": "Полная инструкция",
+      "categoryLabel": "Категория",
+      "formLabel": "Форма",
+      "leadLabel": "Вступление",
+      "sectionsTitle": "Разделы",
+      "moveUp": "Переместить раздел {{n}} вверх",
+      "moveDown": "Переместить раздел {{n}} вниз",
+      "remove": "Удалить",
+      "sectionTitleLabel": "Заголовок раздела",
+      "textLabel": "Текст",
+      "textPlaceholder": "Оставьте пустым, если в разделе только список или таблица",
+      "listItemsLabel": "Пункты списка",
+      "listItemAriaLabel": "Пункт списка {{n}}",
+      "addListItem": "+ Добавить пункт списка",
+      "includeTable": "Добавить таблицу",
+      "columnsLabel": "Столбцы",
+      "columnAriaLabel": "Название столбца {{n}}",
+      "addColumn": "+ Добавить столбец",
+      "rowsLabel": "Строки",
+      "rowAriaLabel": "Строка {{n}}, {{column}}",
+      "addRow": "+ Добавить строку",
+      "footnotesLabel": "Сноски",
+      "footnoteAriaLabel": "Сноска {{n}}",
+      "addFootnote": "+ Добавить сноску",
+      "addSection": "+ Добавить раздел"
+    },
+    "actions": {
+      "resetForm": "Сбросить форму",
+      "save": "Сохранить товар",
+      "saving": "Сохранение…",
+      "logout": "Выйти"
+    }
   }
 }

@@ -247,5 +247,94 @@
     "title": "SEITE NICHT GEFUNDEN",
     "text": "Diese Seite existiert nicht mehr oder hat nie existiert. Überprüfe die Adresse oder kehre einfach zur Startseite zurück.",
     "button": "Zur Startseite"
+  },
+  "login": {
+    "title": "Admin-Anmeldung",
+    "emailLabel": "E-Mail",
+    "passwordLabel": "Passwort",
+    "submit": "Anmelden",
+    "submitting": "Anmeldung läuft…",
+    "errors": {
+      "invalidCredentials": "Ungültige E-Mail-Adresse oder ungültiges Passwort."
+    }
+  },
+  "productDashboard": {
+    "eyebrow": "Produktkatalog",
+    "title": "Produkt hinzufügen",
+    "intro": "Grundinformationen und Bilder gelten für alle Sprachen. Titel, Merkmale, Beschreibung und die vollständige Fachinformation werden über die Reiter unten für jede Sprache separat eingegeben.",
+    "alerts": {
+      "handleRequired": "Das Handle ist erforderlich.",
+      "titleDefaultLangRequired": "Der Titel (Georgisch) ist erforderlich – dies ist die Standardsprache der Website.",
+      "waitForUpload": "Bitte warten Sie, bis der Bild-Upload abgeschlossen ist.",
+      "saveError": "Beim Speichern des Produkts ist ein Fehler aufgetreten.",
+      "saveSuccess": "Produkt erfolgreich hinzugefügt."
+    },
+    "basicInfo": {
+      "legend": "Grundinformationen",
+      "handleLabel": "Handle (URL-Slug)",
+      "handlePlaceholder": "fitosed-25ml",
+      "handleHint": "Wird in der Produkt-URL verwendet. Nur Kleinbuchstaben, Zahlen und Bindestriche.",
+      "imageLabel": "Bild",
+      "imageChoose": "Bild auswählen",
+      "imageReplace": "Bild ersetzen",
+      "imageUploading": "Wird hochgeladen…",
+      "imageUrlPlaceholder": "Bild-URL (wird nach dem Hochladen automatisch ausgefüllt)",
+      "imageUrlAriaLabel": "Bild-URL",
+      "imageErrorType": "Bitte wählen Sie eine Bilddatei aus.",
+      "imageErrorSize": "Das Bild darf höchstens 5 MB groß sein.",
+      "imageErrorUpload": "Hochladen fehlgeschlagen. Bitte versuchen Sie es erneut."
+    },
+    "titleBrand": {
+      "legend": "Titel & Marke",
+      "titleLabel": "Produkttitel",
+      "brandPrimaryLabel": "Markenname",
+      "brandSecondaryLabel": "Markenname (sekundär / lateinisch)"
+    },
+    "characteristics": {
+      "legend": "Merkmale",
+      "pharmacologicalGroup": "Pharmakologische Gruppe",
+      "manufacturerCountry": "Herstellungsland",
+      "manufacturer": "Hersteller",
+      "dispensingForm": "Darreichungsform",
+      "status": "Status",
+      "activeSubstance": "Wirkstoff (durch Komma getrennt)",
+      "dosage": "Dosierung"
+    },
+    "shortDescription": {
+      "legend": "Kurzbeschreibung"
+    },
+    "fullAnnotation": {
+      "legend": "Vollständige Fachinformation",
+      "categoryLabel": "Kategorie",
+      "formLabel": "Form",
+      "leadLabel": "Einleitung",
+      "sectionsTitle": "Abschnitte",
+      "moveUp": "Abschnitt {{n}} nach oben verschieben",
+      "moveDown": "Abschnitt {{n}} nach unten verschieben",
+      "remove": "Entfernen",
+      "sectionTitleLabel": "Abschnittstitel",
+      "textLabel": "Text",
+      "textPlaceholder": "Leer lassen, wenn dieser Abschnitt nur eine Liste oder eine Tabelle enthält",
+      "listItemsLabel": "Listenelemente",
+      "listItemAriaLabel": "Listenelement {{n}}",
+      "addListItem": "+ Listenelement hinzufügen",
+      "includeTable": "Tabelle einfügen",
+      "columnsLabel": "Spalten",
+      "columnAriaLabel": "Name von Spalte {{n}}",
+      "addColumn": "+ Spalte hinzufügen",
+      "rowsLabel": "Zeilen",
+      "rowAriaLabel": "Zeile {{n}}, {{column}}",
+      "addRow": "+ Zeile hinzufügen",
+      "footnotesLabel": "Fußnoten",
+      "footnoteAriaLabel": "Fußnote {{n}}",
+      "addFootnote": "+ Fußnote hinzufügen",
+      "addSection": "+ Abschnitt hinzufügen"
+    },
+    "actions": {
+      "resetForm": "Formular zurücksetzen",
+      "save": "Produkt speichern",
+      "saving": "Wird gespeichert…",
+      "logout": "Abmelden"
+    }
   }
 }

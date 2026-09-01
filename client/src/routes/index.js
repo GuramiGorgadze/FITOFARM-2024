@@ -6,3 +6,5 @@ export { default as ProductSingle } from './ProductSingle';
 export { default as PrivacyPolicy } from './PrivacyPolicy';
 export { default as Terms } from './Terms';
 export { default as NotFound } from './NotFound';
+export { default as ProductDashboard } from './ProductDashboard';
+export { default as Login } from './Login';

@@ -7,11 +7,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 import compression from "compression";
 import helmet from "helmet";
+import cookieParser from "cookie-parser";
 
 import connectDB from "./db/connection.js";
 
 import UsersRouter from "./routes/users.js";
 import ProductsRouter from "./routes/products.js";
+import UploadRouter from "./routes/uploads.js";
+import AuthRouter from "./routes/auth.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,11 +44,14 @@ app.use(
   }),
 );
 app.use(express.json());
+app.use(cookieParser());
 app.set("trust proxy", 1);
 
 // API routes
 app.use("/api/users", UsersRouter);
 app.use("/api/products", ProductsRouter);
+app.use("/api/uploads", UploadRouter);
+app.use("/api/auth", AuthRouter);
 
 // Frontend
 const __filename = fileURLToPath(import.meta.url);

@@ -244,5 +244,94 @@
     "title": "PAGE NOT FOUND",
     "text": "That page doesn't exist anymore, or it never did. Double check the address, or just head back home.",
     "button": "Back to homepage"
+  },
+  "login": {
+    "title": "Admin Login",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submit": "Log in",
+    "submitting": "Logging in…",
+    "errors": {
+      "invalidCredentials": "Invalid email or password."
+    }
+  },
+  "productDashboard": {
+    "eyebrow": "Product catalog",
+    "title": "Add a product",
+    "intro": "Basic info and images apply across every language. Title, characteristics, description, and the full annotation are filled in separately per language, using the tabs below.",
+    "alerts": {
+      "handleRequired": "Handle is required.",
+      "titleDefaultLangRequired": "Title (Georgian) is required — it is the site default language.",
+      "waitForUpload": "Please wait for the image upload to finish.",
+      "saveError": "Something went wrong while saving the product.",
+      "saveSuccess": "Product added successfully."
+    },
+    "basicInfo": {
+      "legend": "Basic info",
+      "handleLabel": "Handle (URL slug)",
+      "handlePlaceholder": "fitosed-25ml",
+      "handleHint": "Used in the product URL. Lowercase letters, numbers, and hyphens only.",
+      "imageLabel": "Image",
+      "imageChoose": "Choose image",
+      "imageReplace": "Replace image",
+      "imageUploading": "Uploading…",
+      "imageUrlPlaceholder": "Image URL (filled in automatically after upload)",
+      "imageUrlAriaLabel": "Image URL",
+      "imageErrorType": "Please choose an image file.",
+      "imageErrorSize": "Image must be under 5MB.",
+      "imageErrorUpload": "Upload failed. Try again."
+    },
+    "titleBrand": {
+      "legend": "Title & brand",
+      "titleLabel": "Product title",
+      "brandPrimaryLabel": "Brand name",
+      "brandSecondaryLabel": "Brand name (secondary / Latin)"
+    },
+    "characteristics": {
+      "legend": "Characteristics",
+      "pharmacologicalGroup": "Pharmacological group",
+      "manufacturerCountry": "Country of manufacture",
+      "manufacturer": "Manufacturer",
+      "dispensingForm": "Dispensing form",
+      "status": "Status",
+      "activeSubstance": "Active substance (comma separated)",
+      "dosage": "Dosage"
+    },
+    "shortDescription": {
+      "legend": "Short description"
+    },
+    "fullAnnotation": {
+      "legend": "Full annotation",
+      "categoryLabel": "Category",
+      "formLabel": "Form",
+      "leadLabel": "Lead",
+      "sectionsTitle": "Sections",
+      "moveUp": "Move section {{n}} up",
+      "moveDown": "Move section {{n}} down",
+      "remove": "Remove",
+      "sectionTitleLabel": "Section title",
+      "textLabel": "Text",
+      "textPlaceholder": "Leave blank if this section only has a list or a table",
+      "listItemsLabel": "List items",
+      "listItemAriaLabel": "List item {{n}}",
+      "addListItem": "+ Add list item",
+      "includeTable": "Include a table",
+      "columnsLabel": "Columns",
+      "columnAriaLabel": "Column {{n}} name",
+      "addColumn": "+ Add column",
+      "rowsLabel": "Rows",
+      "rowAriaLabel": "Row {{n}}, {{column}}",
+      "addRow": "+ Add row",
+      "footnotesLabel": "Footnotes",
+      "footnoteAriaLabel": "Footnote {{n}}",
+      "addFootnote": "+ Add footnote",
+      "addSection": "+ Add section"
+    },
+    "actions": {
+      "resetForm": "Reset form",
+      "save": "Save product",
+      "saving": "Saving…",
+      "logout": "Log out"
+    }
   }
 }

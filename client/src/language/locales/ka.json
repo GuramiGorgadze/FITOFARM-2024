@@ -247,5 +247,94 @@
     "title": "გვერდი ვერ მოიძებნა",
     "text": "ეს გვერდი აღარ არსებობს ან საერთოდ არასოდეს არსებობდა. გადაამოწმე მისამართი ან უბრალოდ დაბრუნდი მთავარ გვერდზე.",
     "button": "მთავარ გვერდზე დაბრუნება"
+  },
+  "login": {
+    "title": "შესვლა",
+    "emailLabel": "ელ. ფოსტა",
+    "passwordLabel": "პაროლი",
+    "submit": "შესვლა",
+    "submitting": "შესვლა მიმდინარეობს…",
+    "errors": {
+      "invalidCredentials": "არასწორი ელ. ფოსტა ან პაროლი."
+    }
+  },
+  "productDashboard": {
+    "eyebrow": "პროდუქტების კატალოგი",
+    "title": "პროდუქტის დამატება",
+    "intro": "ძირითადი ინფორმაცია და სურათები ვრცელდება ყველა ენაზე. სათაური, მახასიათებლები, აღწერა და სრული ანოტაცია ივსება თითოეული ენისთვის ცალ-ცალკე, ქვემოთ მოცემული ჩანართების საშუალებით.",
+    "alerts": {
+      "handleRequired": "Handle-ის მითითება სავალდებულოა.",
+      "titleDefaultLangRequired": "სათაური (ქართულად) სავალდებულოა — ეს არის საიტის ნაგულისხმევი ენა.",
+      "waitForUpload": "გთხოვთ, დაელოდოთ სურათის ატვირთვის დასრულებას.",
+      "saveError": "პროდუქტის შენახვისას დაფიქსირდა შეცდომა.",
+      "saveSuccess": "პროდუქტი წარმატებით დაემატა."
+    },
+    "basicInfo": {
+      "legend": "ძირითადი ინფორმაცია",
+      "handleLabel": "Handle (URL მისამართი)",
+      "handlePlaceholder": "fitosed-25ml",
+      "handleHint": "გამოიყენება პროდუქტის URL-ში. მხოლოდ პატარა ასოები, ციფრები და დეფისი.",
+      "imageLabel": "სურათი",
+      "imageChoose": "სურათის არჩევა",
+      "imageReplace": "სურათის შეცვლა",
+      "imageUploading": "იტვირთება…",
+      "imageUrlPlaceholder": "სურათის URL (ივსება ავტომატურად ატვირთვის შემდეგ)",
+      "imageUrlAriaLabel": "სურათის URL",
+      "imageErrorType": "გთხოვთ, აირჩიოთ სურათის ფაილი.",
+      "imageErrorSize": "სურათის ზომა არ უნდა აღემატებოდეს 5 მბ-ს.",
+      "imageErrorUpload": "ატვირთვა ვერ მოხერხდა. სცადეთ ხელახლა."
+    },
+    "titleBrand": {
+      "legend": "სათაური და ბრენდი",
+      "titleLabel": "პროდუქტის სახელი",
+      "brandPrimaryLabel": "ბრენდის სახელი",
+      "brandSecondaryLabel": "ბრენდის სახელი (დამატებითი / ლათინური)"
+    },
+    "characteristics": {
+      "legend": "მახასიათებლები",
+      "pharmacologicalGroup": "ფარმაკოლოგიური ჯგუფი",
+      "manufacturerCountry": "წარმოშობის ქვეყანა",
+      "manufacturer": "მწარმოებელი",
+      "dispensingForm": "გამოშვების ფორმა",
+      "status": "სტატუსი",
+      "activeSubstance": "მოქმედი ნივთიერება (მძიმით გამოყოფილი)",
+      "dosage": "დოზირება"
+    },
+    "shortDescription": {
+      "legend": "მოკლე აღწერა"
+    },
+    "fullAnnotation": {
+      "legend": "სრული ანოტაცია",
+      "categoryLabel": "კატეგორია",
+      "formLabel": "ფორმა",
+      "leadLabel": "შესავალი",
+      "sectionsTitle": "სექციები",
+      "moveUp": "სექცია {{n}}-ის ზემოთ გადატანა",
+      "moveDown": "სექცია {{n}}-ის ქვემოთ გადატანა",
+      "remove": "წაშლა",
+      "sectionTitleLabel": "სექციის სათაური",
+      "textLabel": "ტექსტი",
+      "textPlaceholder": "დატოვეთ ცარიელი, თუ სექციას აქვს მხოლოდ სია ან ცხრილი",
+      "listItemsLabel": "სიის ერთეულები",
+      "listItemAriaLabel": "სიის ერთეული {{n}}",
+      "addListItem": "+ ერთეულის დამატება",
+      "includeTable": "ცხრილის დამატება",
+      "columnsLabel": "სვეტები",
+      "columnAriaLabel": "სვეტი {{n}}-ის სახელი",
+      "addColumn": "+ სვეტის დამატება",
+      "rowsLabel": "სტრიქონები",
+      "rowAriaLabel": "სტრიქონი {{n}}, {{column}}",
+      "addRow": "+ სტრიქონის დამატება",
+      "footnotesLabel": "სქოლიოები",
+      "footnoteAriaLabel": "სქოლიო {{n}}",
+      "addFootnote": "+ სქოლიოს დამატება",
+      "addSection": "+ სექციის დამატება"
+    },
+    "actions": {
+      "resetForm": "ფორმის გასუფთავება",
+      "save": "პროდუქტის შენახვა",
+      "saving": "ინახება…",
+      "logout": "გასვლა"
+    }
   }
 }

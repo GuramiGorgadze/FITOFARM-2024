@@ -10,8 +10,10 @@ import {
   PrivacyPolicy,
   Terms,
   NotFound,
+  ProductDashboard,
+  Login,
 } from './routes';
-import { ScrollToTopButton, LoadingScreen } from './components';
+import { ScrollToTopButton, LoadingScreen, ProtectedRoute } from './components';
 import { Toaster } from 'react-hot-toast';
 import './styles/style.scss';
 import useDocumentTitle from './hooks/useDocumentTitle';
@@ -65,6 +67,16 @@ function App() {
           <Route
             path="/products/:id"
             element={<ProductSingle />}
+          />
+          <Route element={<ProtectedRoute />}>
+            <Route
+              path="/admin"
+              element={<ProductDashboard />}
+            />
+          </Route>
+          <Route
+            path="/login"
+            element={<Login />}
           />
           <Route
             path="/privacy-policy"
