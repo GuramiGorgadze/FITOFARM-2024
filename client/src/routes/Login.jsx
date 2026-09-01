@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLoader } from '../context/LoaderContext';
 
 const loginSchema = yup
   .object({
@@ -21,6 +22,10 @@ function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const { useFakeLoader } = useLoader();
+
+  useEffect(() => useFakeLoader(), []);
+
   const [serverError, setServerError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 

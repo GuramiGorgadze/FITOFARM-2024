@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { createProduct, uploadImage } from '../api/api';
 import { useAuth } from '../context/AuthContext';
+import { useLoader } from '../context/LoaderContext';
 
 const LANGS = ['ka', 'en', 'ru', 'de'];
 const LANG_LABELS = { ka: 'ქართული', en: 'English', ru: 'Русский', de: 'Deutsch' };
@@ -112,6 +113,9 @@ function ProductDashboard() {
   const { t } = useTranslation();
   const { logout } = useAuth();
   const navigate = useNavigate();
+  const { useFakeLoader } = useLoader();
+
+  useEffect(() => useFakeLoader(), []);
 
   const [formData, setFormData] = useState(initialFormState);
   const [activeLang, setActiveLang] = useState('ka');
