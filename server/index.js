@@ -23,6 +23,12 @@ app.use(
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
         "style-src": ["'self'", "'unsafe-inline'"],
+        "frame-src": [
+          "'self'",
+          "https://www.google.com",
+          "https://maps.google.com",
+        ],
+        "img-src": ["'self'", "data:", "https://res.cloudinary.com"],
       },
     },
   }),
