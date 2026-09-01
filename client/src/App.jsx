@@ -65,7 +65,7 @@ function App() {
             element={<Products />}
           />
           <Route
-            path="/products/:id"
+            path="/products/:handle"
             element={<ProductSingle />}
           />
           <Route element={<ProtectedRoute />}>

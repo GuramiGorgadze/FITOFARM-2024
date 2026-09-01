@@ -24,9 +24,9 @@ export const getProducts = async () => {
   }
 };
 
-export const getProductById = async (id) => {
+export const getProductByHandle = async (handle) => {
   try {
-    const response = await axios.get(`/api/products/${id}`, {
+    const response = await axios.get(`/api/products/${handle}`, {
       withCredentials: true,
     });
     return response.data;

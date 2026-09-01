@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLoader } from '../context/LoaderContext';
 import { ProductAnnotation, Disclaimer } from '../components';
-import { getProductById } from '../api/api';
+import { getProductByHandle } from '../api/api';
 import useMetaDescription from '../hooks/useMetaDescription';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import useProductSchema from '../hooks/useProductSchema';
@@ -57,7 +57,7 @@ const SPEC_ROWS = [
 ];
 
 function ProductSingle() {
-  const { id } = useParams();
+  const { handle } = useParams();
   const { t, i18n } = useTranslation();
   const lang = resolveLang(i18n.language);
 
@@ -74,7 +74,7 @@ function ProductSingle() {
     (async () => {
       try {
         setLoading(true);
-        const { data } = await getProductById(id);
+        const { data } = await getProductByHandle(handle);
         if (!cancelled) setProduct(data);
       } catch (err) {
         if (!cancelled) setError(err.message);
@@ -86,7 +86,7 @@ function ProductSingle() {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [handle]);
 
   useDocumentTitle(
     product?.title?.[lang] ? `${product.title[lang]} — ${t('seo.productSingle')}` : undefined
