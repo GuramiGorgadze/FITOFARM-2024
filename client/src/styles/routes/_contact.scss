@@ -106,6 +106,67 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     }
   }
 
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(12px * var(--app-scale));
+    margin-top: calc(22px * var(--app-scale));
+
+    @media (max-width: 960px) {
+      align-items: center;
+    }
+  }
+
+  &__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(12px * var(--app-scale));
+
+    font-family: $font-regular;
+    font-weight: 800;
+    font-size: clamp(calc(16px * var(--app-scale)), 1.4vw, calc(20px * var(--app-scale)));
+    color: $color-ink;
+    text-decoration: none;
+
+    transition: color 0.2s $ease-organic;
+
+    &:hover {
+      color: $color-green;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-gold;
+      outline-offset: calc(3px * var(--app-scale));
+      border-radius: $radius-sm;
+    }
+  }
+
+  &__phone-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: calc(34px * var(--app-scale));
+    height: calc(34px * var(--app-scale));
+
+    font-size: 1rem;
+    color: $color-green;
+    background: rgba(47, 138, 79, 0.1);
+    border-radius: 50%;
+  }
+
+  // Space before a title that follows a text block or the phone numbers.
+  &__text + &__title,
+  &__phones + &__title {
+    margin-top: calc(48px * var(--app-scale));
+
+    @media (max-width: 960px) {
+      margin-top: calc(36px * var(--app-scale));
+    }
+  }
+
   &__card {
     position: relative;
     flex: 1 1 calc(440px * var(--app-scale));

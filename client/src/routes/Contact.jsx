@@ -18,24 +18,31 @@ function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const titleRef = useRef(null);
-  const titleText = t('contact.title');
+  const title1Ref = useRef(null);
+  const title2Ref = useRef(null);
+  const title1Text = t('contact.title1');
+  const title2Text = t('contact.title2');
+
+  const phone1 = t('info.phone1');
+  const phone2 = t('info.phone2');
 
   useLayoutEffect(() => {
-    const titleEl = titleRef.current;
-    if (!titleEl) return;
+    const titleEls = [title1Ref.current, title2Ref.current].filter(Boolean);
+    if (!titleEls.length) return;
 
     const BASELINE = 46;
 
     const fit = () => {
-      const availableWidth = titleEl.parentElement?.clientWidth;
-      if (!availableWidth) return;
+      titleEls.forEach((titleEl) => {
+        const availableWidth = titleEl.parentElement?.clientWidth;
+        if (!availableWidth) return;
 
-      titleEl.style.fontSize = `${BASELINE}px`;
-      const naturalWidth = titleEl.scrollWidth;
-      if (!naturalWidth) return;
+        titleEl.style.fontSize = `${BASELINE}px`;
+        const naturalWidth = titleEl.scrollWidth;
+        if (!naturalWidth) return;
 
-      titleEl.style.fontSize = `${(BASELINE * availableWidth) / naturalWidth}px`;
+        titleEl.style.fontSize = `${(BASELINE * availableWidth) / naturalWidth}px`;
+      });
     };
 
     fit();
@@ -46,7 +53,7 @@ function Contact() {
 
     window.addEventListener('resize', fit);
     return () => window.removeEventListener('resize', fit);
-  }, [titleText]);
+  }, [title1Text, title2Text]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -99,11 +106,43 @@ function Contact() {
 
         <h2
           className="contact__title"
-          ref={titleRef}
+          ref={title2Ref}
         >
-          {titleText}
+          {title2Text}
         </h2>
-        <p className="contact__text">{t('contact.text')}</p>
+        <p className="contact__text">{t('contact.text2')}</p>
+
+        <div className="contact__phones">
+          <a
+            className="contact__phone"
+            href={`tel:${phone1.replace(/\s+/g, '')}`}
+          >
+            <i
+              className="contact__phone-icon bi bi-telephone"
+              aria-hidden="true"
+            />
+            <span>{phone1}</span>
+          </a>
+
+          <a
+            className="contact__phone"
+            href={`tel:${phone2.replace(/\s+/g, '')}`}
+          >
+            <i
+              className="contact__phone-icon bi bi-telephone"
+              aria-hidden="true"
+            />
+            <span>{phone2}</span>
+          </a>
+        </div>
+
+        <h2
+          className="contact__title"
+          ref={title1Ref}
+        >
+          {title1Text}
+        </h2>
+        <p className="contact__text">{t('contact.text1')}</p>
       </div>
 
       <div className="contact__card">

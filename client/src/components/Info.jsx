@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 function Info() {
   const { t } = useTranslation();
-  const phone = t('info.phone');
+  const phone1 = t('info.phone1');
+  const phone2 = t('info.phone2');
   const email = t('info.email');
 
   return (
@@ -51,13 +52,24 @@ function Info() {
         <div className="contact-links">
           <a
             className="contact-link"
-            href={`tel:${phone.replace(/\s+/g, '')}`}
+            href={`tel:${phone1.replace(/\s+/g, '')}`}
           >
             <i
               className="icon bi bi-telephone"
               aria-hidden="true"
             />
-            <span>{phone}</span>
+            <span>{phone1}</span>
+          </a>
+
+                    <a
+            className="contact-link"
+            href={`tel:${phone2.replace(/\s+/g, '')}`}
+          >
+            <i
+              className="icon bi bi-telephone"
+              aria-hidden="true"
+            />
+            <span>{phone2}</span>
           </a>
 
           <a

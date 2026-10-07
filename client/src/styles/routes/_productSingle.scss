@@ -205,6 +205,13 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     }
   }
 
+  // status row: bold label and value, full-strength ink color
+  &__specs-row--status &__specs-label,
+  &__specs-row--status &__specs-value {
+    font-weight: 900;
+    color: #000;
+  }
+
   // ---- short description ----
   &__description {
     margin: 0;
@@ -219,6 +226,125 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     @media (max-width: 960px) {
       text-align: center;
     }
+  }
+
+  // ---- where to buy: pharmacy cards ----
+  &__pharmacies {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: calc(12px * var(--app-scale));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 560px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &__pharmacy-item {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__pharmacy {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: calc(10px * var(--app-scale));
+    width: 100%;
+    min-height: calc(112px * var(--app-scale));
+    padding: calc(16px * var(--app-scale)) calc(10px * var(--app-scale));
+
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: calc(#{$radius-sm} * var(--app-scale));
+    box-shadow: 0 calc(8px * var(--app-scale)) calc(24px * var(--app-scale)) rgba(19, 20, 24, 0.05);
+
+    color: $color-ink;
+    text-decoration: none;
+    touch-action: manipulation;
+
+    transition:
+      transform 0.2s $ease-organic,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      border-color: rgba(47, 138, 79, 0.45);
+      box-shadow: 0 calc(12px * var(--app-scale)) calc(28px * var(--app-scale)) $color-shadow;
+    }
+
+    &:focus-visible {
+      outline: calc(2px * var(--app-scale)) solid $color-green-dark;
+      outline-offset: calc(3px * var(--app-scale));
+    }
+
+    // motion only for people who haven't asked for less of it
+    @media (prefers-reduced-motion: no-preference) {
+      &:hover {
+        transform: translateY(calc(-3px * var(--app-scale)));
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &:hover .product-single__pharmacy-name::after {
+        transform: translateX(calc(3px * var(--app-scale)));
+      }
+    }
+  }
+
+  &__pharmacy-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(44px * var(--app-scale));
+  }
+
+  &__pharmacy-logo {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__pharmacy-name {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(6px * var(--app-scale));
+
+    font-family: $font-regular;
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: $color-ink;
+
+    &::after {
+      content: '→';
+      color: $color-green-dark;
+      transition: transform 0.2s $ease-organic;
+    }
+  }
+
+  // screen-reader-only helper text ("opens in a new tab")
+  &__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   // ---- full annotation link ----

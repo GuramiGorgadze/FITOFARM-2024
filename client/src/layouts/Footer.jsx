@@ -6,7 +6,8 @@ import Logo from '../assets/logo.webp';
 function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
-  const phone = t('info.phone');
+  const phone1 = t('info.phone1');
+  const phone2 = t('info.phone2');
   const email = t('info.email');
 
   return (
@@ -81,7 +82,29 @@ function Footer() {
             >
               {t('footer.contact')}
             </Link>
+
+                        <a href={`tel:${phone1.replace(/\s+/g, '')}`}>
+              {' '}
+              <div className="link">
+                <i
+                  className="bi bi-telephone"
+                  aria-hidden="true"
+                />
+                {t('info.phone1')}
+              </div>
+            </a>
+            <a href={`tel:${phone2.replace(/\s+/g, '')}`}>
+              {' '}
+              <div className="link">
+                <i
+                  className="bi bi-telephone"
+                  aria-hidden="true"
+                />
+                {t('info.phone2')}
+              </div>
+            </a>
           </div>
+          
         </div>
 
         <div className="column">
@@ -101,14 +124,24 @@ function Footer() {
             >
               <div className="link ">{t('info.office2Address')}</div>
             </a>
-            <a href={`tel:${phone.replace(/\s+/g, '')}`}>
+            <a href={`tel:${phone1.replace(/\s+/g, '')}`}>
               {' '}
               <div className="link">
                 <i
                   className="bi bi-telephone"
                   aria-hidden="true"
                 />
-                {t('info.phone')}
+                {t('info.phone1')}
+              </div>
+            </a>
+            <a href={`tel:${phone2.replace(/\s+/g, '')}`}>
+              {' '}
+              <div className="link">
+                <i
+                  className="bi bi-telephone"
+                  aria-hidden="true"
+                />
+                {t('info.phone2')}
               </div>
             </a>
             <a

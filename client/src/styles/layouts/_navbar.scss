@@ -7,6 +7,7 @@ $color-gold: #fbbc05;
 $color-gold-soft: rgba(251, 188, 5, 0.14);
 $color-green: #2f8a4f;
 $color-green-dark: #188038;
+$color-green-darker: #146c2e;
 $color-hairline: rgba(19, 20, 24, 0.1);
 $color-shadow: rgba(19, 20, 24, 0.16);
 $color-text-dark: #2d2f32;
@@ -17,6 +18,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
 $nav-height: calc(84px * var(--app-scale));
 $nav-height-mobile: calc(64px * var(--app-scale));
+$control-height: calc(44px * var(--app-scale));
 
 .navbar {
   position: sticky;
@@ -226,6 +228,7 @@ $nav-height-mobile: calc(64px * var(--app-scale));
   font-weight: 500;
   color: $color-ink;
   cursor: pointer;
+  touch-action: manipulation;
 
   transition:
     background 0.25s $ease-organic,
@@ -352,5 +355,118 @@ $nav-height-mobile: calc(64px * var(--app-scale));
       border-radius: calc(999px * var(--app-scale));
       background: $color-gold;
     }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Call button: a tab that sticks out from under the navbar. Its flat top edge
+// is flush with the bar (as if the top half were tucked behind it), and only
+// the lower half with the label is visible. It is a child of the sticky
+// navbar, so it follows it while scrolling.
+// ---------------------------------------------------------------------------
+
+.call-fab {
+  position: absolute;
+  top: calc(100% + 1px * var(--app-scale)); // just below the navbar's bottom hairline
+  right: clamp(1.25rem, 4vw, 3.5rem);
+  z-index: 55; // under the language dropdown (60), above page content
+
+  @media (max-width: 768px) {
+    right: clamp(1rem, 5vw, 1.75rem);
+  }
+}
+
+.call-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: $control-height;
+  padding: 0.35rem 1.25rem 0.5rem;
+  border: 0;
+  border-radius: 0 0 $radius-md $radius-md; // flat top, rounded bottom
+  background: $color-green-dark; // darker than $color-green so white text passes 4.5:1
+  color: #ffffff;
+  font-family: $font-regular;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  box-shadow:
+    // shade cast by the navbar onto the top edge, so it reads as tucked underneath
+    inset 0 calc(8px * var(--app-scale)) calc(8px * var(--app-scale)) calc(-8px * var(--app-scale)) rgba(0, 0, 0, 0.3),
+    0 calc(10px * var(--app-scale)) calc(20px * var(--app-scale)) rgba(24, 128, 56, 0.3),
+    0 calc(2px * var(--app-scale)) calc(6px * var(--app-scale)) $color-shadow;
+  transition: background 0.25s $ease-organic;
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: $color-green-darker;
+  }
+
+  &:focus-visible {
+    outline: calc(2px * var(--app-scale)) solid $color-gold;
+    outline-offset: calc(3px * var(--app-scale));
+  }
+
+  i {
+    font-size: 0.95rem;
+  }
+}
+
+.call-options {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  min-width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+
+  background: #ffffff;
+  border-radius: $radius-md;
+  border-top: calc(3px * var(--app-scale)) solid $color-gold;
+  box-shadow:
+    0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
+    0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.15);
+
+  animation: dropdown-in 0.28s $ease-organic;
+  z-index: 60;
+
+  li + li {
+    margin-top: 0.15rem;
+  }
+}
+
+.call-option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: $control-height;
+  padding: 0 0.8rem;
+  border-radius: $radius-sm;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: $color-text-dark;
+  text-decoration: none;
+  transition: background 0.2s $ease-organic;
+
+  i {
+    color: $color-green;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(47, 138, 79, 0.12);
+    outline: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-options,
+  .call-options {
+    animation: none;
   }
 }

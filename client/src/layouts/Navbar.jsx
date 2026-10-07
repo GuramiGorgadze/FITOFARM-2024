@@ -15,15 +15,21 @@ const languages = [
   { code: 'ka', label: 'ქართული', flag: flagKA },
 ];
 
+const CALL_OPTIONS_ID = 'navbar-call-options';
+
 function Navbar() {
   const { t, i18n } = useTranslation();
 
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isCallOpen, setIsCallOpen] = useState(false);
   const [currentLangCode, setCurrentLangCode] = useState(i18n.resolvedLanguage || i18n.language);
   const langDropdownRef = useRef(null);
+  const callRef = useRef(null);
 
   const bigRef = useRef(null);
   const smallRef = useRef(null);
+
+  const phones = [t('info.phone1'), t('info.phone2')];
 
   useEffect(() => {
     const handleLanguageChanged = (lng) => setCurrentLangCode(lng);
@@ -38,9 +44,24 @@ function Navbar() {
       if (langDropdownRef.current && !langDropdownRef.current.contains(event.target)) {
         setIsLangOpen(false);
       }
+      if (callRef.current && !callRef.current.contains(event.target)) {
+        setIsCallOpen(false);
+      }
     };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsLangOpen(false);
+        setIsCallOpen(false);
+      }
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   const handleLanguageChange = (code) => {
@@ -111,7 +132,8 @@ function Navbar() {
 
       <div className="center">
         <NavLink to="/about">{t('nav.about')}</NavLink>
-        <NavLink to="/products">{t('nav.products')}</NavLink>
+        <NavLink to="/products/fitosed-25ml">{t('nav.fitosed')}</NavLink>
+        <NavLink to="/products/diabetol-1">{t('nav.diabetol-1')}</NavLink>
         <NavLink to="/contact">{t('nav.contact')}</NavLink>
       </div>
 
@@ -122,7 +144,10 @@ function Navbar() {
         >
           <button
             className="dropdown-trigger"
-            onClick={() => setIsLangOpen((prev) => !prev)}
+            onClick={() => {
+              setIsLangOpen((prev) => !prev);
+              setIsCallOpen(false);
+            }}
             type="button"
           >
             <img
@@ -159,6 +184,52 @@ function Navbar() {
             </ul>
           )}
         </div>
+      </div>
+
+      <div
+        className="call-fab"
+        ref={callRef}
+      >
+        <button
+          className="call-trigger"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded={isCallOpen}
+          aria-controls={CALL_OPTIONS_ID}
+          onClick={() => {
+            setIsCallOpen((prev) => !prev);
+            setIsLangOpen(false);
+          }}
+        >
+          <i
+            className="bi bi-telephone-fill"
+            aria-hidden="true"
+          ></i>
+          <span>{t('nav.call')}</span>
+        </button>
+
+        {isCallOpen && (
+          <ul
+            className="call-options"
+            id={CALL_OPTIONS_ID}
+          >
+            {phones.map((phone) => (
+              <li key={phone}>
+                <a
+                  className="call-option"
+                  href={`tel:${phone.replace(/[^\d+]/g, '')}`}
+                  onClick={() => setIsCallOpen(false)}
+                >
+                  <i
+                    className="bi bi-telephone"
+                    aria-hidden="true"
+                  ></i>
+                  <span>{phone}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </nav>
   );

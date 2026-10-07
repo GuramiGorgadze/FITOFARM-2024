@@ -4,7 +4,10 @@
     "title": "FITOFARM",
     "about": "About Us",
     "products": "Products",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "fitosed": "Fitosed",
+    "diabetol-1": "Diabetol-1",
+    "call": "Call"
   },
   "home": {
     "slogan": "A Natural Path to Peacefulness",
@@ -37,14 +40,17 @@
     "office1Address": "Georgia, 142 Akaki Tsereteli Ave, Tbilisi 0162",
     "office2Title": "Address 2",
     "office2Address": "Georgia, Tkibuli, Dabadzveli village",
-    "phone": "+995 599 142 118",
+    "phone1": "+995 599 14 21 18",
+    "phone2": "+995 598 16 47 45",
     "email": "info@fitofarm2024.ge",
     "logoAlt": "FITOFARM-2024 logo"
   },
   "disclaimer": "Warning: These products are dietary supplements and are not intended to diagnose, treat, cure, or prevent disease. Consult a physician before use.",
   "contact": {
-    "title": "Get in Touch",
-    "text": "Our team is prepared to collaborate on any public relations matters you might have. Whether it’s a proposal, expanding a partnership, or a pertinent inquiry, we invite you to fill out our contact form. This will ensure your message reaches us directly via email, enabling us to address your needs efficiently and effectively.",
+    "title1": "Get in Touch",
+    "text1": "Our team is prepared to collaborate on any public relations matters you might have. Whether it’s a proposal, expanding a partnership, or a pertinent inquiry, we invite you to fill out our contact form. This will ensure your message reaches us directly via email, enabling us to address your needs efficiently and effectively.",
+    "title2": "Call Us",
+    "text2": "Ask us whatever questions you have. We will answer all your questions.",
     "name": "Name",
     "email": "Email address",
     "topic": "Subject",
@@ -191,7 +197,9 @@
   "productSingle": {
     "characteristics": "Characteristics",
     "shortDesc": "Short Description",
-    "fullAnnotation": "Full Annotation"
+    "fullAnnotation": "Full Annotation",
+    "buyHere": "Buy here:",
+    "opensInNewTab": "(opens in a new tab)"
   },
   "productAnnotation": "Full Annotation",
   "footer": {

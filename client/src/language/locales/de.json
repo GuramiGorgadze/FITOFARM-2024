@@ -4,7 +4,10 @@
     "title": "FITOFARM",
     "about": "Über uns",
     "products": "Produkte",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "fitosed": "Fitosed",
+    "diabetol-1": "Diabetol-1",
+    "call": "Anrufen"
   },
   "home": {
     "slogan": "Der natürliche Weg zur Ruhe",
@@ -37,14 +40,17 @@
     "office1Address": "Georgien, 142 Akaki Tsereteli Ave, Tiflis 0162",
     "office2Title": "Adresse 2",
     "office2Address": "Georgien, Tkibuli, Dorf Dabadzveli",
-    "phone": "+995 599 142 118",
+    "phone1": "+995 599 14 21 18",
+    "phone2": "+995 598 16 47 45",
     "email": "info@fitofarm2024.ge",
     "logoAlt": "FITOFARM-2024-Logo"
   },
   "disclaimer": "Warnhinweis: Diese Produkte sind Nahrungsergänzungsmittel und dienen nicht der Diagnose, Behandlung, Heilung oder Vorbeugung von Krankheiten. Konsultieren Sie vor der Anwendung einen Arzt.",
   "contact": {
-    "title": "Kontaktieren Sie uns",
-    "text": "Unser Team steht bereit, mit Ihnen in allen Angelegenheiten der Öffentlichkeitsarbeit zusammenzuarbeiten. Ob es sich um ein Angebot, den Ausbau einer Partnerschaft oder eine relevante Anfrage handelt, laden wir Sie ein, unser Kontaktformular auszufüllen. So erreicht uns Ihre Nachricht direkt per E-Mail, damit wir Ihr Anliegen effizient und zielgerichtet bearbeiten können.",
+    "title1": "Kontaktieren Sie uns",
+    "text1": "Unser Team steht bereit, mit Ihnen in allen Angelegenheiten der Öffentlichkeitsarbeit zusammenzuarbeiten. Ob es sich um ein Angebot, den Ausbau einer Partnerschaft oder eine relevante Anfrage handelt, laden wir Sie ein, unser Kontaktformular auszufüllen. So erreicht uns Ihre Nachricht direkt per E-Mail, damit wir Ihr Anliegen effizient und zielgerichtet bearbeiten können.",
+    "title2": "Rufen Sie uns an",
+    "text2": "Stellen Sie uns alle Fragen, die Sie haben. Wir werden all Ihre Fragen beantworten.",
     "name": "Name",
     "email": "E-Mail-Adresse",
     "topic": "Betreff",
@@ -194,7 +200,9 @@
   "productSingle": {
     "characteristics": "Merkmale",
     "shortDesc": "Kurzbeschreibung",
-    "fullAnnotation": "Vollständige Annotation"
+    "fullAnnotation": "Vollständige Annotation",
+    "buyHere": "Hier kaufen:",
+    "opensInNewTab": "(öffnet in neuem Tab)"
   },
   "productAnnotation": "Vollständige Annotation",
   "footer": {

@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export const contact = async (data) => {
   try {
-    const response = await axios.post('/api/users/contact', data, {
+    const response = await axios.post(`${BASE_URL}/api/users/contact`, data, {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -15,7 +17,7 @@ export const contact = async (data) => {
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get(`/api/products`, {
+    const response = await axios.get(`${BASE_URL}/api/products`, {
       withCredentials: true,
     });
     return response.data;
@@ -26,7 +28,7 @@ export const getProducts = async () => {
 
 export const getProductByHandle = async (handle) => {
   try {
-    const response = await axios.get(`/api/products/${handle}`, {
+    const response = await axios.get(`${BASE_URL}/api/products/${handle}`, {
       withCredentials: true,
     });
     return response.data;
@@ -37,7 +39,7 @@ export const getProductByHandle = async (handle) => {
 
 export const createProduct = async (data) => {
   try {
-    const response = await axios.post(`/api/products`, data, {
+    const response = await axios.post(`${BASE_URL}/api/products`, data, {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -54,7 +56,7 @@ export const uploadImage = async (file) => {
     const formData = new FormData();
     formData.append('image', file);
 
-    const response = await axios.post(`/api/uploads`, formData, {
+    const response = await axios.post(`${BASE_URL}/api/uploads`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
       withCredentials: true,
     });
@@ -66,7 +68,7 @@ export const uploadImage = async (file) => {
 
 export const login = async (data) => {
   try {
-    const response = await axios.post(`/api/auth/login`, data, {
+    const response = await axios.post(`${BASE_URL}/api/auth/login`, data, {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     });
@@ -78,11 +80,7 @@ export const login = async (data) => {
 
 export const logout = async () => {
   try {
-    const response = await axios.post(
-      `/api/auth/logout`,
-      {},
-      { withCredentials: true }
-    );
+    const response = await axios.post(`${BASE_URL}/api/auth/logout`, {}, { withCredentials: true });
     return response.data;
   } catch (err) {
     throw new Error(err.response?.data?.err || 'Error logging out');

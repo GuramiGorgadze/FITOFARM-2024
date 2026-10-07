@@ -8,6 +8,12 @@ import useMetaDescription from '../hooks/useMetaDescription';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import useProductSchema from '../hooks/useProductSchema';
 
+// Pharmacy logos: drop the files in this folder (adjust the path / extension if yours differ)
+import aversiLogo from '../assets/pharmacies/aversi.png';
+import pspLogo from '../assets/pharmacies/psp.png';
+import gpcLogo from '../assets/pharmacies/gpc.png';
+import pharmadepotLogo from '../assets/pharmacies/pharmadepot.png';
+
 const SUPPORTED_LANGS = ['ka', 'en', 'ru', 'de'];
 
 function resolveLang(lng) {
@@ -15,6 +21,33 @@ function resolveLang(lng) {
   const short = lng.split('-')[0];
   return SUPPORTED_LANGS.includes(short) ? short : 'ka';
 }
+
+const PHARMACIES = [
+  {
+    id: 'aversi',
+    name: 'Aversi',
+    logo: aversiLogo,
+    url: 'https://www.aversi.ge/ka/aversi/act/drugDet/?MatID=144463',
+  },
+  {
+    id: 'psp',
+    name: 'PSP',
+    logo: pspLogo,
+    url: 'https://psp.ge/მედიკამენტები/ნევროლოგია/დამამშვიდებელი-წამალი/ფიტოსედი-phytosed-25მლ.html',
+  },
+  {
+    id: 'gpc',
+    name: 'GPC',
+    logo: gpcLogo,
+    url: 'https://gpc.ge/ka/details/food-supplements/neurology-and-psych/fitosedi-wveTebi-oraluri-25ml-1?product=64275',
+  },
+  {
+    id: 'pharmadepot',
+    name: 'PharmaDepot',
+    logo: pharmadepotLogo,
+    url: 'https://pharmadepot.ge/ka/details/food-supplements/neurology-and-psych/fitosedi-wveTebi-oraluri-25ml-1?product=209675',
+  },
+];
 
 const SPEC_ROWS = [
   {
@@ -143,9 +176,13 @@ function ProductSingle() {
                 if (!raw) return null;
                 const value = Array.isArray(raw[lang]) ? raw[lang].join(', ') : raw[lang];
                 if (!value) return null;
+                const rowClass =
+                  key === 'status'
+                    ? 'product-single__specs-row product-single__specs-row--status'
+                    : 'product-single__specs-row';
                 return (
                   <tr
-                    className="product-single__specs-row"
+                    className={rowClass}
                     key={key}
                   >
                     <th className="product-single__specs-label">{label[lang]}</th>
@@ -158,6 +195,40 @@ function ProductSingle() {
 
           <h4 className="product-single__section-title">{t('productSingle.shortDesc')}</h4>
           <h5 className="product-single__description">{shortDescription?.[lang]}</h5>
+
+          <h4 className="product-single__section-title">
+            {t('productSingle.buyHere', { defaultValue: 'შეიძინეთ აქ:' })}
+          </h4>
+          <ul className="product-single__pharmacies">
+            {PHARMACIES.map(({ id, name, logo, url }) => (
+              <li
+                className="product-single__pharmacy-item"
+                key={id}
+              >
+                <a
+                  className="product-single__pharmacy"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="product-single__pharmacy-logo-wrap">
+                    <img
+                      className="product-single__pharmacy-logo"
+                      src={logo}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </span>
+                  <span className="product-single__pharmacy-name">{name}</span>
+                  <span className="product-single__sr-only">
+                    {t('productSingle.opensInNewTab', {
+                      defaultValue: '(იხსნება ახალ ჩანართში)',
+                    })}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
 
           {annotationData && (
             <a
