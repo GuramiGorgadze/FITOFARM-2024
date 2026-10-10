@@ -2,9 +2,14 @@
 
 .disclaimer-wrapper {
   display: flex;
-  background-color: #fff;
-  border: #e2ebe4 solid 1px;
   justify-content: center;
+
+  // same grid background as the rest of the site
+  background-color: #eff8f1;
+  background-image:
+    linear-gradient(to right, #e2ebe4 calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale))),
+    linear-gradient(to bottom, #e2ebe4 calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale)));
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
 
   .disclaimer {
     display: flex;
@@ -33,3 +38,6 @@
     }
   }
 }
+
+
+

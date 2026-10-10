@@ -17,7 +17,7 @@ function removeJsonLd() {
   document.getElementById(SCHEMA_ID)?.remove();
 }
 
-function useProductSchema(product, lang) {
+function useProductSchema(product, lang, rating) {
   useEffect(() => {
     const name = product?.title?.[lang];
     if (!name) return;
@@ -31,10 +31,23 @@ function useProductSchema(product, lang) {
       brand: product.brandName?.[lang]?.primary
         ? { '@type': 'Brand', name: product.brandName[lang].primary }
         : undefined,
+      aggregateRating:
+        rating?.count > 0
+          ? {
+              '@type': 'AggregateRating',
+              ratingValue: rating.average,
+              reviewCount: rating.count,
+              bestRating: 5,
+              worstRating: 1,
+            }
+          : undefined,
     });
 
     return () => removeJsonLd();
-  }, [product, lang]);
+  }, [product, lang, rating?.average, rating?.count]);
 }
 
 export default useProductSchema;
+
+
+

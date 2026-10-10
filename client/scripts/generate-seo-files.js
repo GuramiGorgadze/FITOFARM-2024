@@ -12,6 +12,7 @@ const STATIC_ROUTES = [
   { url: '/about', changefreq: 'monthly' },
   { url: '/products', changefreq: 'weekly' },
   { url: '/contact', changefreq: 'yearly' },
+  { url: '/ratings', changefreq: 'weekly' },
   { url: '/privacy-policy', changefreq: 'yearly' },
   { url: '/terms', changefreq: 'yearly' },
 ];
@@ -55,3 +56,6 @@ function generateRobotsTxt() {
 const products = await fetchProducts();
 await generateSitemap(products);
 generateRobotsTxt();
+
+
+

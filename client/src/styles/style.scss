@@ -8,6 +8,7 @@
 @use 'components/loadingScreen';
 @use 'components/productCard';
 @use 'components/productAnnotation';
+@use 'components/ratings';
 
 @use 'layouts/navbar';
 @use 'layouts/footer';
@@ -21,3 +22,7 @@
 @use 'routes/notFound';
 @use 'routes/productDashboard';
 @use 'routes/login';
+@use 'routes/ratingsPage';
+
+
+

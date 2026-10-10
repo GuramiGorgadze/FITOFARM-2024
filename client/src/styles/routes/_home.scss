@@ -1,5 +1,6 @@
 @use '../abstracts' as *;
 
+$ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 $color-bg: #ffffff;
 $color-ink: #16241a;
 $color-ink-dim: rgba(22, 36, 26, 0.64);
@@ -228,8 +229,8 @@ $color-shadow: rgba(22, 36, 26, 0.16);
       border-radius: calc(25px * var(--app-scale)) calc(7px * var(--app-scale))
         calc(25px * var(--app-scale)) calc(7px * var(--app-scale));
       transition:
-        border-radius 0.1s ease,
-        transform 0.1s ease;
+        border-radius 0.25s $ease-organic,
+        transform 0.25s $ease-organic;
     }
 
     .background {
@@ -241,8 +242,8 @@ $color-shadow: rgba(22, 36, 26, 0.16);
       border-radius: calc(25px * var(--app-scale)) calc(7px * var(--app-scale))
         calc(25px * var(--app-scale)) calc(7px * var(--app-scale));
       transition:
-        border-radius 0.1s ease,
-        background-color 0.1s ease;
+        border-radius 0.25s $ease-organic,
+        background-color 0.25s $ease-organic;
     }
 
     &:hover {
@@ -253,7 +254,7 @@ $color-shadow: rgba(22, 36, 26, 0.16);
       }
 
       img {
-        transform: translate(calc(-10px * var(--app-scale)), calc(-10px * var(--app-scale)));
+        transform: translate(calc(-3px * var(--app-scale)), calc(-3px * var(--app-scale)));
       }
 
       .background {
@@ -262,3 +263,6 @@ $color-shadow: rgba(22, 36, 26, 0.16);
     }
   }
 }
+
+
+

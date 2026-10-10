@@ -9,6 +9,7 @@ const ROUTE_KEYS = {
   '/about': 'seo.about.description',
   '/products': 'seo.products.description',
   '/contact': 'seo.contact.description',
+  '/ratings': 'seo.ratings.description',
   '/privacy-policy': 'seo.privacy.description',
   '/terms': 'seo.terms.description',
 };
@@ -39,3 +40,6 @@ function useMetaDescription(overrideText) {
 }
 
 export default useMetaDescription;
+
+
+

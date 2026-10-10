@@ -25,6 +25,7 @@ function Navbar() {
   const [currentLangCode, setCurrentLangCode] = useState(i18n.resolvedLanguage || i18n.language);
   const langDropdownRef = useRef(null);
   const callRef = useRef(null);
+  const navRef = useRef(null);
 
   const bigRef = useRef(null);
   const smallRef = useRef(null);
@@ -103,8 +104,29 @@ function Navbar() {
     return () => ro.disconnect();
   }, []);
 
+  // Publish the navbar's real height (it grows when it stacks on mobile) so
+  // in-page anchors (#full-anotation, #ratings) can scroll to just below it.
+  useLayoutEffect(() => {
+    const navEl = navRef.current;
+    if (!navEl) return;
+
+    const publish = () => {
+      document.documentElement.style.setProperty('--nav-offset', `${navEl.offsetHeight}px`);
+    };
+
+    publish();
+
+    const ro = new ResizeObserver(publish);
+    ro.observe(navEl);
+
+    return () => ro.disconnect();
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav
+      className="navbar"
+      ref={navRef}
+    >
       <div className="left">
         <Link to="/">
           <div className="name">
@@ -150,15 +172,30 @@ function Navbar() {
             }}
             type="button"
           >
-            <img
-              src={currentLanguage.flag}
-              alt={currentLanguage.label}
-              className="flag"
-              loading="lazy"
-            />
-            <span>{currentLanguage.label}</span>
-            <span className={clsx('arrow', { open: isLangOpen })}>
-              <i className="bi bi-chevron-down"></i>
+            <span className="dropdown-trigger__content">
+              <img
+                src={currentLanguage.flag}
+                alt={currentLanguage.label}
+                className="flag"
+                loading="lazy"
+              />
+              <span className="dropdown-trigger__label">{currentLanguage.label}</span>
+              <span className={clsx('arrow', { open: isLangOpen })}>
+                <i className="bi bi-chevron-down"></i>
+              </span>
+            </span>
+
+            {/* invisible copy of the widest option: keeps the button exactly as wide as its dropdown in every language */}
+            <span
+              className="dropdown-trigger__sizer"
+              aria-hidden="true"
+            >
+              <span className="dropdown-trigger__flag-space"></span>
+              <span className="dropdown-trigger__names">
+                {languages.map((lang) => (
+                  <span key={lang.code}>{lang.label}</span>
+                ))}
+              </span>
             </span>
           </button>
 
@@ -201,11 +238,26 @@ function Navbar() {
             setIsLangOpen(false);
           }}
         >
-          <i
-            className="bi bi-telephone-fill"
+          <span className="call-trigger__content">
+            <i
+              className="bi bi-telephone-fill"
+              aria-hidden="true"
+            ></i>
+            <span>{t('nav.call')}</span>
+          </span>
+
+          {/* invisible copy of the dropdown rows: makes the button exactly as wide as its dropdown */}
+          <span
+            className="call-trigger__sizer"
             aria-hidden="true"
-          ></i>
-          <span>{t('nav.call')}</span>
+          >
+            <i className="bi bi-telephone"></i>
+            <span className="call-trigger__numbers">
+              {phones.map((phone) => (
+                <span key={phone}>{phone}</span>
+              ))}
+            </span>
+          </span>
         </button>
 
         {isCallOpen && (

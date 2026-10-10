@@ -7,6 +7,7 @@ const TITLE_KEYS = {
   '/about': 'seo.about.title',
   '/products': 'seo.products.title',
   '/contact': 'seo.contact.title',
+  '/ratings': 'seo.ratings.title',
   '/privacy-policy': 'seo.privacy.title',
   '/terms': 'seo.terms.title',
 };
@@ -22,3 +23,6 @@ function useDocumentTitle(overrideTitle) {
 }
 
 export default useDocumentTitle;
+
+
+

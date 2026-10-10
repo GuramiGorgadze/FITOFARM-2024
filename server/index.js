@@ -15,6 +15,7 @@ import UsersRouter from "./routes/users.js";
 import ProductsRouter from "./routes/products.js";
 import UploadRouter from "./routes/uploads.js";
 import AuthRouter from "./routes/auth.js";
+import RatingsRouter from './routes/ratings.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -52,6 +53,7 @@ app.use("/api/users", UsersRouter);
 app.use("/api/products", ProductsRouter);
 app.use("/api/uploads", UploadRouter);
 app.use("/api/auth", AuthRouter);
+app.use('/api/ratings', RatingsRouter);
 
 // Frontend
 const __filename = fileURLToPath(import.meta.url);

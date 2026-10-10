@@ -2,8 +2,9 @@ import React, { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HomePic from '../assets/home.webp';
-import { Info } from '../components';
+import { Info, RatingBadge, RatingsSection } from '../components';
 import { useLoader } from '../context/LoaderContext';
+import { useRatings } from '../context/RatingsContext';
 import { useEffect } from 'react';
 
 function Home() {
@@ -11,6 +12,8 @@ function Home() {
 
   const { useFakeLoader } = useLoader();
   useEffect(() => useFakeLoader(), []);
+
+  const { siteSummary } = useRatings();
 
   const titleRef = useRef(null);
   const titleText = t('home.title');
@@ -55,6 +58,13 @@ function Home() {
           </div>
 
           <p className="text1 text"> </p>
+
+          <RatingBadge
+            summary={siteSummary}
+            to="/ratings"
+            variant="hero"
+          />
+
           <div
             className="title"
             ref={titleRef}
@@ -93,9 +103,14 @@ function Home() {
         </div>
       </div>
 
+      <RatingsSection />
+
       <Info />
     </>
   );
 }
 
 export default Home;
+
+
+

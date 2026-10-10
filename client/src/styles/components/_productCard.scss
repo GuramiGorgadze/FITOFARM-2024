@@ -32,7 +32,6 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     flex-direction: column;
     box-sizing: border-box;
     background: #ffffff;
-    border: calc(1px * var(--app-scale)) solid #000;
     border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
     transition:
       transform 0.25s $ease-organic,

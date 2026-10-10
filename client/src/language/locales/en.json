@@ -66,6 +66,43 @@
       "error": "Something went wrong. Please try again."
     }
   },
+  "ratings": {
+    "eyebrow": "Reviews",
+    "title": "Customer Ratings",
+    "intro": "Tell us what you think about FITOFARM-2024. Your rating helps us improve and helps others make the right choice.",
+    "sectionTitle": "What Our Customers Say",
+    "productSectionTitle": "Customer Ratings",
+    "leaveRating": "Rate Us",
+    "seeAll": "See all ratings",
+    "noRatingsShort": "No ratings yet",
+    "count": "Reviews: {{count}}",
+    "ariaLabel": "Rated {{average}} out of 5, reviews: {{count}}",
+    "form": {
+      "title": "Leave a Rating",
+      "productTitle": "Rate This Product",
+      "yourRating": "Your rating",
+      "starLabel": "{{value}} out of 5",
+      "name": "Name",
+      "comment": "Comment",
+      "commentPlaceholder": "Tell us about your experience",
+      "submit": "Submit Rating",
+      "sending": "Sending..."
+    },
+    "list": {
+      "empty": "No ratings yet. Be the first!",
+      "loading": "Loading...",
+      "loadMore": "Show more",
+      "error": "Could not load ratings."
+    },
+    "toast": {
+      "starsError": "Please select a star rating.",
+      "nameError": "Please enter your name.",
+      "commentError": "Please write a comment.",
+      "loading": "Sending your rating...",
+      "success": "Thank you for your rating!",
+      "error": "Something went wrong. Please try again."
+    }
+  },
   "terms": {
     "eyebrow": "Legal",
     "title": "Terms & Conditions",
@@ -245,6 +282,10 @@
       "title": "Terms & Conditions — FITOFARM-2024",
       "description": "Terms and conditions for using the FITOFARM-2024 website."
     },
+    "ratings": {
+      "title": "Ratings — FITOFARM-2024",
+      "description": "Read customer ratings of FITOFARM-2024 and leave your own."
+    },
     "productSingle": "FITOFARM-2024"
   },
   "notFound": {
@@ -343,3 +384,6 @@
     }
   }
 }
+
+
+

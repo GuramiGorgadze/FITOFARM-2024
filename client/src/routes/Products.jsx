@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { ProductCard, Disclaimer } from '../components';
 import { useTranslation } from 'react-i18next';
 import { useLoader } from '../context/LoaderContext';
-import { getProducts } from '../api/api';
+import { getProducts, getProductRatingSummaries } from '../api/api';
 
 const Products = () => {
   const { t } = useTranslation();
   const { useDataLoader } = useLoader();
 
   const [products, setProducts] = useState([]);
+  const [ratings, setRatings] = useState({});
 
   useEffect(() => {
     const fetchProductsData = async () => {
@@ -22,6 +23,10 @@ const Products = () => {
     };
 
     fetchProductsData();
+
+    getProductRatingSummaries()
+      .then(({ data }) => setRatings(data || {}))
+      .catch(() => {});
   }, []);
 
   return (
@@ -40,6 +45,7 @@ const Products = () => {
             <ProductCard
               key={product._id}
               product={product}
+              rating={ratings[product.handle]}
             />
           ))}
         </div>
@@ -50,3 +56,6 @@ const Products = () => {
 };
 
 export default Products;
+
+
+

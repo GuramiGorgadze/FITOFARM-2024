@@ -1,0 +1,94 @@
+@use '../abstracts' as *;
+
+$color-page-bg: #eff8f1;
+$color-grid-line: #e2ebe4;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-gold: #fbbc05;
+$color-green: #2f8a4f;
+
+// ---- /ratings page ----
+// The title itself reuses the shared .hero block (same as Products).
+.ratings-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-bottom: calc(100px * var(--app-scale));
+
+  background-color: $color-page-bg;
+  background-image:
+    linear-gradient(to right, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale))),
+    linear-gradient(to bottom, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale)));
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
+
+  @media (max-width: 960px) {
+    padding-bottom: calc(64px * var(--app-scale));
+  }
+
+  &__text {
+    max-width: calc(720px * var(--app-scale));
+    margin: calc(8px * var(--app-scale)) auto 0;
+    padding: 0 clamp(calc(20px * var(--app-scale)), 6vw, calc(60px * var(--app-scale)));
+    text-align: center;
+    font-family: $font-regular;
+    font-size: clamp(calc(15px * var(--app-scale)), 1.3vw, calc(18px * var(--app-scale)));
+    line-height: 1.6;
+    color: $color-ink-dim;
+  }
+
+  &__content {
+    padding: calc(56px * var(--app-scale)) clamp(calc(24px * var(--app-scale)), 8vw, calc(140px * var(--app-scale))) 0;
+
+    @media (max-width: 960px) {
+      padding: calc(40px * var(--app-scale)) clamp(calc(20px * var(--app-scale)), 6vw, calc(60px * var(--app-scale))) 0;
+    }
+  }
+}
+
+// ---- ratings block on each product page ----
+.product-ratings {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: calc(40px * var(--app-scale));
+  padding: calc(60px * var(--app-scale)) clamp(calc(24px * var(--app-scale)), 8vw, calc(200px * var(--app-scale)))
+    calc(80px * var(--app-scale));
+  scroll-margin-top: var(--nav-offset, calc(84px * var(--app-scale))); // clear the sticky navbar
+
+  background-color: $color-page-bg;
+  background-image:
+    linear-gradient(to right, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale))),
+    linear-gradient(to bottom, $color-grid-line calc(1px * var(--app-scale)), transparent calc(1px * var(--app-scale)));
+  background-size: calc(47px * var(--app-scale)) calc(47px * var(--app-scale));
+
+  @media (max-width: 960px) {
+    padding: calc(48px * var(--app-scale)) clamp(calc(20px * var(--app-scale)), 6vw, calc(60px * var(--app-scale)))
+      calc(56px * var(--app-scale));
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: calc(12px * var(--app-scale));
+
+    @media (max-width: 960px) {
+      justify-content: center;
+    }
+
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: calc(30px * var(--app-scale));
+      height: calc(3px * var(--app-scale));
+      border-radius: calc(10px * var(--app-scale));
+      background-color: $color-green;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: $font-bold;
+      font-weight: 900;
+      font-size: clamp(calc(22px * var(--app-scale)), 2.6vw, calc(32px * var(--app-scale)));
+      color: $color-ink;
+    }
+  }
+}

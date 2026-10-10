@@ -2,6 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.webp';
+import { RatingBadge } from '../components';
+import { useRatings } from '../context/RatingsContext';
 
 function Footer() {
   const { t } = useTranslation();
@@ -9,6 +11,7 @@ function Footer() {
   const phone1 = t('info.phone1');
   const phone2 = t('info.phone2');
   const email = t('info.email');
+  const { siteSummary } = useRatings();
 
   return (
     <footer className="footer">
@@ -177,6 +180,11 @@ function Footer() {
               <span className="wordmark__year">-2024</span>
             </p>
           </Link>
+          <RatingBadge
+            summary={siteSummary}
+            to="/ratings"
+            variant="footer"
+          />
           <p className="slogan">{t('footer.slogan')}</p>
         </div>
       </div>
@@ -207,3 +215,6 @@ function Footer() {
 }
 
 export default Footer;
+
+
+

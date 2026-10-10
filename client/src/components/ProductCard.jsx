@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import RatingBadge from './RatingBadge';
 
 const SUPPORTED_LANGS = ['ka', 'en', 'ru', 'de'];
 
@@ -10,7 +11,7 @@ function resolveLang(lng) {
   return SUPPORTED_LANGS.includes(short) ? short : 'ka';
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product, rating }) {
   const { i18n, t } = useTranslation();
   const lang = resolveLang(i18n.language);
 
@@ -45,6 +46,10 @@ function ProductCard({ product }) {
         <div className="product-card__info">
           <h3 className="product-card__title">{title}</h3>
           {size && <span className="product-card__size">{size}</span>}
+          <RatingBadge
+            summary={rating}
+            variant="card"
+          />
         </div>
 
         <span className="product-card__button-wrapper">
@@ -60,3 +65,6 @@ function ProductCard({ product }) {
 }
 
 export default ProductCard;
+
+
+

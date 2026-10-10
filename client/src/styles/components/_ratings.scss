@@ -1,0 +1,672 @@
+@use '../abstracts' as *;
+
+$color-page-bg: #eff8f1;
+$color-ink: #131418;
+$color-ink-dim: rgba(19, 20, 24, 0.64);
+$color-ink-faint: rgba(19, 20, 24, 0.45);
+$color-gold: #fbbc05;
+$color-gold-soft: rgba(251, 188, 5, 0.14);
+$color-green: #2f8a4f;
+$color-green-dark: #188038;
+$color-green-tint: #d9eddf;
+$color-hairline: rgba(19, 20, 24, 0.1);
+$color-shadow: rgba(19, 20, 24, 0.16);
+$color-card-bg: #2d2f32;
+
+$radius-sm: calc(8px * var(--app-scale));
+$radius-lg: calc(25px * var(--app-scale));
+$ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
+
+// ------------------------------------------------------------------
+// Stars (read-only)
+// ------------------------------------------------------------------
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(2px * var(--app-scale));
+  color: $color-gold;
+  line-height: 1;
+
+  &--sm {
+    font-size: 0.85rem;
+  }
+  &--md {
+    font-size: 1.05rem;
+  }
+  &--lg {
+    font-size: 1.5rem;
+    gap: calc(4px * var(--app-scale));
+  }
+}
+
+// ------------------------------------------------------------------
+// Stars (input)
+// ------------------------------------------------------------------
+.star-input {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  &__legend {
+    padding: 0;
+    margin-bottom: calc(6px * var(--app-scale));
+    font-family: $font-regular;
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: $color-ink;
+  }
+
+  &__stars {
+    display: flex;
+    gap: calc(6px * var(--app-scale));
+  }
+
+  &__star {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+  }
+
+  // visually hidden but still focusable / keyboard operable
+  &__radio {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    line-height: 1;
+    color: $color-gold;
+    border-radius: calc(4px * var(--app-scale));
+    transition: transform 0.15s $ease-organic;
+  }
+
+  &__star:hover &__icon {
+    transform: scale(1.12);
+  }
+
+  &__radio:focus-visible + &__icon {
+    outline: calc(2px * var(--app-scale)) solid $color-green;
+    outline-offset: calc(3px * var(--app-scale));
+  }
+
+  &:disabled &__star,
+  &:disabled &__radio {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// ------------------------------------------------------------------
+// Rating badge: stars + average + count
+// ------------------------------------------------------------------
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  gap: calc(10px * var(--app-scale));
+  box-sizing: border-box;
+  max-width: 100%;
+  text-decoration: none;
+  font-family: $font-regular;
+  color: $color-ink;
+
+  @media (max-width: 960px) {
+    align-self: center;
+    justify-content: center;
+  }
+
+  &__text {
+    display: inline-flex;
+    align-items: baseline;
+    gap: calc(8px * var(--app-scale));
+    font-size: 0.88rem;
+
+    &--empty {
+      font-weight: 600;
+      color: $color-ink-dim;
+    }
+  }
+
+  &__average {
+    font-family: $font-bold;
+    font-size: 1rem;
+    font-weight: 900;
+    color: $color-ink;
+  }
+
+  &__count {
+    font-weight: 600;
+    color: $color-ink-dim;
+  }
+
+  // pill look: homepage hero + product page
+  &--hero,
+  &--product {
+    padding: calc(8px * var(--app-scale)) calc(16px * var(--app-scale));
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: calc(999px * var(--app-scale));
+    box-shadow: 0 calc(6px * var(--app-scale)) calc(18px * var(--app-scale)) rgba(19, 20, 24, 0.06);
+  }
+
+  &--hero {
+    margin-bottom: calc(18px * var(--app-scale));
+  }
+
+  &--product {
+    margin-bottom: calc(14px * var(--app-scale));
+  }
+
+  &--footer {
+    .rating-badge__text,
+    .rating-badge__count {
+      font-size: 0.85rem;
+      color: $color-ink-dim;
+    }
+  }
+
+  &--card {
+    margin-top: calc(2px * var(--app-scale));
+    gap: calc(8px * var(--app-scale));
+
+    .rating-badge__text {
+      font-size: 0.8rem;
+    }
+    .rating-badge__average {
+      font-size: 0.88rem;
+    }
+  }
+
+  // clickable variants
+  &:is(a) {
+    transition:
+      transform 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      transform: translate(calc(-2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+    }
+
+    &:focus-visible {
+      outline: calc(2px * var(--app-scale)) solid $color-gold;
+      outline-offset: calc(3px * var(--app-scale));
+    }
+  }
+
+  &--hero:is(a):hover,
+  &--product:is(a):hover {
+    border-color: $color-green;
+  }
+}
+
+// ------------------------------------------------------------------
+// Single rating card
+// ------------------------------------------------------------------
+.rating-card {
+  box-sizing: border-box;
+  padding: calc(20px * var(--app-scale)) calc(22px * var(--app-scale));
+  background: #ffffff;
+  border: calc(1px * var(--app-scale)) solid $color-hairline;
+  border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+  box-shadow: 0 calc(8px * var(--app-scale)) calc(24px * var(--app-scale)) rgba(19, 20, 24, 0.05);
+  text-align: left;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: calc(12px * var(--app-scale));
+    margin-bottom: calc(12px * var(--app-scale));
+
+    .star-rating {
+      margin-left: auto;
+    }
+  }
+
+  &__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: calc(40px * var(--app-scale));
+    height: calc(40px * var(--app-scale));
+    border-radius: 50%;
+    background: $color-green-tint;
+    color: $color-green-dark;
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+
+  &__meta {
+    min-width: 0;
+  }
+
+  &__name {
+    margin: 0;
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: 0.95rem;
+    color: $color-ink;
+    overflow-wrap: anywhere;
+  }
+
+  &__date {
+    display: block;
+    font-family: $font-regular;
+    font-size: 0.78rem;
+    color: $color-ink-faint;
+  }
+
+  &__comment {
+    margin: 0;
+    font-family: $font-regular;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: $color-ink;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+}
+
+// ------------------------------------------------------------------
+// List of rating cards
+// ------------------------------------------------------------------
+.rating-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24px * var(--app-scale));
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20px * var(--app-scale));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__message {
+    margin: 0;
+    padding: calc(24px * var(--app-scale)) 0;
+    font-family: $font-regular;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $color-ink-dim;
+  }
+
+  &__more {
+    align-self: flex-start;
+    padding: 0.7rem 1.6rem;
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: $color-green;
+    background: transparent;
+    border: calc(2px * var(--app-scale)) solid $color-green;
+    border-radius: calc(999px * var(--app-scale));
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      background: $color-green;
+      color: #ffffff;
+    }
+
+    &:focus-visible {
+      outline: calc(2px * var(--app-scale)) solid $color-gold;
+      outline-offset: calc(3px * var(--app-scale));
+    }
+
+    @media (max-width: 960px) {
+      align-self: center;
+    }
+  }
+}
+
+// ------------------------------------------------------------------
+// Rating form
+// ------------------------------------------------------------------
+.rating-form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(18px * var(--app-scale));
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: calc(6px * var(--app-scale));
+    text-align: left;
+  }
+
+  &__label {
+    font-family: $font-regular;
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: $color-ink;
+  }
+
+  &__input,
+  &__textarea {
+    box-sizing: border-box;
+    width: 100%;
+    font-family: $font-regular;
+    font-size: 0.95rem;
+    color: $color-ink;
+    background: rgba(19, 20, 24, 0.025);
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: $radius-sm;
+    padding: 0.75rem 0.9rem;
+    transition:
+      border-color 0.2s $ease-organic,
+      background 0.2s $ease-organic,
+      box-shadow 0.2s $ease-organic;
+
+    &::placeholder {
+      color: rgba(19, 20, 24, 0.35);
+    }
+
+    &:hover {
+      border-color: rgba(19, 20, 24, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: $color-gold;
+      box-shadow: 0 0 0 calc(3px * var(--app-scale)) $color-gold-soft;
+    }
+  }
+
+  &__textarea {
+    min-height: calc(120px * var(--app-scale));
+    resize: vertical;
+  }
+
+  &__counter {
+    align-self: flex-end;
+    font-family: $font-regular;
+    font-size: 0.72rem;
+    color: $color-ink-faint;
+  }
+
+  &__button {
+    align-self: flex-start;
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: clamp(calc(14px * var(--app-scale)), 1.1vw, calc(16px * var(--app-scale)));
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #ffffff;
+    background: $color-green;
+    border: none;
+    border-radius: calc(999px * var(--app-scale));
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      opacity 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: $color-green-dark;
+      transform: translate(calc(-2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-gold;
+      outline-offset: calc(3px * var(--app-scale));
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 960px) {
+      align-self: stretch;
+      width: 100%;
+    }
+  }
+}
+
+// ------------------------------------------------------------------
+// Ratings panel: summary + form on one side, list on the other
+// ------------------------------------------------------------------
+.ratings-panel {
+  display: grid;
+  grid-template-columns: minmax(
+      calc(300px * var(--app-scale)),
+      calc(420px * var(--app-scale))
+    ) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(calc(40px * var(--app-scale)), 6vw, calc(90px * var(--app-scale)));
+
+  @media (max-width: 960px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    gap: calc(36px * var(--app-scale));
+    min-width: 0;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    gap: calc(20px * var(--app-scale));
+    padding: calc(20px * var(--app-scale)) calc(24px * var(--app-scale));
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: $radius-sm;
+    box-shadow: 0 calc(8px * var(--app-scale)) calc(24px * var(--app-scale)) rgba(19, 20, 24, 0.05);
+  }
+
+  &__average {
+    margin: 0;
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: clamp(calc(44px * var(--app-scale)), 5vw, calc(60px * var(--app-scale)));
+    line-height: 1;
+    color: $color-ink;
+  }
+
+  &__summary-meta {
+    display: flex;
+    flex-direction: column;
+    gap: calc(6px * var(--app-scale));
+  }
+
+  &__count {
+    margin: 0;
+    font-family: $font-regular;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: $color-ink-dim;
+  }
+
+  // form card with the sitewide offset "shadow block" motif
+  &__card {
+    position: relative;
+    width: 100%;
+  }
+
+  &__card-bg {
+    position: absolute;
+    inset: calc(10px * var(--app-scale)) calc(-10px * var(--app-scale))
+      calc(-10px * var(--app-scale)) calc(10px * var(--app-scale));
+    z-index: 0;
+    background: $color-card-bg;
+    border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+    transition:
+      background-color 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: calc(18px * var(--app-scale));
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: $radius-lg $radius-sm $radius-lg $radius-sm;
+    padding: clamp(calc(20px * var(--app-scale)), 3vw, calc(32px * var(--app-scale)));
+    box-shadow:
+      0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
+      0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.1);
+    transition:
+      transform 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+  }
+
+  &__card:hover &__form,
+  &__card:focus-within &__form {
+    transform: translate(calc(-3px * var(--app-scale)), calc(-3px * var(--app-scale)));
+    border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
+  }
+
+  &__card:hover &__card-bg,
+  &__card:focus-within &__card-bg {
+    background-color: $color-green;
+    border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
+  }
+
+  &__form-title {
+    margin: 0;
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: $color-ink;
+  }
+
+  &__main {
+    min-width: 0;
+  }
+}
+
+// ------------------------------------------------------------------
+// Homepage section
+// ------------------------------------------------------------------
+.ratings-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: calc(40px * var(--app-scale));
+  padding: clamp(calc(48px * var(--app-scale)), 7vw, calc(90px * var(--app-scale)))
+    clamp(calc(24px * var(--app-scale)), 8vw, calc(200px * var(--app-scale)));
+  background: #ffffff;
+  border-top: calc(1px * var(--app-scale)) solid #e2ebe4;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(14px * var(--app-scale));
+    text-align: center;
+  }
+
+  &__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: calc(10px * var(--app-scale));
+
+    .line {
+      flex-shrink: 0;
+      width: calc(30px * var(--app-scale));
+      height: calc(3px * var(--app-scale));
+      border-radius: calc(10px * var(--app-scale));
+      background-color: #34a65b;
+    }
+
+    p {
+      margin: 0;
+      font-family: $font-regular;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $color-green;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font-bold;
+    font-weight: 900;
+    font-size: clamp(calc(26px * var(--app-scale)), 3.4vw, calc(42px * var(--app-scale)));
+    line-height: 1.2;
+    color: $color-ink;
+  }
+
+  // three cards side by side on desktop
+  .rating-list__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(280px * var(--app-scale)), 1fr));
+    gap: calc(24px * var(--app-scale));
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: calc(24px * var(--app-scale));
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(10px * var(--app-scale));
+    padding: 0.9rem 1.8rem;
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: clamp(calc(14px * var(--app-scale)), 1.1vw, calc(16px * var(--app-scale)));
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background: $color-green;
+    border-radius: calc(999px * var(--app-scale));
+    box-shadow: calc(5px * var(--app-scale)) calc(5px * var(--app-scale)) 0 #2d2f32;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translate(calc(-2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+      box-shadow: calc(7px * var(--app-scale)) calc(7px * var(--app-scale)) 0 #24613a;
+    }
+
+    &:focus-visible {
+      outline: calc(2px * var(--app-scale)) solid $color-gold;
+      outline-offset: calc(4px * var(--app-scale));
+    }
+  }
+
+  &__link {
+    font-family: $font-regular;
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: $color-green-dark;
+    text-decoration: underline;
+    text-underline-offset: calc(4px * var(--app-scale));
+
+    &:hover {
+      color: $color-ink;
+    }
+  }
+}

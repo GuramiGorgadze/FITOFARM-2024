@@ -12,6 +12,7 @@ import {
   NotFound,
   ProductDashboard,
   Login,
+  Ratings,
 } from './routes';
 import { ScrollToTopButton, LoadingScreen, ProtectedRoute } from './components';
 import { Toaster } from 'react-hot-toast';
@@ -75,6 +76,10 @@ function App() {
             />
           </Route>
           <Route
+            path="/ratings"
+            element={<Ratings />}
+          />
+          <Route
             path="/login"
             element={<Login />}
           />
@@ -99,3 +104,6 @@ function App() {
 }
 
 export default App;
+
+
+

@@ -66,6 +66,53 @@ export const uploadImage = async (file) => {
   }
 };
 
+export const getRatings = async ({ productHandle, page = 1, limit = 6 } = {}) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/ratings`, {
+      params: { product: productHandle || undefined, page, limit },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.err || 'Error fetching ratings');
+  }
+};
+
+export const getRatingSummary = async (productHandle) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/ratings/summary`, {
+      params: { product: productHandle || undefined },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.err || 'Error fetching rating summary');
+  }
+};
+
+export const getProductRatingSummaries = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/ratings/summaries`, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.err || 'Error fetching rating summaries');
+  }
+};
+
+export const createRating = async (data) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/api/ratings`, data, {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (err) {
+    throw new Error(err.response?.data?.err || 'Error submitting rating');
+  }
+};
+
 export const login = async (data) => {
   try {
     const response = await axios.post(`${BASE_URL}/api/auth/login`, data, {
@@ -93,3 +140,6 @@ export const checkAuth = async () => {
   });
   return response.data;
 };
+
+
+

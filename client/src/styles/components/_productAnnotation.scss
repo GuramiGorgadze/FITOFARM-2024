@@ -23,7 +23,7 @@ $color-hairline: rgba(19, 20, 24, 0.1);
     calc((100% - calc(1040px * var(--app-scale))) / 2)
   );
   background-color: $color-page-bg;
-  scroll-margin-top: calc(32px * var(--app-scale));
+  scroll-margin-top: var(--nav-offset, calc(84px * var(--app-scale))); // clear the sticky navbar
 
   &__title {
     position: relative;
@@ -287,3 +287,6 @@ $color-hairline: rgba(19, 20, 24, 0.1);
       calc(72px * var(--app-scale));
   }
 }
+
+
+

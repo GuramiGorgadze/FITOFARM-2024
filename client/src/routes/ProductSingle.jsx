@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLoader } from '../context/LoaderContext';
-import { ProductAnnotation, Disclaimer } from '../components';
+import { ProductAnnotation, Disclaimer, RatingBadge, RatingsPanel } from '../components';
 import { getProductByHandle } from '../api/api';
 import useMetaDescription from '../hooks/useMetaDescription';
 import useDocumentTitle from '../hooks/useDocumentTitle';
 import useProductSchema from '../hooks/useProductSchema';
+import useProductRatingSummary from '../hooks/useProductRatingSummary';
 
 // Pharmacy logos: drop the files in this folder (adjust the path / extension if yours differ)
 import aversiLogo from '../assets/pharmacies/aversi.png';
@@ -94,8 +95,7 @@ function ProductSingle() {
   const { t, i18n } = useTranslation();
   const lang = resolveLang(i18n.language);
 
-  const { useFakeLoader } = useLoader();
-  useEffect(() => useFakeLoader(), []);
+  const { useDataLoader } = useLoader();
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -107,7 +107,9 @@ function ProductSingle() {
     (async () => {
       try {
         setLoading(true);
-        const { data } = await getProductByHandle(handle);
+        setError(null);
+        // keeps the global loading screen up until the product has actually arrived
+        const { data } = await useDataLoader(() => getProductByHandle(handle));
         if (!cancelled) setProduct(data);
       } catch (err) {
         if (!cancelled) setError(err.message);
@@ -125,9 +127,10 @@ function ProductSingle() {
     product?.title?.[lang] ? `${product.title[lang]} — ${t('seo.productSingle')}` : undefined
   );
   useMetaDescription(product?.shortDescription?.[lang]);
-  useProductSchema(product, lang);
+  const [ratingSummary, refreshRatingSummary] = useProductRatingSummary(handle);
+  useProductSchema(product, lang, ratingSummary);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return null; // the global loading screen is covering the page
   if (error) return <p>{error}</p>;
   if (!product) return null;
 
@@ -166,6 +169,12 @@ function ProductSingle() {
 
         <div className="product-single__info">
           <h3 className="product-single__title">{title?.[lang]}</h3>
+
+          <RatingBadge
+            summary={ratingSummary}
+            href="#ratings"
+            variant="product"
+          />
 
           <h4 className="product-single__section-title">{t('productSingle.characteristics')}</h4>
 
@@ -244,6 +253,20 @@ function ProductSingle() {
       {annotationData && <ProductAnnotation data={annotationData} />}
 
       <Disclaimer />
+
+      <section
+        className="product-ratings"
+        id="ratings"
+      >
+        <div className="product-ratings__head">
+          <h2>{t('ratings.productSectionTitle')}</h2>
+        </div>
+        <RatingsPanel
+          productHandle={handle}
+          summary={ratingSummary}
+          onCreated={refreshRatingSummary}
+        />
+      </section>
     </>
   );
 }

@@ -153,6 +153,7 @@ $control-height: calc(44px * var(--app-scale));
     letter-spacing: 0.01em;
     color: $color-ink-dim;
     text-decoration: none;
+    white-space: nowrap; // e.g. Georgian "ჩვენ შესახებ" must stay on one line
     transition: color 0.3s $ease-organic;
     font-family: $font-regular;
 
@@ -192,16 +193,28 @@ $control-height: calc(44px * var(--app-scale));
     }
   }
 
+  // tablet widths: tighten so the one-line links still fit next to logo + language
+  @media (min-width: 769px) and (max-width: 1000px) {
+    gap: 0.8rem;
+
+    a {
+      font-size: 0.8rem;
+      letter-spacing: 0;
+    }
+  }
+
   @media (max-width: 768px) {
     order: 1;
     width: 100%;
     justify-content: center;
-    gap: 1.5rem;
+    gap: clamp(0.6rem, 3.2vw, 1.5rem);
     padding-top: 0.35rem;
     border-top: calc(1px * var(--app-scale)) solid $color-hairline;
 
+    // scales with the screen so all four links stay on one line, even in Georgian
     a {
-      font-size: 0.85rem;
+      font-size: clamp(0.66rem, 3.3vw, 0.85rem);
+      letter-spacing: 0;
     }
   }
 }
@@ -216,15 +229,14 @@ $control-height: calc(44px * var(--app-scale));
 }
 
 .dropdown-trigger {
-  display: flex;
+  display: grid; // label row + invisible sizer share one cell
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.45rem 0.85rem 0.45rem 0.5rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.4rem;
   border-radius: calc(999px * var(--app-scale));
   border: calc(1px * var(--app-scale)) solid $color-hairline;
   background: rgba(19, 20, 24, 0.03);
 
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: $color-ink;
   cursor: pointer;
@@ -245,31 +257,71 @@ $control-height: calc(44px * var(--app-scale));
   }
 
   .flag {
-    width: calc(20px * var(--app-scale));
-    height: calc(20px * var(--app-scale));
+    width: calc(18px * var(--app-scale));
+    height: calc(18px * var(--app-scale));
     border-radius: 50%;
     object-fit: cover;
     border: calc(1px * var(--app-scale)) solid rgba(19, 20, 24, 0.15);
     flex-shrink: 0;
   }
 
-  > span:not(.arrow) {
-    white-space: nowrap;
+  &__content,
+  &__sizer {
+    grid-area: 1 / 1;
+  }
 
-    @media (max-width: 480px) {
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    white-space: nowrap;
+  }
+
+  // Reserves the width of the widest language + the arrow, so the button is
+  // always exactly as wide as the dropdown that opens under it.
+  &__sizer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 1.2rem;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  // small phones: the header row has no room for a wider button, so it stays
+  // compact (flag + arrow) there; the dropdown still lists the language names.
+  @media (max-width: 400px) {
+    &__label,
+    &__sizer {
       display: none;
     }
   }
 
+  &__flag-space {
+    flex-shrink: 0;
+    width: calc(18px * var(--app-scale));
+  }
+
+  &__names {
+    display: flex;
+    flex-direction: column;
+  }
+
   .arrow {
     display: inline-flex;
-    margin-left: 0.1rem;
+    margin-left: auto; // arrow sits at the right edge of the button
     color: $color-green;
     transition: transform 0.3s $ease-organic;
 
     i {
       display: block;
-      font-size: 0.68rem;
+      font-size: 0.6rem;
     }
 
     &.open {
@@ -280,18 +332,20 @@ $control-height: calc(44px * var(--app-scale));
 
 .dropdown-options {
   position: absolute;
-  top: calc(100% + 0.6rem);
+  top: calc(100% + 0.45rem);
   right: 0;
+  min-width: 100%;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.3rem;
   list-style: none;
 
   background: #ffffff;
-  border-radius: $radius-md;
-  border-top: calc(3px * var(--app-scale)) solid $color-gold;
+  border-radius: $radius-sm;
+  border-top: calc(2px * var(--app-scale)) solid $color-gold;
   box-shadow:
-    0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
-    0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.15);
+    0 calc(12px * var(--app-scale)) calc(28px * var(--app-scale)) $color-shadow,
+    0 calc(2px * var(--app-scale)) calc(6px * var(--app-scale)) rgba(19, 20, 24, 0.15);
 
   animation: dropdown-in 0.28s $ease-organic;
   z-index: 60;
@@ -312,24 +366,24 @@ $control-height: calc(44px * var(--app-scale));
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.55rem 0.7rem;
-  border-radius: $radius-sm;
+  gap: 0.5rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: calc(6px * var(--app-scale));
   cursor: pointer;
 
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: $color-text-dark;
 
   transition: background 0.2s $ease-organic;
 
   & + & {
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
   }
 
   .flag {
-    width: calc(22px * var(--app-scale));
-    height: calc(22px * var(--app-scale));
+    width: calc(18px * var(--app-scale));
+    height: calc(18px * var(--app-scale));
     border-radius: 50%;
     object-fit: cover;
     border: calc(1px * var(--app-scale)) solid rgba(0, 0, 0, 0.08);
@@ -377,27 +431,25 @@ $control-height: calc(44px * var(--app-scale));
 }
 
 .call-trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  min-height: $control-height;
-  padding: 0.35rem 1.25rem 0.5rem;
+  display: grid; // label + invisible sizer share one cell
+  place-items: center;
+  min-height: calc(32px * var(--app-scale));
+  padding: 0.1rem 0.6rem 0.25rem;
   border: 0;
-  border-radius: 0 0 $radius-md $radius-md; // flat top, rounded bottom
+  border-radius: 0 0 $radius-sm $radius-sm; // flat top, rounded bottom
   background: $color-green-dark; // darker than $color-green so white text passes 4.5:1
   color: #ffffff;
   font-family: $font-regular;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
   touch-action: manipulation;
   box-shadow:
     // shade cast by the navbar onto the top edge, so it reads as tucked underneath
-    inset 0 calc(8px * var(--app-scale)) calc(8px * var(--app-scale)) calc(-8px * var(--app-scale)) rgba(0, 0, 0, 0.3),
-    0 calc(10px * var(--app-scale)) calc(20px * var(--app-scale)) rgba(24, 128, 56, 0.3),
-    0 calc(2px * var(--app-scale)) calc(6px * var(--app-scale)) $color-shadow;
+    inset 0 calc(6px * var(--app-scale)) calc(6px * var(--app-scale)) calc(-6px * var(--app-scale)) rgba(0, 0, 0, 0.3),
+    0 calc(6px * var(--app-scale)) calc(14px * var(--app-scale)) rgba(24, 128, 56, 0.28),
+    0 calc(2px * var(--app-scale)) calc(5px * var(--app-scale)) $color-shadow;
   transition: background 0.25s $ease-organic;
 
   &:hover,
@@ -411,42 +463,72 @@ $control-height: calc(44px * var(--app-scale));
   }
 
   i {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+  }
+
+  &__content,
+  &__sizer {
+    grid-area: 1 / 1;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  // Same structure as a dropdown row (icon + gap + number), so the button
+  // always ends up exactly as wide as the dropdown below it.
+  &__sizer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.3rem;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .call-options {
   position: absolute;
-  top: calc(100% + 0.6rem);
+  top: calc(100% + 0.45rem);
   right: 0;
   min-width: 100%;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.3rem;
   list-style: none;
 
   background: #ffffff;
-  border-radius: $radius-md;
-  border-top: calc(3px * var(--app-scale)) solid $color-gold;
+  border-radius: $radius-sm;
+  border-top: calc(2px * var(--app-scale)) solid $color-gold;
   box-shadow:
-    0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
-    0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.15);
+    0 calc(12px * var(--app-scale)) calc(28px * var(--app-scale)) $color-shadow,
+    0 calc(2px * var(--app-scale)) calc(6px * var(--app-scale)) rgba(19, 20, 24, 0.15);
 
   animation: dropdown-in 0.28s $ease-organic;
   z-index: 60;
 
   li + li {
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
   }
 }
 
 .call-option {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  min-height: $control-height;
-  padding: 0 0.8rem;
-  border-radius: $radius-sm;
-  font-size: 0.9rem;
+  gap: 0.5rem;
+  min-height: calc(32px * var(--app-scale));
+  padding: 0 0.6rem;
+  border-radius: calc(6px * var(--app-scale));
+  font-size: 0.8rem;
   font-weight: 500;
   white-space: nowrap;
   color: $color-text-dark;

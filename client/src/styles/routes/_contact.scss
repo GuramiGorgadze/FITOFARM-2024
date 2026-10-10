@@ -218,7 +218,7 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
 
   &__card:hover &__form,
   &__card:focus-within &__form {
-    transform: translate(calc(-8px * var(--app-scale)), calc(-8px * var(--app-scale)));
+    transform: translate(calc(-3px * var(--app-scale)), calc(-3px * var(--app-scale)));
     border-radius: $radius-sm $radius-lg $radius-sm $radius-lg;
   }
 
@@ -337,3 +337,5 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     color: $color-ink-dim;
   }
 }
+
+

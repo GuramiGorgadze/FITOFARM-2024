@@ -66,6 +66,43 @@
       "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
     }
   },
+  "ratings": {
+    "eyebrow": "Bewertungen",
+    "title": "Kundenbewertungen",
+    "intro": "Teilen Sie uns Ihre Meinung zu FITOFARM-2024 mit. Ihre Bewertung hilft uns, besser zu werden, und anderen bei der Entscheidung.",
+    "sectionTitle": "Das sagen unsere Kunden",
+    "productSectionTitle": "Kundenbewertungen",
+    "leaveRating": "Jetzt bewerten",
+    "seeAll": "Alle Bewertungen ansehen",
+    "noRatingsShort": "Noch keine Bewertungen",
+    "count": "Bewertungen: {{count}}",
+    "ariaLabel": "Bewertung {{average}} von 5, Bewertungen: {{count}}",
+    "form": {
+      "title": "Bewertung abgeben",
+      "productTitle": "Dieses Produkt bewerten",
+      "yourRating": "Ihre Bewertung",
+      "starLabel": "{{value}} von 5",
+      "name": "Name",
+      "comment": "Kommentar",
+      "commentPlaceholder": "Erzählen Sie von Ihren Erfahrungen",
+      "submit": "Bewertung senden",
+      "sending": "Wird gesendet..."
+    },
+    "list": {
+      "empty": "Noch keine Bewertungen. Seien Sie der Erste!",
+      "loading": "Wird geladen...",
+      "loadMore": "Mehr anzeigen",
+      "error": "Bewertungen konnten nicht geladen werden."
+    },
+    "toast": {
+      "starsError": "Bitte wählen Sie eine Sternebewertung.",
+      "nameError": "Bitte geben Sie Ihren Namen ein.",
+      "commentError": "Bitte schreiben Sie einen Kommentar.",
+      "loading": "Ihre Bewertung wird gesendet...",
+      "success": "Vielen Dank für Ihre Bewertung!",
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    }
+  },
   "terms": {
     "eyebrow": "Rechtliches",
     "title": "Allgemeine Geschäftsbedingungen",
@@ -248,6 +285,10 @@
       "title": "Allgemeine Geschäftsbedingungen — FITOFARM-2024",
       "description": "Nutzungsbedingungen für die Website von FITOFARM-2024."
     },
+    "ratings": {
+      "title": "Bewertungen — FITOFARM-2024",
+      "description": "Lesen Sie Kundenbewertungen zu FITOFARM-2024 und geben Sie Ihre eigene ab."
+    },
     "productSingle": "FITOFARM-2024"
   },
   "notFound": {
@@ -346,3 +387,6 @@
     }
   }
 }
+
+
+
