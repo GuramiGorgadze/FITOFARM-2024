@@ -61,7 +61,7 @@ function Info() {
             <span>{phone1}</span>
           </a>
 
-                    <a
+          <a
             className="contact-link"
             href={`tel:${phone2.replace(/\s+/g, '')}`}
           >

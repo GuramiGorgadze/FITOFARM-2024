@@ -86,7 +86,7 @@ function Footer() {
               {t('footer.contact')}
             </Link>
 
-                        <a href={`tel:${phone1.replace(/\s+/g, '')}`}>
+            <a href={`tel:${phone1.replace(/\s+/g, '')}`}>
               {' '}
               <div className="link">
                 <i
@@ -107,7 +107,6 @@ function Footer() {
               </div>
             </a>
           </div>
-          
         </div>
 
         <div className="column">
@@ -215,6 +214,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
-

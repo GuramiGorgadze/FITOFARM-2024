@@ -15,8 +15,6 @@ function Ratings() {
   const titleRef = useRef(null);
   const titleText = t('ratings.title');
 
-  // Same title as the Products page (.hero). Long translations (e.g. Georgian)
-  // are scaled down just enough to stay on a single row.
   useLayoutEffect(() => {
     const titleEl = titleRef.current;
     const wrapEl = titleEl?.parentElement;

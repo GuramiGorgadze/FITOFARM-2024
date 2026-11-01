@@ -29,7 +29,9 @@ function RatingsPanel({ productHandle, summary, onCreated }) {
             <StarRating
               value={average}
               size="lg"
-              label={count ? t('ratings.ariaLabel', { average: average.toFixed(1), count }) : undefined}
+              label={
+                count ? t('ratings.ariaLabel', { average: average.toFixed(1), count }) : undefined
+              }
             />
             <p className="ratings-panel__count">
               {count ? t('ratings.count', { count }) : t('ratings.noRatingsShort')}

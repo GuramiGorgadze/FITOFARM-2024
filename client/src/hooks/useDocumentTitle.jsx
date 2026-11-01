@@ -23,6 +23,3 @@ function useDocumentTitle(overrideTitle) {
 }
 
 export default useDocumentTitle;
-
-
-

@@ -48,6 +48,3 @@ function useProductSchema(product, lang, rating) {
 }
 
 export default useProductSchema;
-
-
-

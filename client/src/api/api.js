@@ -140,6 +140,3 @@ export const checkAuth = async () => {
   });
   return response.data;
 };
-
-
-

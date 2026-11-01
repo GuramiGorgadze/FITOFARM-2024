@@ -56,6 +56,3 @@ function generateRobotsTxt() {
 const products = await fetchProducts();
 await generateSitemap(products);
 generateRobotsTxt();
-
-
-

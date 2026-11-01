@@ -78,7 +78,6 @@ const initialFormState = () => ({
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
 
-// converts the form state into the payload shape the API/schema expects
 function buildPayload(formData) {
   const payload = clone(formData);
 

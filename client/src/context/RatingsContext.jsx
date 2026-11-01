@@ -26,7 +26,10 @@ export const RatingsProvider = ({ children }) => {
     refreshSiteSummary();
   }, [refreshSiteSummary]);
 
-  const value = useMemo(() => ({ siteSummary, refreshSiteSummary }), [siteSummary, refreshSiteSummary]);
+  const value = useMemo(
+    () => ({ siteSummary, refreshSiteSummary }),
+    [siteSummary, refreshSiteSummary]
+  );
 
   return <RatingsContext.Provider value={value}>{children}</RatingsContext.Provider>;
 };

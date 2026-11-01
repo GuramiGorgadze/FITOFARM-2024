@@ -65,6 +65,3 @@ function ProductCard({ product, rating }) {
 }
 
 export default ProductCard;
-
-
-

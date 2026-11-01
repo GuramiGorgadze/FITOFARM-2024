@@ -6,8 +6,6 @@ export { default as ProductCard } from './ProductCard';
 export { default as ProductAnnotation } from './ProductAnnotation';
 export { default as ProtectedRoute } from './ProtectedRoute';
 
-
-
 export { default as StarRating } from './StarRating';
 export { default as StarInput } from './StarInput';
 export { default as RatingBadge } from './RatingBadge';

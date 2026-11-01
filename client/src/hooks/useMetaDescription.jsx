@@ -40,6 +40,3 @@ function useMetaDescription(overrideText) {
 }
 
 export default useMetaDescription;
-
-
-
