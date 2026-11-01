@@ -334,6 +334,145 @@ $ease-organic: cubic-bezier(0.22, 1, 0.36, 1);
     }
   }
 
+  &__map {
+    max-width: 100%;
+
+    @media (max-width: 960px) {
+      margin-inline: auto;
+    }
+  }
+
+  &__map-frame {
+    position: relative;
+  }
+
+  &__map-bg {
+    position: absolute;
+    inset: calc(8px * var(--app-scale)) calc(-8px * var(--app-scale)) calc(-8px * var(--app-scale)) calc(8px * var(--app-scale));
+    z-index: 0;
+
+    background: $color-card-bg;
+    border-radius: calc(#{$radius-lg} * var(--app-scale)) calc(#{$radius-sm} * var(--app-scale))
+      calc(#{$radius-lg} * var(--app-scale)) calc(#{$radius-sm} * var(--app-scale));
+
+    transition:
+      background-color 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+  }
+
+  &__map-card {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: calc(14px * var(--app-scale));
+    padding: calc(18px * var(--app-scale)) calc(20px * var(--app-scale));
+
+    background: #ffffff;
+    border: calc(1px * var(--app-scale)) solid $color-hairline;
+    border-radius: calc(#{$radius-lg} * var(--app-scale)) calc(#{$radius-sm} * var(--app-scale))
+      calc(#{$radius-lg} * var(--app-scale)) calc(#{$radius-sm} * var(--app-scale));
+    box-shadow:
+      0 calc(18px * var(--app-scale)) calc(40px * var(--app-scale)) $color-shadow,
+      0 calc(2px * var(--app-scale)) calc(8px * var(--app-scale)) rgba(19, 20, 24, 0.1);
+
+    color: $color-ink;
+    text-decoration: none;
+    touch-action: manipulation;
+
+    transition:
+      transform 0.25s $ease-organic,
+      border-radius 0.25s $ease-organic;
+
+    &:focus-visible {
+      outline: calc(2px * var(--app-scale)) solid $color-gold;
+      outline-offset: calc(3px * var(--app-scale));
+    }
+  }
+
+  &__map-frame:hover &__map-card,
+  &__map-frame:focus-within &__map-card {
+    transform: translate(calc(-3px * var(--app-scale)), calc(-3px * var(--app-scale)));
+    border-radius: calc(#{$radius-sm} * var(--app-scale)) calc(#{$radius-lg} * var(--app-scale))
+      calc(#{$radius-sm} * var(--app-scale)) calc(#{$radius-lg} * var(--app-scale));
+  }
+
+  &__map-frame:hover &__map-bg,
+  &__map-frame:focus-within &__map-bg {
+    background-color: $color-green;
+    border-radius: calc(#{$radius-sm} * var(--app-scale)) calc(#{$radius-lg} * var(--app-scale))
+      calc(#{$radius-sm} * var(--app-scale)) calc(#{$radius-lg} * var(--app-scale));
+  }
+
+  &__map-pin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: calc(38px * var(--app-scale));
+    height: calc(38px * var(--app-scale));
+
+    font-size: 1.05rem;
+    color: $color-green;
+    background: rgba(47, 138, 79, 0.1);
+    border-radius: 50%;
+  }
+
+  &__map-cta {
+    flex: 1;
+    text-align: left;
+
+    font-family: $font-regular;
+    font-weight: 900;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  &__map-arrow {
+    color: $color-green-dark;
+    transition: transform 0.2s $ease-organic;
+  }
+
+  &__map-frame:hover &__map-arrow {
+    transform: translate(calc(2px * var(--app-scale)), calc(-2px * var(--app-scale)));
+  }
+
+  &__map-address {
+    margin: calc(20px * var(--app-scale)) 0 0;
+
+    font-family: $font-regular;
+    font-weight: 500;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: $color-ink-dim;
+    text-align: left;
+
+    @media (max-width: 960px) {
+      text-align: center;
+    }
+  }
+
+  // clickable address inside the specs table (status row)
+  &__specs-link {
+    color: $color-green-dark;
+    text-decoration: underline;
+    text-underline-offset: calc(3px * var(--app-scale));
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-green;
+    }
+
+    &:focus-visible {
+      outline: calc(2px * var(--app-scale)) solid $color-gold;
+      outline-offset: calc(2px * var(--app-scale));
+      border-radius: calc(2px * var(--app-scale));
+    }
+  }
+
   // screen-reader-only helper text ("opens in a new tab")
   &__sr-only {
     position: absolute;

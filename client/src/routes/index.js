@@ -9,3 +9,5 @@ export { default as NotFound } from './NotFound';
 export { default as ProductDashboard } from './ProductDashboard';
 export { default as Login } from './Login';
 export { default as Ratings } from './Ratings';
+export { default as ProductFitosed } from './ProductFitosed';
+export { default as ProductDiabetol } from './ProductDiabetol';

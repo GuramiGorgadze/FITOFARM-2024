@@ -13,6 +13,8 @@ import {
   ProductDashboard,
   Login,
   Ratings,
+  ProductFitosed,
+  ProductDiabetol,
 } from './routes';
 import { ScrollToTopButton, LoadingScreen, ProtectedRoute } from './components';
 import { Toaster } from 'react-hot-toast';
@@ -65,9 +67,17 @@ function App() {
             path="/products"
             element={<Products />}
           />
-          <Route
+          {/* <Route
             path="/products/:handle"
             element={<ProductSingle />}
+          /> */}
+          <Route
+            path="/products/fitosed-25ml"
+            element={<ProductFitosed />}
+          />
+          <Route
+            path="/products/diabetol-1"
+            element={<ProductDiabetol />}
           />
           <Route element={<ProtectedRoute />}>
             <Route
